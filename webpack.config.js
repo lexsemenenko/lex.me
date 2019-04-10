@@ -15,6 +15,7 @@ module.exports = {
   devServer: {
     port: process.env.PORT || 3000,
     contentBase: path.join(process.cwd(), './public'),
+    historyApiFallback: true,
     watchContentBase: true,
     stats: 'none',
     quiet: false,

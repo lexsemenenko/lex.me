@@ -1,8 +1,11 @@
+/* eslint-disable no-useless-constructor */
+/* eslint-disable react/prefer-stateless-function */
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './css/main.less';
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+// Pages
+import AppRouter from './routers/AppRouter';
 
-import App from './components/App';
-
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<AppRouter />, document.getElementById('root'));
