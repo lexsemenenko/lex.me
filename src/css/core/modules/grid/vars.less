@@ -1,0 +1,23 @@
+@G__columns:                 12;
+@G__gutter:                  20px;
+@G__attr:                    "data-grid";
+@G__breakpoint:              @laptop-up;
+
+// Create Grid
+#G.create(
+  @columns:                   12,
+  @optional: {
+
+    #G.breakpoint(
+      @suffix:                "large", 
+      @gutter:                30px, // Needs to be updated in the grid loop
+      @breakpoint:            @desktop-up
+    );
+
+    //#G.breakpoint(
+    //  @suffix:                "large-x",
+    //  @gutter:                30px,
+    //  @breakpoint:            @widescreen-up
+    //);
+  }
+);

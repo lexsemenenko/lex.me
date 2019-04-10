@@ -1,0 +1,39 @@
+// =============================================================================
+// Mixins: Type
+// =============================================================================
+
+// Version:         1.0.0
+
+// Description:     Mixins to help typography
+
+#ELEMENT() {
+
+  .links(@color: @a-color,
+  @hover: @a-color-hover,
+  @visited: @a-color-visited ) {
+    color: @color;
+
+    &:visited when not (@visited =off) and not (@visited =false) {
+      color: @visited;
+    }
+
+    &:hover {
+      color: @hover;
+    }
+  }
+
+  .buttonResetStyles() {
+    text-transform: none;
+    text-align: inherit;
+    background-color: transparent;
+    border: transparent;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: inherit;
+  }
+
+}

@@ -1,0 +1,65 @@
+.menu-scroll {
+  display: flex;
+  justify-content: flex-start;
+
+  >li {}
+
+  a {
+    padding: 0.7em 1em;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    color: rgba(255, 255, 255, 0.5);
+    // font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      bottom: 12px;
+      height: 8px;
+      background-color: transparent;
+      transition: 0.3s ease-out;
+      transition-property: background-color, border-color, box-shadow, height, right;
+      left: 0.9em;
+      right: 0.9em;
+    }
+
+    &.active {
+      color: white;
+
+      &::before {
+        transition-property: background-color, border-color, box-shadow, height, right;
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+    }
+  }
+}
+
+.scrollpoint--menu-anchor {
+  z-index: 150;
+  position: relative;
+
+  &.active {
+    position: fixed;
+    z-index: 200;
+  }
+}
+
+
+// =============================================================================
+// Menu Mobile
+// =============================================================================
+
+
+.menu-mobile {
+  display: none;
+  position: relative;
+
+  @media @break-primary-up {
+    display: none;
+  }
+}

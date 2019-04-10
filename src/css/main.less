@@ -1,1 +1,54 @@
-// Ready for Styling
+// Core
+// =============================================================================  
+@import "_core";
+
+// Site Specific
+// =============================================================================  
+
+@import "_site";
+
+// Bottom of stylesheet
+// =============================================================================  
+
+@import "core/base/utilities";
+.mix-bottom-stylesheet();
+
+// {
+//  outline   : 1px solid magenta !important;
+//  background: bisque !important;
+//  color     : white !important;
+// }
+
+.scrollpoint__trigger {
+  content: '';
+  height: 1px;
+  background: magenta;
+  position: absolute;
+  top: auto;
+  width: 100%;
+  transition: top 0.25s ease;
+  z-index: 9999;
+}
+
+// #about {
+//opacity: 0;
+//height : 100vh;
+// }
+
+// .section {
+//   &.scrollpoint {
+//     &.active {
+//       background: tint(#c678dd, 80%) !important;
+//     }
+//   }
+// }
+
+// .scrollpoint--menu-anchor.active {
+//   background: plum !important;
+// }
+
+// .scrollpoint {
+//   &.active {
+//     background: plum !important;
+//   }
+// }
