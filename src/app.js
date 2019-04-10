@@ -3,6 +3,6 @@ import './css/main.less';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Test from './components/Test';
+import App from './components/App';
 
-ReactDOM.render(<Test />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('root'));
