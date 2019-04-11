@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const LessLists = require('less-plugin-lists');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -24,6 +25,10 @@ module.exports = {
 
   module: {
     rules: [
+      {
+        test: /\.((png)|(jpg)|(jpeg)|(eot)|(woff)|(woff2)|(ttf)|(svg)|(gif))(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file-loader?name=/[hash].[ext]'
+      },
       {
         loader: 'babel-loader',
         test: /\.js?$/,
@@ -61,7 +66,19 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css'
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: './src/fonts/',
+        to: 'fonts/',
+        flatten: true
+      },
+      {
+        from: './src/images/',
+        to: 'images/',
+        flatten: true
+      }
+    ])
   ],
   devtool: 'cheap-module-eval-source-map'
 };
