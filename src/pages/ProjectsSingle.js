@@ -6,7 +6,7 @@ class ProjectsSingle extends Component {
   constructor() {
     super();
     this.state = { project: [] };
-  }
+  };
 
   componentDidMount() {
     const { projectSlug } = this.props.match.params;
@@ -20,7 +20,12 @@ class ProjectsSingle extends Component {
           this.setState({ project: entries.items[0] });
         });
     }
-  }
+  };
+
+  goBack = () => {
+    // React Router
+    this.props.history.push('/')
+  };
 
   render() {
     // eslint-disable-next-line prettier/prettier
@@ -46,6 +51,10 @@ class ProjectsSingle extends Component {
         {projectLink}
         <br />
         {projectSlug}
+        <br />
+        <button type="button" onClick={this.goBack}>
+          Back
+        </button>
       </div>
     );
 
@@ -53,7 +62,7 @@ class ProjectsSingle extends Component {
 
     // console.log(this.state.project.fields);
     // const { projectTitle } = this.state.project.fields;
-  }
+  };
 }
 
 export default ProjectsSingle;

@@ -8,22 +8,9 @@ const HomeHero = () => (
           <h1 className="h1 t-bold">Front-End & Web Developer</h1>
           <strong className="h2 t-normal">Lex Semenenko</strong>
           <a className="hero__arrow" href="#about">
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-              data-svg="arrow-down"
-            >
+            <svg width="30" height="30" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="arrow-down">
               <polygon points="10.5,16.08 5.63,10.66 6.37,10 10.5,14.58 14.63,10 15.37,10.66" />
-              <line
-                fill="none"
-                stroke="#FA6400"
-                x1="10.5"
-                y1="4"
-                x2="10.5"
-                y2="15"
-              />
+              <line fill="none" stroke="#FA6400" x1="10.5" y1="4" x2="10.5" y2="15" />
             </svg>
           </a>
         </div>

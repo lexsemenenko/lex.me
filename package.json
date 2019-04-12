@@ -13,6 +13,7 @@
   "dependencies": {
     "@babel/preset-react": "^7.0.0",
     "contentful": "^7.5.0",
+    "jquery": "^3.4.0",
     "live-server": "^1.2.1",
     "marked": "^0.6.2",
     "react": "^16.8.6",

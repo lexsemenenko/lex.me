@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const LessLists = require('less-plugin-lists');
@@ -78,7 +79,13 @@ module.exports = {
         to: 'images/',
         flatten: true
       }
-    ])
+    ]),
+    // Add jQuery
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
+    })
   ],
   devtool: 'cheap-module-eval-source-map'
 };
