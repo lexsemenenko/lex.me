@@ -9,10 +9,10 @@ import { toggleOpen } from './actions/ui';
 const store = configureStore();
 
 // store.dispatch(toggleOpen({ color: 'white' }));
-// console.log(store.getState().ui);
-// store.subscribe(() => {
-//   console.log(store.getState().ui);
-// });
+console.log(store.getState());
+store.subscribe(() => {
+  console.log(store.getState());
+});
 
 const jsx = (
   // Provide strore component to any nested components

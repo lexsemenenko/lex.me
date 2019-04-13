@@ -25,7 +25,7 @@ const Collapsible = ({ ui, dispatch }) => {
 
 const mapStateToProps = state => {
   return {
-    ui: state.ui
+    ui: state.ui.dropdown.menuMobile
   };
 };
 

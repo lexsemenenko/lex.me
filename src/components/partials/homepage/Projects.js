@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import client from '../../api/contentful';
 import ProjectItem from './ProjectItem';
+import { connect } from 'react-redux';
+import { loadProjectsConetentful } from '../../../actions/projects';
 
 class HomeProjects extends Component {
 
@@ -9,6 +11,9 @@ class HomeProjects extends Component {
     homeProjects: [],
     open: []
   };
+
+  stateProjects = this.props.stateProjects;
+  dispatch = this.props.dispatch;
 
   // Toggle Open
   handleClick = (indexClicked) => {
@@ -24,6 +29,8 @@ class HomeProjects extends Component {
   };
   
   componentDidMount() {
+    // console.log(this.stateProjects);
+    // console.log(this);
     client
       .getEntries({
         content_type: 'project',
@@ -35,7 +42,10 @@ class HomeProjects extends Component {
           homeProjects: entries.items,
           open: itemOpen
         });
+        this.dispatch(loadProjectsConetentful({projects: entries.items}));
       });
+      // console.log(this.stateProjects)
+      
   };
   
   render() {
@@ -58,4 +68,11 @@ class HomeProjects extends Component {
   }
 }
 
-export default HomeProjects;
+const mapStateToProps = state => {
+  return {
+    stateUi: state.ui,
+    stateProjects: state.projects
+  };
+};
+
+export default connect(mapStateToProps)(HomeProjects);

@@ -1,16 +1,16 @@
-// const projectsReducersDefaultState = [{ test: 'test' }];
+const defaultProjects = {
+  projects: []
+};
 
-// export default (state = projectsReducersDefaultState, action) => {
-//   switch (action.type) {
-//     case 'TOGGLE_OPEN':
-//       return 'something';
-//     case 'CLOSE_ALL':
-//       return 'somehting';
-//     default:
-//       return state;
-//   }
-// };
+const projectsReducer = (state = defaultProjects, action) => {
+  console.log(state, '!!!!state');
+  switch (action.type) {
+    case 'LOAD_PROJECTS_CONTENTFUL':
+      // Return New State
+      return action.projects ? action.projects : state.projects;
+    default:
+      return state;
+  }
+};
 
-// const store = createState(objDefaultState) => {
-//   return state // making zero changes to the store
-// }
+export default projectsReducer;

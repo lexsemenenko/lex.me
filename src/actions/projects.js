@@ -1,18 +1,6 @@
-// =============================================================================
-// Actions: Tasks
-// =============================================================================
-
-// Toggle Click
-// =============================================================================
-
-// export const toggleOpen = (id, updates) => ({
-//   type: 'TOGGLE_OPEN',
-//   id,
-//   updates
-// });
-
-// export const closeAll = (id, updates) => ({
-//   type: 'CLOSE_ALL',
-//   id,
-//   updates
-// });
+export const loadProjectsConetentful = ({ projects }) => {
+  return {
+    type: 'LOAD_PROJECTS_CONTENTFUL',
+    projects
+  };
+};
