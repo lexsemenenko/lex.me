@@ -12,10 +12,13 @@ const Collapsible = ({ ui, dispatch }) => {
         onClick={() => {
           dispatch(toggleOpen({ color: 'plum' }));
         }}
+        data-collapsible={`open: ${open}`}
       >
         Toggle
       </button>
-      <div className="dropdown__content">Dropdown Content</div>
+      <div className="dropdown__content" data-collapsible={`open: ${open}`}>
+        Dropdown Content
+      </div>
     </div>
   );
 };

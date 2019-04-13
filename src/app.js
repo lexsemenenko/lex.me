@@ -4,13 +4,15 @@ import './css/main.less';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import AppRouter from './routers/AppRouter';
+import { toggleOpen } from './actions/ui';
 
 const store = configureStore();
 
-console.log(store.getState().ui);
-store.subscribe(() => {
-  console.log(store.getState().ui);
-});
+// store.dispatch(toggleOpen({ color: 'white' }));
+// console.log(store.getState().ui);
+// store.subscribe(() => {
+//   console.log(store.getState().ui);
+// });
 
 const jsx = (
   // Provide strore component to any nested components

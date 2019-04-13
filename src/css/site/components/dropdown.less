@@ -1,0 +1,13 @@
+.dropdown {}
+
+.dropdown__toggle {}
+
+.dropdown__content {
+  &[data-collapsible*="open: false"] {
+    display: none;
+  }
+
+  &[data-collapsible*="open: true"] {
+    display: block;
+  }
+}
