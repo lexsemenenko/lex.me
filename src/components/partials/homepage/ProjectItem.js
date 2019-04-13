@@ -5,11 +5,10 @@ const ProjecItem = props => {
   const { homeProjects, open } = props.projectState;
   let itemOpen = false;
   return homeProjects.map((project, index) => {
-    console.log(project.fields.projectTitle);
     const { projectTitle, projectCompany, projectIntro, projectImage, projectLink, projectSlug } = project.fields;
     const projectKey = `project-${index}`;
     const { url: image } = projectImage.fields.file;
-    console.log(open[index]);
+
     if (open[index]) {
       itemOpen = true;
     } else {

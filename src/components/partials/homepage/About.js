@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import client from '../../api/contentful';
+import Dropdown from '../Dropdown';
 
 class HomeAbout extends Component {
   constructor() {
@@ -32,6 +33,7 @@ class HomeAbout extends Component {
               <p className="t-large">{intro}</p>
             </div>
           </div>
+          <Dropdown />
         </div>
       </div>
     );
