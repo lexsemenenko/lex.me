@@ -3,7 +3,6 @@ const defaultProjects = {
 };
 
 const projectsReducer = (state = defaultProjects, action) => {
-  console.log(state, '!!!!state');
   switch (action.type) {
     case 'LOAD_PROJECTS_CONTENTFUL':
       // Return New State

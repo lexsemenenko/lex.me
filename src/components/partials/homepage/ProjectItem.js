@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
+import { connect } from 'react-redux';
 
 const ProjecItem = props => {
+  // console.log(props.stateProjects, 'New Store');
+  // console.log(props.projectState.homeProjects, 'Old Store');
   const { homeProjects, open } = props.projectState;
   let itemOpen = false;
   return homeProjects.map((project, index) => {
@@ -41,4 +44,11 @@ const ProjecItem = props => {
   });
 };
 
-export default ProjecItem;
+const mapStateToProps = state => {
+  return {
+    stateUi: state.ui,
+    stateProjects: state.projects
+  };
+};
+
+export default connect(mapStateToProps)(ProjecItem);

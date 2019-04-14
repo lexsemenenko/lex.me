@@ -1,27 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './css/main.less';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import AppRouter from './routers/AppRouter';
 import { toggleOpen } from './actions/ui';
+import _events from './js/core/core--events';
 
 const store = configureStore();
 
-// store.dispatch(toggleOpen({ color: 'white' }));
-console.log(store.getState());
-store.subscribe(() => {
-  console.log(store.getState());
-});
+// store.subscribe(() => {
+//   console.log(store.getState().ui);
+// });
+// console.log(store.getState().ui);
 
-const jsx = (
-  // Provide strore component to any nested components
-  <Provider store={store}>
-    <AppRouter />
-  </Provider>
-);
+// store.subscribe(() => {
+//   console.log(store.getState().projects, 'subscribe');
+// });
+// console.log(store.getState().projects, 'default');
+
+class Wrapper extends Component {
+  componentDidMount() {
+    _events.emit('on:ReactReady');
+  }
+
+  render() {
+    return (
+      <Provider store={store}>
+        <AppRouter />
+      </Provider>
+    );
+  }
+}
 
 $(document).ready(function() {
   $('#loader').remove();
-  ReactDOM.render(jsx, document.getElementById('root'));
+  ReactDOM.render(<Wrapper />, document.getElementById('root'));
 });

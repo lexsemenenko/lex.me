@@ -35,23 +35,52 @@
 //height : 100vh;
 // }
 
-// .section {
-//   &.scrollpoint {
-//     &.active {
-//       background: tint(#c678dd, 80%) !important;
-//     }
-//   }
-// }
+.section {
+  &.scrollpoint {
+    &.active {
+      background-color: plum !important;
+    }
+  }
+}
 
-// .scrollpoint--menu-anchor.active {
-//   background: plum !important;
-// }
 
-// .scrollpoint {
-//   &.active {
+// .scrollpoint-section-active--intro {
+//   .scrollpoint--intro {
 //     background: plum !important;
 //   }
 // }
+
+// .scrollpoint-section-active--about {
+//   .scrollpoint--about {
+//     background: plum !important;
+//   }
+// }
+
+// .scrollpoint-section-active--projects {
+//   .scrollpoint--projects {
+//     background: plum !important;
+//   }
+// }
+
+// .scrollpoint-section-active--contact {
+//   .scrollpoint--contact {
+//     background: plum !important;
+//   }
+// }
+
+// =============================================================================
+.scrollpoint-section-active--intro [data-scrollpoint-watch*="intro"],
+.scrollpoint-section-active--about [data-scrollpoint-watch*="about"],
+.scrollpoint-section-active--projects [data-scrollpoint-watch*="projects"],
+.scrollpoint-section-active--contact [data-scrollpoint-watch*="contact"] {
+  background: plum !important;
+}
+
+// =============================================================================
+
+
+
+
 
 #loader {
   background: black;

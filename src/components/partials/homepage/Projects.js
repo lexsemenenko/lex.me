@@ -29,8 +29,6 @@ class HomeProjects extends Component {
   };
   
   componentDidMount() {
-    // console.log(this.stateProjects);
-    // console.log(this);
     client
       .getEntries({
         content_type: 'project',
@@ -44,24 +42,21 @@ class HomeProjects extends Component {
         });
         this.dispatch(loadProjectsConetentful({projects: entries.items}));
       });
-      // console.log(this.stateProjects)
       
   };
   
   render() {
     const { homeProjects, open } = this.state;
     return (
-      <div id="projects" className="section section--lines section--muted scrollpoint">
-        <div className="group">
-          <h2 className="h2 h2__block">
-            <span>Projects</span>
-          </h2>
-          <div data-grid="columns: 12, gutters-row: true">
-            <ProjectItem 
-              projectState={this.state} 
-              handleClick={this.handleClick} 
-              closeAll={this.closeAll}/>
-          </div>
+      <div className="group">
+        <h2 className="h2 h2__block">
+          <span>Projects</span>
+        </h2>
+        <div data-grid="columns: 12, gutters-row: true">
+          <ProjectItem 
+            projectState={this.state} 
+            handleClick={this.handleClick} 
+            closeAll={this.closeAll}/>
         </div>
       </div>
     );

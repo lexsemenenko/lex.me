@@ -23,18 +23,16 @@ class HomeAbout extends Component {
     const { aboutPage } = this.state;
     const { title, intro } = aboutPage;
     return (
-      <div id="about" className="section section--lines scrollpoint">
-        <div className="group">
-          <h2 className="h2 h2__block">
-            <span>{title}</span>
-          </h2>
-          <div data-grid="columns: 12">
-            <div data-grid-item="width: 12, width-large: 6">
-              <p className="t-large">{intro}</p>
-            </div>
+      <div className="group">
+        <h2 className="h2 h2__block">
+          <span>{title}</span>
+        </h2>
+        <div data-grid="columns: 12">
+          <div data-grid-item="width: 12, width-large: 6">
+            <p className="t-large">{intro}</p>
           </div>
-          <Dropdown />
         </div>
+        <Dropdown />
       </div>
     );
   }

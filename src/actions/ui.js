@@ -8,3 +8,12 @@ export const toggleOpen = ({ color } = {}) => {
     }
   };
 };
+
+export const setActiveSpHome = id => {
+  return {
+    type: 'SET_ACTIVE_SP_HOME',
+    scrollpoint: {
+      homepageSectionActive: id
+    }
+  };
+};
