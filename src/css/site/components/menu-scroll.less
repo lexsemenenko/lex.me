@@ -1,3 +1,7 @@
+.scrollpoint--menu-anchor {
+  background: plum;
+}
+
 .menu-scroll {
   display: flex;
   justify-content: flex-start;
@@ -43,10 +47,12 @@
   z-index: 150;
   position: relative;
 
-  &.active {
+  .scrollpoint-menu-sticky--true & {
     position: fixed;
     z-index: 200;
   }
+
+  .scrollpoint-menu-sticky--false & {}
 }
 
 

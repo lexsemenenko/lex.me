@@ -9,11 +9,16 @@ export const toggleOpen = ({ color } = {}) => {
   };
 };
 
-export const setActiveSpHome = id => {
+export const scrollpointHomeSectionActive = data => {
   return {
-    type: 'SET_ACTIVE_SP_HOME',
-    scrollpoint: {
-      homepageSectionActive: id
-    }
+    type: 'SCROLLPOINT_HOME_SECTION_ACTIVE',
+    scrollpointHomeSectionActive: data
+  };
+};
+
+export const homeMenuSticky = bool => {
+  return {
+    type: 'SCROLLPOINT_HOME_MENU_STICKY',
+    scrollpointHomeMenuSticky: bool
   };
 };

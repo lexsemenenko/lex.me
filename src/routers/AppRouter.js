@@ -10,11 +10,15 @@ import PageProjects from '../pages/Projects';
 import PageNotFound from '../pages/NotFound';
 
 const AppRouter = ({ stateUi }) => {
-  const { homepageSectionActive } = stateUi.scrollpoint;
-  console.log(homepageSectionActive);
+  // const { scrollpointHomeSectionActive, scrollpointHomeMenuSticky } = stateUi;
   return (
     <BrowserRouter>
-      <div className={`scrollpoint-section-active--${homepageSectionActive}`}>
+      <div
+      //   className={`
+      //   scrollpoint-section-active--${scrollpointHomeSectionActive}
+      //   scrollpoint-menu-sticky--${scrollpointHomeMenuSticky}
+      // `}
+      >
         <Header />
         <Switch>
           <Route path="/" component={PageHome} exact />

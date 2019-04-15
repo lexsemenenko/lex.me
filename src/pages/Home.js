@@ -5,49 +5,54 @@ import HomeHero from '../components/partials/homepage/Hero';
 import HomeAbout from '../components/partials/homepage/About';
 import HomeProjects from '../components/partials/homepage/Projects';
 import HomeContact from '../components/partials/homepage/Contact';
-import _events from '../js/core/core--events';
 import scrollpoints from '../js/modules/moudle--scrollpoints';
-import { setActiveSpHome } from '../actions/ui';
+import { scrollpointHomeSectionActive } from '../actions/ui';
 
 class Home extends Component {
+
+  sp = React.createRef()
+
   componentDidMount() {
+    const scrollpointsArray = [...this.sp.current.childNodes]
     const { dispatch } = this.props;
     setTimeout(() => {
-      const currentScrollpoint = scrollpoints({
+      const spInstance = scrollpoints;
+      spInstance.setSettings({
         scrollpoint: '.scrollpoint',
         offset: 0,
         elementOffset: '#header',
         direction: 'both',
         debug: true
       });
-      dispatch(setActiveSpHome(currentScrollpoint.attr('id')));
       $(window).on('scroll', () => {
-        const currentScrollpoint = scrollpoints({
-          scrollpoint: '.scrollpoint',
-          offset: 0,
-          elementOffset: '#header',
-          direction: 'both',
-          debug: true
-        });
-        dispatch(setActiveSpHome(currentScrollpoint.attr('id')));
+        const currentScrollpoint = spInstance.get();
+        dispatch(scrollpointHomeSectionActive(currentScrollpoint));
+        // Adding CSS Class  thrugh using ref set on scrollpoits wrapper.
+        currentScrollpoint.map((item, index) => {
+            item.isActive ? scrollpointsArray[index].classList.add('active') : scrollpointsArray[index].classList.remove('active')
+        })
       });
-    }, 200);
+    }, 400);
   }
 
   render() {
-    const { homepageSectionActive } = this.props.stateUi.scrollpoint;
     return (
-      <div>
-        <div id="intro" className="section section--hero scrollpoint scrollpoint--intro">
+      <div ref={this.sp}>
+        <div 
+          id="intro" 
+          className="section section--hero scrollpoint scrollpoint--intro">
           <HomeHero />
         </div>
-        <div id="about" className="section section--lines scrollpoint scrollpoint--about">
+        <div
+          id="about"
+          className="section section--lines scrollpoint scrollpoint--about"
+        >
           <HomeAbout />
         </div>
-        <div id="projects" className="section section--lines section--muted scrollpoint scrollpoint--projects">
+        <div  id="projects" className="section section--lines section--muted scrollpoint scrollpoint--projects">
           <HomeProjects />
         </div>
-        <div id="contact" className="section section--lines-dark  scrollpoint scrollpoint--contact">
+        <div  id="contact" className="section section--lines-dark  scrollpoint scrollpoint--contact">
           <HomeContact />
         </div>
       </div>

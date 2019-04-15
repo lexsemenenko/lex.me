@@ -5,9 +5,8 @@ const defaultStateUIelements = {
       color: 'defaultColor'
     }
   },
-  scrollpoint: {
-    homepageSectionActive: ''
-  }
+  scrollpointHomeSectionActive: '',
+  scrollpointHomeMenuSticky: []
 };
 
 const uiReducer = (state = defaultStateUIelements, action) => {
@@ -23,12 +22,15 @@ const uiReducer = (state = defaultStateUIelements, action) => {
           }
         }
       };
-    case 'SET_ACTIVE_SP_HOME':
+    case 'SCROLLPOINT_HOME_SECTION_ACTIVE':
       return {
         ...state,
-        scrollpoint: {
-          homepageSectionActive: action.scrollpoint.homepageSectionActive
-        }
+        scrollpointHomeSectionActive: action.scrollpointHomeSectionActive ? action.scrollpointHomeSectionActive : state.scrollpointHomeSectionActive
+      };
+    case 'SCROLLPOINT_HOME_MENU_STICKY':
+      return {
+        ...state,
+        scrollpointHomeMenuSticky: action.scrollpointHomeMenuSticky ? action.scrollpointHomeMenuSticky : state.scrollpointHomeMenuSticky
       };
     default:
       return state;
