@@ -1,33 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/main.less';
-import { Provider } from 'react-redux';
-import configureStore from './store/configureStore';
 import AppRouter from './routers/AppRouter';
 
-const store = configureStore();
-
-// store.subscribe(() => {
-//   console.log(store.getState().ui);
-// });
-// console.log(store.getState().ui);
-
-// store.subscribe(() => {
-//   console.log(store.getState().projects, 'subscribe');
-// });
-// console.log(store.getState().projects, 'default');
-
-class Wrapper extends Component {
-  componentDidMount() {}
-
-  render() {
-    return (
-      <Provider store={store}>
-        <AppRouter />
-      </Provider>
-    );
-  }
-}
+const Wrapper = () => {
+  return <AppRouter />;
+};
 
 $(document).ready(function() {
   $('#loader').remove();
