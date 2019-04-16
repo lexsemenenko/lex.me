@@ -13,10 +13,10 @@
 @import "core/base/utilities";
 .mix-bottom-stylesheet();
 
-// {
-//  outline   : 1px solid magenta !important;
-//  background: bisque !important;
-//  color     : white !important;
+// * {
+//   outline: 1px solid magenta !important;
+//   background: bisque !important;
+//   color: white !important;
 // }
 
 .scrollpoint__trigger {
@@ -24,43 +24,11 @@
   height: 1px;
   background: magenta;
   position: absolute;
-  top: auto;
+  // top: auto;
   width: 100%;
   transition: top 0.25s ease;
   z-index: 9999;
 }
-
-// #about {
-//opacity: 0;
-//height : 100vh;
-// }
-
-.section {
-  &.scrollpoint {
-    &.active {
-      // background-color: plum !important;
-    }
-  }
-}
-
-
-.scrollpoint-section-active--intro .scrollpoint--intro,
-.scrollpoint-section-active--about .scrollpoint--about,
-.scrollpoint-section-active--projects .scrollpoint--projects,
-.scrollpoint-section-active--contact .scrollpoint--contact {
-  // background: plum !important;
-}
-
-// =============================================================================
-.scrollpoint-section-active--intro [data-scrollpoint-watch*="intro"],
-.scrollpoint-section-active--about [data-scrollpoint-watch*="about"],
-.scrollpoint-section-active--projects [data-scrollpoint-watch*="projects"],
-.scrollpoint-section-active--contact [data-scrollpoint-watch*="contact"] {
-  // background: plum !important;
-}
-
-// =============================================================================
-
 
 #loader {
   background: black;

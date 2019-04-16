@@ -4,13 +4,12 @@ import './css/main.less';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import AppRouter from './routers/AppRouter';
-import { toggleOpen } from './actions/ui';
 
 const store = configureStore();
 
-store.subscribe(() => {
-  // console.log(store.getState().ui);
-});
+// store.subscribe(() => {
+//   console.log(store.getState().ui);
+// });
 // console.log(store.getState().ui);
 
 // store.subscribe(() => {

@@ -5,7 +5,7 @@ const defaultStateUIelements = {
       color: 'defaultColor'
     }
   },
-  scrollpointHomeSectionActive: '',
+  scrollpointHomeSectionActive: [],
   scrollpointHomeMenuSticky: []
 };
 

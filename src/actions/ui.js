@@ -12,13 +12,13 @@ export const toggleOpen = ({ color } = {}) => {
 export const scrollpointHomeSectionActive = data => {
   return {
     type: 'SCROLLPOINT_HOME_SECTION_ACTIVE',
-    scrollpointHomeSectionActive: data
+    scrollpointHomeSectionActive: data || []
   };
 };
 
-export const homeMenuSticky = bool => {
+export const scrollpointHomeMenuSticky = data => {
   return {
     type: 'SCROLLPOINT_HOME_MENU_STICKY',
-    scrollpointHomeMenuSticky: bool
+    scrollpointHomeMenuSticky: data || []
   };
 };

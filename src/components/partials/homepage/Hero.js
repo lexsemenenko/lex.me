@@ -1,31 +1,34 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import scrollpointsMenu from '../../../js/modules/moudle--scrollpoints';
-import { homeMenuSticky } from '../../../actions/ui';
+import scrollpoints from '../../../js/modules/moudle--scrollpoints';
+import { scrollpointHomeMenuSticky } from '../../../actions/ui';
 
 class HomeHero extends Component {
-
   menu = React.createRef()
-
   componentDidMount() {
+
+    //  Scrollpoints Menu Sticky
+    // =============================================================================
+    const { dispatch } = this.props;
+    const menu = this.menu.current;
+
     setTimeout(() => {
-
-
-      $(window).on('scroll', () => {
-        // scrollpointsMenu.setSettings({
-        //   scrollpoint: '.scrollpoint--menu-anchor',
-        //   offset: 0,
-        //   elementOffset: '#header',
-        //   direction: 'down',
-        //   debug: true
-        // });
-        // console.log(scrollpointsMenu.get())
-        // console.log(spInstanceMenu.get())
-        // const spMenuObjectWithActive = spInstanceMenu.get();
-        // console.log(spMenuObjectWithActive)
-        // dispatch(scrollpointHomeSectionActive(currentScrollpoint));
+      const scrollpointsMenuInstance = scrollpoints({
+        scrollpoint: '.scrollpoint--menu',
+        offset: 0,
+        direction: 'down'
       });
-    }, 400);
+      const scrollpointsMenuInstanceWithActive = scrollpointsMenuInstance.get();
+      scrollpointsMenuInstanceWithActive[0].isActive ? menu.classList.add('active') : menu.classList.remove('active');
+      dispatch(scrollpointHomeMenuSticky(scrollpointsMenuInstanceWithActive));
+      $(window).on('scroll', () => {
+        const scrollpointsMenuInstanceWithActive = scrollpointsMenuInstance.get();
+        scrollpointsMenuInstanceWithActive[0].isActive ? menu.classList.add('active') : menu.classList.remove('active');
+        dispatch(scrollpointHomeMenuSticky(scrollpointsMenuInstanceWithActive));
+      });
+    }, 200);
+    //                                                                           End
+    // =============================================================================
   }
 
   render() {
@@ -43,20 +46,12 @@ class HomeHero extends Component {
             </a>
           </div>
           <div className="hero__menu">
-            <div id="menu" className="scrollpoint--menu-anchor">
+            <div ref={this.menu} id="menu" className="scrollpoint--menu">
               <ul className="menu-scroll">
-                <li>
-                  <a href="/#intro">Intro</a>
-                </li>
-                <li>
-                  <a href="/#about">About</a>
-                </li>
-                <li>
-                  <a href="/#projects">Projects</a>
-                </li>
-                <li>
-                  <a href="/#contact">Contact</a>
-                </li>
+                <li><a href="/#intro">Intro</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#projects">Projects</a></li>
+                <li><a href="/#contact">Contact</a></li>
               </ul>
             </div>
           </div>

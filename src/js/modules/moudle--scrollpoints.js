@@ -1,4 +1,4 @@
-const scrollpoints = (function() {
+const scrollpoints = function(instanceSettings) {
   const root = {
     settings: {
       scrollpoint: null,
@@ -12,22 +12,23 @@ const scrollpoints = (function() {
 
   let s;
 
-  function _mergeSettings(instanceSettings) {
+  function _mergeSettings() {
     s = Object.assign({}, root.settings, instanceSettings);
   }
 
   function _getCurrentScrollpoint() {
-    const { scrollpoint, elementOffset, offset, direction } = s;
-    const $elCurrent = false;
+    const { scrollpoint, elementOffset, offset, direction, debug } = s;
 
     let scrollpointsArr = document.querySelectorAll(scrollpoint);
     scrollpointsArr = [...scrollpointsArr];
 
-    const scrollpointsArrWithActive = scrollpointsArr.map((item, index) => {
+    const scrollpointsArrWithActive = scrollpointsArr.map(item => {
       // Sizes, offsetsconst triggerMatching = spTouchesTrigger && spNotPassedTrigger;
-      const spFromTop = item.offsetTop;
+      const totalOffset = $(elementOffset).outerHeight() ? $(elementOffset).outerHeight() : offset;
+      const spFromTop = item.offsetTop - totalOffset;
       const spHeight = item.offsetHeight;
       const amountScrolled = window.pageYOffset;
+      const trigger = amountScrolled + totalOffset;
 
       // Conditions
       const spTouchesTrigger = amountScrolled >= spFromTop;
@@ -35,40 +36,39 @@ const scrollpoints = (function() {
       const triggerMatching = spTouchesTrigger && spNotPassedTrigger;
       let isActive = false;
 
-      // console.log(spFromTop, 'Offset Top');
-      // console.log(spHeight, 'El Hiehgt');
-      // console.log(amountScrolled, 'Amount Scrolled');
-      // console.log(spTouchesTrigger, 'Touched Trigger');
-      // console.log(spNotPassedTrigger, 'Not Passed Trigger');
-      // return item.offsetTop;
-      // console.log(triggerMatching);
       if (direction === 'both') {
-        if (spTouchesTrigger && spNotPassedTrigger) {
-          // item.classList.add('active');
-          isActive = true;
-        } else {
-          // item.classList.remove('active');
-          isActive = false;
-        }
+        triggerMatching ? (isActive = true) : (isActive = false);
       }
+      if (direction === 'down') {
+        spTouchesTrigger ? (isActive = true) : (isActive = false);
+      }
+      if (debug) $('.scrollpoint__trigger').css('top', `${trigger}px`);
 
       return {
         name: item.id,
         isActive
       };
     });
+
     return scrollpointsArrWithActive;
   }
 
+  function _debugVisually() {
+    $('body').append('<div class="scrollpoint__trigger"></div>');
+  }
+
+  const init = () => {
+    _mergeSettings();
+    _debugVisually();
+  };
+
+  init();
+
   return {
-    setSettings(settings) {
-      // Now s is available here
-      _mergeSettings(settings);
-    },
     get() {
-      // Now s is available here
       return _getCurrentScrollpoint();
     }
   };
-})();
+};
+
 export default scrollpoints;

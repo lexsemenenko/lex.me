@@ -5,7 +5,7 @@ import HomeHero from '../components/partials/homepage/Hero';
 import HomeAbout from '../components/partials/homepage/About';
 import HomeProjects from '../components/partials/homepage/Projects';
 import HomeContact from '../components/partials/homepage/Contact';
-import scrollpoints from '../js/modules/moudle--scrollpoints';
+import scrollpointsSection from '../js/modules/moudle--scrollpoints';
 import { scrollpointHomeSectionActive } from '../actions/ui';
 
 class Home extends Component {
@@ -16,16 +16,17 @@ class Home extends Component {
     const scrollpointsArray = [...this.sp.current.childNodes]
     const { dispatch } = this.props;
     setTimeout(() => {
-      const spInstance = scrollpoints;
-      spInstance.setSettings({
+      
+      const scrollpointsSectionInstance = scrollpointsSection({
         scrollpoint: '.scrollpoint',
         offset: 0,
         elementOffset: '#header',
         direction: 'both',
-        debug: true
+        debug: false
       });
+
       $(window).on('scroll', () => {
-        const currentScrollpoint = spInstance.get();
+        const currentScrollpoint = scrollpointsSectionInstance.get();
         dispatch(scrollpointHomeSectionActive(currentScrollpoint));
         // Adding CSS Class  thrugh using ref set on scrollpoits wrapper.
         currentScrollpoint.map((item, index) => {
