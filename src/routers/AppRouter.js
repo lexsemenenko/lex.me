@@ -11,7 +11,7 @@ import PageHome from '../components/pages/pageHome';
 const AppRouter = () => {
   return (
     <BrowserRouter>
-      <div>
+      <>
         <Header />
         <Switch>
           <Route path="/" component={PageHome} exact />
@@ -20,7 +20,7 @@ const AppRouter = () => {
           <Route component={PageNotFound} /> */}
         </Switch>
         <Footer />
-      </div>
+      </>
     </BrowserRouter>
   );
 };

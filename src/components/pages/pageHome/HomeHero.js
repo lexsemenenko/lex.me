@@ -26,17 +26,16 @@ const HomeHero = () => {
       offset: 0,
       direction: 'down'
     });
-    toggleMenuSticky(scrollpointsMenuInstance.get());
+    $(window).on('scroll', () => {
+      toggleMenuSticky(scrollpointsMenuInstance.get());
+      scrollpointsMenuInstance.get()[0].isActive ? $header.addClass('active') : $header.removeClass('active');
+    });
     const $header = $('#header');
-    scrollpointsMenuInstance.get()[0].isActive ? $header.addClass('active') : $header.removeClass('active');
   };
 
   // Component Did Mount
   useEffect(() => {
     getMenuScrollpoint();
-    $(window).on('scroll', () => {
-      getMenuScrollpoint();
-    });
   }, []);
 
   return (

@@ -24,15 +24,13 @@ const pageHome = () => {
       direction: 'both',
       debug: false
     });
-    dispatchUi({ type: 'GET_SCROLLPOINTS_SECTIONS', getScrollPontsSections: spInstance.get() });
-    // updateSpSections(spInstance.get()); REPLACE and Replace stateSpSections
+    $(window).on('scroll', () => {
+      dispatchUi({ type: 'GET_SCROLLPOINTS_SECTIONS', getScrollPontsSections: spInstance.get() });
+    });
   };
 
   useEffect(() => {
     getSp();
-    $(window).on('scroll', () => {
-      getSp();
-    });
   }, []);
 
   return (
