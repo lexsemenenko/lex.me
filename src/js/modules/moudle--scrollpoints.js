@@ -5,70 +5,70 @@ const scrollpoints = function(instanceSettings) {
       elementOffset: null,
       offset: 0,
       direction: 'both',
-      debug: false
+      debug: false,
     },
-    public: {}
-  };
+    public: {},
+  }
 
-  let s;
+  let s
 
   function _mergeSettings() {
-    s = Object.assign({}, root.settings, instanceSettings);
+    s = Object.assign({}, root.settings, instanceSettings)
   }
 
   function _getCurrentScrollpoint() {
-    const { scrollpoint, elementOffset, offset, direction, debug } = s;
+    const {scrollpoint, elementOffset, offset, direction, debug} = s
 
-    let scrollpointsArr = document.querySelectorAll(scrollpoint);
-    scrollpointsArr = [...scrollpointsArr];
+    let scrollpointsArr = document.querySelectorAll(scrollpoint)
+    scrollpointsArr = [...scrollpointsArr]
 
     const scrollpointsArrWithActive = scrollpointsArr.map(item => {
       // Sizes, offsetsconst triggerMatching = spTouchesTrigger && spNotPassedTrigger;
-      const totalOffset = $(elementOffset).outerHeight() ? $(elementOffset).outerHeight() : offset;
-      const spFromTop = item.offsetTop - totalOffset;
-      const spHeight = item.offsetHeight;
-      const amountScrolled = window.pageYOffset;
-      const trigger = amountScrolled + totalOffset;
+      const totalOffset = $(elementOffset).outerHeight() ? $(elementOffset).outerHeight() : offset
+      const spFromTop = item.offsetTop - totalOffset
+      const spHeight = item.offsetHeight
+      const amountScrolled = window.pageYOffset
+      const trigger = amountScrolled + totalOffset
 
       // Conditions
-      const spTouchesTrigger = amountScrolled >= spFromTop;
-      const spNotPassedTrigger = amountScrolled < spFromTop + spHeight;
-      const triggerMatching = spTouchesTrigger && spNotPassedTrigger;
-      let isActive = false;
+      const spTouchesTrigger = amountScrolled >= spFromTop
+      const spNotPassedTrigger = amountScrolled < spFromTop + spHeight
+      const triggerMatching = spTouchesTrigger && spNotPassedTrigger
+      let isActive = false
 
       if (direction === 'both') {
-        triggerMatching ? (isActive = true) : (isActive = false);
+        triggerMatching ? (isActive = true) : (isActive = false)
       }
       if (direction === 'down') {
-        spTouchesTrigger ? (isActive = true) : (isActive = false);
+        spTouchesTrigger ? (isActive = true) : (isActive = false)
       }
-      if (debug) $('.scrollpoint__trigger').css('top', `${trigger}px`);
+      if (debug) $('.scrollpoint__trigger').css('top', `${trigger}px`)
 
       return {
         name: item.id,
-        isActive
-      };
-    });
+        isActive,
+      }
+    })
 
-    return scrollpointsArrWithActive;
+    return scrollpointsArrWithActive
   }
 
   function _debugVisually() {
-    $('body').append('<div class="scrollpoint__trigger"></div>');
+    $('body').append('<div class="scrollpoint__trigger"></div>')
   }
 
   const init = () => {
-    _mergeSettings();
-    _debugVisually();
-  };
+    _mergeSettings()
+    _debugVisually()
+  }
 
-  init();
+  init()
 
   return {
     get() {
-      return _getCurrentScrollpoint();
-    }
-  };
-};
+      return _getCurrentScrollpoint()
+    },
+  }
+}
 
-export default scrollpoints;
+export default scrollpoints

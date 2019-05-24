@@ -1,8 +1,47 @@
-import React from 'react'
-// import client from '../../api/contentful';
+import React, {useState} from 'react'
+// import projects from '../../../data/projects'
 // import Dropdown from '../Dropdown';
 
 const HomeProjects = () => {
+  const projects = {
+    combattingCybercrime: {
+      name: 'Combatting Cybercrime',
+      company: 'World Bank',
+      description: 'Project completed at Informatics Studio. Front-End & Static Site Generator development.',
+      link: 'http://www.combattingcybercrime.org',
+      open: false,
+    },
+    projectTwo: {
+      name: 'Project Name Two',
+      detail: 'Project Detail Two',
+      description: 'Project Description Two',
+      link: 'http://google.com',
+      open: false,
+    },
+    projectThree: {
+      name: 'Project Name Three',
+      detail: 'Project Detail Three',
+      description: 'Project Description Three',
+      link: 'http://google.com',
+      open: false,
+    },
+    projectFour: {
+      name: 'Project Name Four',
+      detail: 'Project Detail Four',
+      description: 'Project Description Four',
+      link: 'http://google.com',
+      open: false,
+    },
+    projectFive: {
+      name: 'Project Name Five',
+      detail: 'Project Detail Five',
+      description: 'Project Description Five',
+      link: 'http://google.com',
+      open: false,
+    },
+  }
+
+  const [projectsStateful, projectToggle] = useState(projects)
   return (
     <div id="projects" className="section section--lines section--muted scrollpoint">
       <div className="group">
@@ -10,46 +49,43 @@ const HomeProjects = () => {
           <span>Projects</span>
         </h2>
         <div data-grid="columns: 12, gutters-row: true">
-          <div data-grid-item="width: 9, width-large: 6, width-large-x: 4">
-            <div className="project__item">
-              <div className="overlay overlay--toggle" data-collapsible="open: false">
-                <img className="project__image" src="/images/placeholder--project-2.jpg" />
-                <div className="overlay__content project__item" data-collapsible="open: false">
-                  <h3 className="project__name">Combatting Cybercrime</h3>
-                  <p className="project__detail">World Bank</p>
-                  <p className="project__description">
-                    Project completed at Informatics Studio. Front-End & Static Site Generator development.
-                  </p>
-                  <a href="http://www.combattingcybercrime.org" target="_blank">
-                    View
-                  </a>
+          {Object.keys(projectsStateful).map(key => {
+            const {name, company, description, link, open} = projectsStateful[key]
+            const openProject = () => {
+              projects[key].open = true
+              projectToggle(projects)
+            }
+            const closeProject = () => projectToggle(projects)
+
+            return (
+              <div data-grid-item="width: 9, width-large: 4, width-large-x: 4">
+                <div className="project__item">
+                  <div className="overlay overlay--toggle">
+                    <img className="project__image" src="/images/placeholder--project-2.jpg" alt="" />
+                    <div className="overlay__content project__item" data-collapsible={`open: ${open}`}>
+                      <h3 className="project__name">{name}</h3>
+                      <p className="project__detail">{company}</p>
+                      <p className="project__description">{description}</p>
+                      <a href="{link}" target="_blank">
+                        View
+                      </a>
+                      <button onClick={closeProject} type="button" className="overlay__close">
+                        <span>Close</span>
+                      </button>
+                    </div>
+                    <button
+                      onClick={openProject}
+                      type="button"
+                      className="overlay__toggle"
+                      data-collapsible="open: false"
+                    >
+                      <span>Open</span>
+                    </button>
+                  </div>
                 </div>
-                <button className="overlay__toggle" data-collapsible="open: false">
-                  <span>Open</span>
-                </button>
               </div>
-            </div>
-          </div>
-          <div data-grid-item="width: 9, width-large: 6, width-large-x: 4">
-            <div className="project__item">
-              <div className="overlay overlay--toggle" data-collapsible="open: false">
-                <img className="project__image" src="/images/placeholder--project-2.jpg" />
-                <div className="overlay__content project__item" data-collapsible="open: false">
-                  <h3 className="project__name">Combatting Cybercrime</h3>
-                  <p className="project__detail">World Bank</p>
-                  <p className="project__description">
-                    Project completed at Informatics Studio. Front-End & Static Site Generator development.
-                  </p>
-                  <a href="http://www.combattingcybercrime.org" target="_blank">
-                    View
-                  </a>
-                </div>
-                <button className="overlay__toggle" data-collapsible="open: false">
-                  <span>Open</span>
-                </button>
-              </div>
-            </div>
-          </div>
+            )
+          })}
         </div>
       </div>
     </div>

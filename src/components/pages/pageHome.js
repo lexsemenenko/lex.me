@@ -9,11 +9,6 @@ import contextUi from '../context/contextUi'
 
 const pageHome = () => {
   // # Using Reducer
-  // It Replaces the following line
-  // const [stateSpSections, updateSpSections] = useState([]);
-  // ## useReducer
-  // Pass 1 reducer, 2 Initial State.
-  // It returns an aray with state and dispatch function
   const [stateSpSections, dispatchUi] = useReducer(reducerUi, [])
 
   const getSp = () => {

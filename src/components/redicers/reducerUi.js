@@ -1,10 +1,10 @@
 const reducerUi = (state, action) => {
   switch (action.type) {
     case 'GET_SCROLLPOINTS_SECTIONS':
-      return action.getScrollPontsSections;
+      return action.getScrollPontsSections
     default:
-      return state;
+      return state
   }
-};
+}
 
-export { reducerUi as default };
+export {reducerUi as default}
