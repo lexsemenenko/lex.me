@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import Image from '../../elements/Image'
 // import projects from '../../../data/projects'
 // import Dropdown from '../Dropdown';
 
@@ -61,7 +62,8 @@ const HomeProjects = () => {
               <div data-grid-item="width: 9, width-large: 4, width-large-x: 4">
                 <div className="project__item">
                   <div className="overlay overlay--toggle">
-                    <img className="project__image" src="/images/placeholder--project-2.jpg" alt="" />
+                    <Image alt={`${name} ${company}`} />
+
                     <div className="overlay__content project__item" data-collapsible={`open: ${open}`}>
                       <h3 className="project__name">{name}</h3>
                       <p className="project__detail">{company}</p>
