@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
 import Image from '../../elements/Image'
+import CollapsibleList from '../../elements/Collapsible/CollapsibleList'
+import CollapsibleToggle from '../../elements/Collapsible/CollapsibleToggle'
+import CollapsibleContent from '../../elements/Collapsible/CollapsibleContent'
 // import projects from '../../../data/projects'
 // import Dropdown from '../Dropdown';
 
@@ -49,6 +52,13 @@ const HomeProjects = () => {
         <h2 className="h2 h2__block">
           <span>Projects</span>
         </h2>
+        <div data-grid="columns: 12, gutters-row: true">
+          <CollapsibleList>
+            <CollapsibleToggle id="project-1">One Toggle</CollapsibleToggle>
+            <CollapsibleToggle id="project-2">Two Toggle</CollapsibleToggle>
+            <CollapsibleToggle id="project-3">Three Toggle</CollapsibleToggle>
+          </CollapsibleList>
+        </div>
         <div data-grid="columns: 12, gutters-row: true">
           {Object.keys(projectsStateful).map(key => {
             const {name, company, description, link, open} = projectsStateful[key]
