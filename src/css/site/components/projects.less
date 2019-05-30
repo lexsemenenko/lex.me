@@ -1,18 +1,22 @@
 // .project__item {}
 
 
-.project__image {
+.project__toggle {
   display: block;
+
+  img {
+    max-width: 100%;
+  }
 }
 
-.project__name {
-  .h4;
-  margin-bottom: @base-small-xx;
-}
+.project__content {
+  &.closed {
+    display: none;
+  }
 
-.project__detail {
-  .t-detail;
-  margin-bottom: @element-margin / 2;
+  &.open {
+    display: block;
+  }
 }
 
 // .project__name {}

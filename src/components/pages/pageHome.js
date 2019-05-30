@@ -27,9 +27,9 @@ const pageHome = () => {
     })
   }
 
-  useEffect(() => {
-    getSp()
-  }, [])
+  // useEffect(() => {
+  //   getSp()
+  // }, [])
 
   return (
     // We are providing context values to any children who wants to cosume it
