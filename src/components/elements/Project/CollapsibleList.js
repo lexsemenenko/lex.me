@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
+import PropTypes from 'prop-types'
 import CollapsibleItem from './CollapsibleItem'
 
 const CollapsibleList = props => {
@@ -14,12 +15,16 @@ const CollapsibleList = props => {
 
   const handleClick = e => {
     e.preventDefault()
+    console.log(e.currentTarget)
     const updateState = () => {
       const newobj = {...state}
       Object.keys(newobj).map(key => {
         if (newobj[key].id === e.currentTarget.id) {
+          // Open currently clicked
           newobj[key].isActive = true
         } else {
+          // Used for close button and close others. It works for close button
+          // as it has no ID, so no match
           newobj[key].isActive = false
         }
       })
@@ -50,6 +55,16 @@ const CollapsibleList = props => {
       </div>
     </div>
   )
+}
+
+CollapsibleList.propTypes = {
+  children: PropTypes.node,
+  classBlock: PropTypes.string,
+}
+
+CollapsibleList.defaultProps = {
+  children: null,
+  classBlock: '',
 }
 
 export default CollapsibleList

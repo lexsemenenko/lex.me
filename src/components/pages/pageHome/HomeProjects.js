@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import CollapsibleList from '../../elements/Project/CollapsibleList'
 import CollapsibleItem from '../../elements/Project/CollapsibleItem'
 

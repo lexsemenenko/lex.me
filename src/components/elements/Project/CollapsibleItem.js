@@ -18,10 +18,19 @@ const CollapsibleItem = props => {
         <Image src={`images/${image}`} alt={name} />
       </button>
       <div className={`${classBlock}__content ${isActive ? 'open' : 'closed'}`}>
+        <button
+          type="button"
+          onClick={e => {
+            onChangeActive(e)
+          }}
+        >
+          Close
+        </button>
         <div>
           <strong>{name}</strong>
         </div>
         <div>{company}</div>
+        <div>{description}</div>
         <div>{link}</div>
         <div>{content}</div>
       </div>
@@ -33,12 +42,16 @@ CollapsibleItem.propTypes = {
   id: PropTypes.string,
   isActive: PropTypes.bool,
   classBlock: PropTypes.string,
+  onChangeActive: PropTypes.func,
+  projectData: PropTypes.object,
 }
 
 CollapsibleItem.defaultProps = {
   id: ``,
   isActive: false,
   classBlock: '',
+  onChangeActive: null,
+  projectData: null,
 }
 
 export default CollapsibleItem
