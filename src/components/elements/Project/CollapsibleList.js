@@ -14,8 +14,7 @@ const CollapsibleList = props => {
   const [state, setState] = useState(generateState(children))
 
   const handleClick = e => {
-    e.preventDefault()
-    console.log(e.currentTarget)
+    // e.preventDefault()
     const updateState = () => {
       const newobj = {...state}
       Object.keys(newobj).map(key => {

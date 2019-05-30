@@ -48,31 +48,26 @@ const HomeProjects = () => {
   }
 
   return (
-    <div
-      id="projects"
-      className="section section--lines section--muted scrollpoint"
-    >
-      <div className="group">
-        <h2 className="h2 h2__block">
-          <span>Projects</span>
-        </h2>
-        {
-          // - Gives us children
-          // - CSS class for the whole component
-          // - Click Functionality Component is done here as we have access to the children.
-          // - Passing each child an id, so we know which one is clicked
-          // - Passing correct data for each collapsible item. This is should be separate from click state object
-        }
-        <CollapsibleList classBlock="project">
-          {Object.keys(projects).map((key, i) => {
-            // - I got data from this component in the parent through children props
-            // - I can add props here or inside CollapsibleList component file
-            //   when rendering OR PropTypes of CollapsibleItem file
-            // - As of now, I'm merging projectsData with the state object. Good/No?
-            return <CollapsibleItem id={key} projectData={projects[key]} />
-          })}
-        </CollapsibleList>
-      </div>
+    <div className="group">
+      <h2 className="h2 h2__block">
+        <span>Projects</span>
+      </h2>
+      {
+        // - Gives us children
+        // - CSS class for the whole component
+        // - Click Functionality Component is done here as we have access to the children.
+        // - Passing each child an id, so we know which one is clicked
+        // - Passing correct data for each collapsible item. This is should be separate from click state object
+      }
+      <CollapsibleList classBlock="project">
+        {Object.keys(projects).map((key, i) => {
+          // - I got data from this component in the parent through children props
+          // - I can add props here or inside CollapsibleList component file
+          //   when rendering OR PropTypes of CollapsibleItem file
+          // - As of now, I'm merging projectsData with the state object. Good/No?
+          return <CollapsibleItem id={key} projectData={projects[key]} />
+        })}
+      </CollapsibleList>
     </div>
   )
 }

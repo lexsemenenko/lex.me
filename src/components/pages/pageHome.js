@@ -27,9 +27,9 @@ const pageHome = () => {
     })
   }
 
-  // useEffect(() => {
-  //   getSp()
-  // }, [])
+  useEffect(() => {
+    getSp()
+  }, [])
 
   return (
     // We are providing context values to any children who wants to cosume it
@@ -37,7 +37,9 @@ const pageHome = () => {
       <div
         id="intro"
         className={`section section--hero scrollpoint ${
-          stateSpSections.length && stateSpSections[0].isActive ? ' active' : ' not-active'
+          stateSpSections.length && stateSpSections[0].isActive
+            ? ' active'
+            : ' not-active'
         }`}
       >
         <HomeHero />
@@ -45,7 +47,9 @@ const pageHome = () => {
       <div
         id="about"
         className={`section section--lines scrollpoint ${
-          stateSpSections.length && stateSpSections[1].isActive ? ' active' : ' not-active'
+          stateSpSections.length && stateSpSections[1].isActive
+            ? ' active'
+            : ' not-active'
         }`}
       >
         <HomeAbout />
@@ -53,7 +57,9 @@ const pageHome = () => {
       <div
         id="projects"
         className={`section section--lines section--muted scrollpoint ${
-          stateSpSections.length && stateSpSections[2].isActive ? ' active' : ' not-active'
+          stateSpSections.length && stateSpSections[2].isActive
+            ? ' active'
+            : ' not-active'
         }`}
       >
         <HomeProjects />
@@ -61,9 +67,13 @@ const pageHome = () => {
       <div
         id="contact"
         className={`section section--lines-dark  scrollpoint ${
-          stateSpSections.length && stateSpSections[3].isActive ? ' active' : ' not-active'
+          stateSpSections.length && stateSpSections[3].isActive
+            ? ' active'
+            : ' not-active'
         }`}
-      />
+      >
+        <HomeContact />
+      </div>
     </contextUi.Provider>
   )
 }
