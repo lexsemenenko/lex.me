@@ -45,6 +45,14 @@ const HomeProjects = () => {
       image: 'placeholder--project-2.jpg',
       content: 'Content here 5',
     },
+    projectSix: {
+      name: 'Project Name Six',
+      company: 'Company Name',
+      description: 'Project Description Six',
+      link: 'http://google.com',
+      image: 'placeholder--project-2.jpg',
+      content: 'Content here 6',
+    },
   }
 
   return (

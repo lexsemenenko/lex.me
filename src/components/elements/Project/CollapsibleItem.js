@@ -43,7 +43,7 @@ CollapsibleItem.propTypes = {
   isActive: PropTypes.bool,
   classBlock: PropTypes.string,
   onChangeActive: PropTypes.func,
-  projectData: PropTypes.object,
+  projectData: PropTypes.objectOf,
 }
 
 CollapsibleItem.defaultProps = {
