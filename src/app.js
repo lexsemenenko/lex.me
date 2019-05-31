@@ -1,13 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './css/main.less';
-import AppRouter from './routers/AppRouter';
+import React, {useEffect} from 'react'
+import ReactDOM from 'react-dom'
+import './css/main.less'
+import AppRouter from './routers/AppRouter'
+import anchorsScroll from './js/modules/module--anchorsScroll'
 
 const Wrapper = () => {
-  return <AppRouter />;
-};
+  useEffect(() => {
+    const test = anchorsScroll({
+      element: '.menu-scroll a',
+      offset: 0,
+      // offsetElement: '#header',
+      offsetNudge: 0,
+    })
+  }, [])
 
-$(document).ready(function() {
-  $('#loader').remove();
-  ReactDOM.render(<Wrapper />, document.getElementById('root'));
-});
+  return <AppRouter />
+}
+
+$(document).ready(() => {
+  $('#loader').remove()
+  ReactDOM.render(<Wrapper />, document.getElementById('root'))
+})
