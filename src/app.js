@@ -7,7 +7,7 @@ import anchorsScroll from './js/modules/module--anchorsScroll'
 const Wrapper = () => {
   useEffect(() => {
     const test = anchorsScroll({
-      element: '.menu-scroll a',
+      element: 'a',
       offset: 0,
       // offsetElement: '#header',
       offsetNudge: 0,
