@@ -67,6 +67,11 @@ module.exports = {
         to: 'images/',
         flatten: true,
       },
+      {
+        from: './src/data/',
+        to: 'data/',
+        flatten: true,
+      },
     ]),
     new htmlWebpackPlugin({
       filename: 'index.html',

@@ -1,0 +1,34 @@
+{
+  "combattingCybercrime": {
+    "name": "Combatting Cybercrime",
+    "company": "World Bank",
+    "description": "Project completed at Informatics Studio. Front-End & Static Site Generator development.",
+    "link": "http://www.combattingcybercrime.org",
+    "image": "placeholder--project-2.jpg",
+    "content": "Content here 1"
+  },
+  "projectTwo": {
+    "name": "Project Name",
+    "company": "Company Name",
+    "description": "Project Description",
+    "link": "http://google.com",
+    "image": "placeholder--project-2.jpg",
+    "content": "Content goes here and can be long. Possibly markdown or HTML."
+  },
+  "projectThree": {
+    "name": "Project Name",
+    "company": "Company Name",
+    "description": "Project Description",
+    "link": "http://google.com",
+    "image": "placeholder--project-2.jpg",
+    "content": "Content goes here and can be long. Possibly markdown or HTML."
+  },
+  "projectFour": {
+    "name": "Project Name",
+    "company": "Company Name",
+    "description": "Project Description",
+    "link": "http://google.com",
+    "image": "placeholder--project-2.jpg",
+    "content": "Content goes here and can be long. Possibly markdown or HTML."
+  }
+}
