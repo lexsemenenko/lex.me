@@ -1,7 +1,6 @@
-import React from 'react'
-import CollapsibleList from '../../elements/Project/CollapsibleList'
-import CollapsibleItem from '../../elements/Project/CollapsibleItem'
-import projectsData from '../../../data/projectsData.json'
+import React, {useContext} from 'react'
+import StoreProjects from '../../store/StoreProjects'
+import Projects from '../../elements/Project/Projects'
 
 const HomeProjects = () => {
   return (
@@ -9,11 +8,11 @@ const HomeProjects = () => {
       <h2 className="h2 h2__block">
         <span>Projects</span>
       </h2>
-      <CollapsibleList classBlock="projects">
-        {Object.keys(projectsData).map((key, i) => {
-          return <CollapsibleItem id={key} />
-        })}
-      </CollapsibleList>
+      <StoreProjects>
+        <div>
+          <Projects />
+        </div>
+      </StoreProjects>
     </div>
   )
 }
