@@ -1,4 +1,8 @@
 import React, {createContext, useReducer} from 'react'
+import projectsData from '../../data/projectsData.json'
+
+// Adding toggle properies to the object
+console.log(projectsData)
 
 export const contextProjects = createContext({})
 
