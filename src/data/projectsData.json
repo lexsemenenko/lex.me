@@ -1,34 +1,38 @@
-{
-  "combattingCybercrime": {
-    "name": "Combatting Cybercrime",
+[
+  {
+    "id": "combattingCybercrime",
+    "image": "placeholder--project-2.jpg",
+    "content": "Content goes here and can be long. Possibly markdown or HTML.",
+    "company": "Company Name",
+    "name": "Project Name",
+    "description": "Project Description",
+    "link": "http://google.com"
+  },
+  {
+    "id": "projectTwo",
+    "image": "placeholder--project-2.jpg",
+    "content": "Content here 1",
     "company": "World Bank",
+    "name": "Combatting Cybercrime",
     "description": "Project completed at Informatics Studio. Front-End & Static Site Generator development.",
-    "link": "http://www.combattingcybercrime.org",
-    "image": "placeholder--project-2.jpg",
-    "content": "Content here 1"
+    "link": "http://www.combattingcybercrime.org"
   },
-  "projectTwo": {
-    "name": "Project Name",
-    "company": "Company Name",
-    "description": "Project Description",
-    "link": "http://google.com",
+  {
+    "id": "projectThree",
     "image": "placeholder--project-2.jpg",
-    "content": "Content goes here and can be long. Possibly markdown or HTML."
+    "content": "Content goes here and can be long. Possibly markdown or HTML.",
+    "company": "Company Name",
+    "name": "Project Name",
+    "description": "Project Description",
+    "link": "http://google.com"
   },
-  "projectThree": {
-    "name": "Project Name",
-    "company": "Company Name",
-    "description": "Project Description",
-    "link": "http://google.com",
+  {
+    "id": "projectFour",
     "image": "placeholder--project-2.jpg",
-    "content": "Content goes here and can be long. Possibly markdown or HTML."
-  },
-  "projectFour": {
-    "name": "Project Name",
+    "content": "Content goes here and can be long. Possibly markdown or HTML.",
     "company": "Company Name",
+    "name": "Project Name",
     "description": "Project Description",
-    "link": "http://google.com",
-    "image": "placeholder--project-2.jpg",
-    "content": "Content goes here and can be long. Possibly markdown or HTML."
+    "link": "http://google.com"
   }
-}
+]
