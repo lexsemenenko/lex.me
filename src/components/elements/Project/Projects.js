@@ -62,18 +62,26 @@ const Projects = () => {
                 <span>{name}</span>
               </button>
 
-              <div
-                className={`project__content ${isActive ? 'open' : 'closed'}`}
-              >
-                <div>{company}</div>
-                <button
-                  type="button"
-                  onClick={e => {
-                    onToggleCloseAll(e)
-                  }}
+              <div className={`lx-modal ${isActive ? 'open' : 'closed'}`}>
+                <div
+                  className={`lx-modal__panel ${isActive ? 'open' : 'closed'}`}
                 >
-                  Close
-                </button>
+                  <div
+                    className={`project__content ${
+                      isActive ? 'open' : 'closed'
+                    }`}
+                  >
+                    <div>{company}</div>
+                    <button
+                      type="button"
+                      onClick={e => {
+                        onToggleCloseAll(e)
+                      }}
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
