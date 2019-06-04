@@ -3,9 +3,32 @@
 
 .project__toggle {
   display: block;
+  width: 100%;
+  background-size: contain;
+  position: relative;
+  height: 1px;
+  padding-top: 56.25%;
+  text-align: center;
+  /* 16:9 Aspect Ratio */
 
-  img {
-    max-width: 100%;
+  &:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: @color-black-a-50;
+  }
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // .t-bold;
+    .t-large;
+    color: white;
   }
 }
 

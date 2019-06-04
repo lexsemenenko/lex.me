@@ -18,7 +18,7 @@ function reducer(state, action) {
   switch (action.type) {
     case 'OPEN_PROJECT':
       return action.newState
-    case 'CLOSE_ALL_PROJECT':
+    case 'CLOSE_ALL_PROJECTS':
       return action.newState
     default:
       return state

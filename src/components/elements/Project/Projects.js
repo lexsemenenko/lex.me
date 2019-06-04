@@ -42,18 +42,24 @@ const Projects = () => {
           link,
           name,
         } = project
+
+        const styleToggle = {
+          backgroundImage: `url(images/${image})`,
+        }
         return (
           <div data-grid-item="width: 9, width-large: 4, width-large-x: 4">
             <div className={`project ${isActive ? 'open' : 'closed'}`}>
               <button
                 type="button"
                 className={`project__toggle ${isActive ? 'open' : 'closed'}`}
+                style={styleToggle}
                 id={id}
                 onClick={e => {
+                  console.log(e.currentTarget)
                   onToggleOpen(e)
                 }}
               >
-                <Image src={`images/${image}`} alt={name} />
+                <span>{name}</span>
               </button>
 
               <div
