@@ -26,7 +26,7 @@ const Projects = () => {
       const part = {isActive: false}
       return {...item, ...part}
     })
-    dispatch({type: 'CLOSE_ALL_PROJECT', newState: newArr})
+    dispatch({type: 'CLOSE_ALL_PROJECTS', newState: newArr})
   }
 
   return (
