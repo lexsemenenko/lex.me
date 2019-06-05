@@ -1,37 +1,91 @@
 [
   {
+    "name": "World Bank: Combatting Cybercrime",
     "id": "combattingCybercrime",
     "image": "placeholder--project-2.jpg",
     "content": "Content goes here and can be long. Possibly markdown or HTML.",
     "company": "Company Name",
-    "name": "Project Name",
     "description": "Project Description",
     "link": "http://google.com"
   },
   {
+    "name": "World Bank:  CGAP Annual Report",
     "id": "projectTwo",
     "image": "placeholder--project-2.jpg",
     "content": "Content here 1",
     "company": "World Bank",
-    "name": "Combatting Cybercrime",
     "description": "Project completed at Informatics Studio. Front-End & Static Site Generator development.",
     "link": "http://www.combattingcybercrime.org"
   },
   {
+    "name": "Imagine Pittsburgh: Work & Job Sections",
     "id": "projectThree",
     "image": "placeholder--project-2.jpg",
     "content": "Content goes here and can be long. Possibly markdown or HTML.",
     "company": "Company Name",
-    "name": "Project Name",
     "description": "Project Description",
     "link": "http://google.com"
   },
   {
+    "name": "Health Sciences South Carolina",
     "id": "projectFour",
     "image": "placeholder--project-2.jpg",
     "content": "Content goes here and can be long. Possibly markdown or HTML.",
     "company": "Company Name",
-    "name": "Project Name",
+    "description": "Project Description",
+    "link": "http://google.com"
+  },
+  {
+    "name": "RAND Getting to Outcomes",
+    "id": "randGettingToOutcomes",
+    "image": "placeholder--project-2.jpg",
+    "content": "Content goes here and can be long. Possibly markdown or HTML.",
+    "company": "Company Name",
+    "description": "Project Description",
+    "link": "http://google.com"
+  },
+  {
+    "name": "Rand API Programs",
+    "id": "randApiPrograms",
+    "image": "placeholder--project-2.jpg",
+    "content": "Content goes here and can be long. Possibly markdown or HTML.",
+    "company": "Company Name",
+    "description": "Project Description",
+    "link": "http://google.com"
+  },
+  {
+    "name": "RAND Hospital Data",
+    "id": "randHospitalData",
+    "image": "placeholder--project-2.jpg",
+    "content": "Content goes here and can be long. Possibly markdown or HTML.",
+    "company": "Company Name",
+    "description": "Project Description",
+    "link": "http://google.com"
+  },
+  {
+    "name": "Dexis Consulting (WordPress)",
+    "id": "dexisConsultingWordPress",
+    "image": "placeholder--project-2.jpg",
+    "content": "Content goes here and can be long. Possibly markdown or HTML.",
+    "company": "Company Name",
+    "description": "Project Description",
+    "link": "http://google.com"
+  },
+  {
+    "name": "International Republican Institute",
+    "id": "internationalRepublicanInstitute",
+    "image": "placeholder--project-2.jpg",
+    "content": "Content goes here and can be long. Possibly markdown or HTML.",
+    "company": "Company Name",
+    "description": "Project Description",
+    "link": "http://google.com"
+  },
+  {
+    "name": "Title II Higher Education Act",
+    "id": "titleIiHigherEducationAct",
+    "image": "placeholder--project-2.jpg",
+    "content": "Content goes here and can be long. Possibly markdown or HTML.",
+    "company": "Company Name",
     "description": "Project Description",
     "link": "http://google.com"
   }
