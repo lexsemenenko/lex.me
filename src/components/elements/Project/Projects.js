@@ -1,10 +1,12 @@
 import React, {useContext} from 'react'
-import {id} from 'postcss-selector-parser'
+// import {id} from 'postcss-selector-parser'
 import {contextProjects} from '../../store/StoreProjects'
+import {contextGlobalUi} from '../../store/StoreGlobalUi'
 import Image from '../Image'
 
 const Projects = () => {
   const [state, dispatch] = useContext(contextProjects)
+  const [stateGlUi, dispatchGlUi] = useContext(contextGlobalUi)
 
   const onToggleOpen = e => {
     e.preventDefault()
@@ -19,6 +21,10 @@ const Projects = () => {
       return {...item, ...part}
     })
     dispatch({type: 'OPEN_PROJECT', newState: newArr})
+    dispatchGlUi({
+      type: 'TOGGLE_MODAL',
+      newState: {...stateGlUi, ...{modalOpen: true}},
+    })
   }
   const onToggleCloseAll = e => {
     const newArr = state.map(item => {
@@ -27,6 +33,10 @@ const Projects = () => {
       return {...item, ...part}
     })
     dispatch({type: 'CLOSE_ALL_PROJECTS', newState: newArr})
+    dispatchGlUi({
+      type: 'TOGGLE_MODAL',
+      newState: {...stateGlUi, ...{modalOpen: false}},
+    })
   }
 
   return (

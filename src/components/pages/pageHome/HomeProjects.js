@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import StoreProjects from '../../store/StoreProjects'
 import Projects from '../../elements/Project/Projects'
 

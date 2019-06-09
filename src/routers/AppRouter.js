@@ -1,17 +1,15 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Header from '../components/partials/Header';
-import Footer from '../components/partials/Footer';
+import React from 'react'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import Header from '../components/partials/Header'
+import Footer from '../components/partials/Footer'
 
-import PageHome from '../components/pages/pageHome';
-// import ProjectsSingle from '../pages/ProjectsSingle';
-// import PageProjects from '../pages/Projects';
-// import PageNotFound from '../pages/NotFound';
+import PageHome from '../components/pages/pageHome'
+import StoreGlobalUi from '../components/store/StoreGlobalUi'
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
-      <>
+      <StoreGlobalUi>
         <Header />
         <Switch>
           <Route path="/" component={PageHome} exact />
@@ -20,9 +18,9 @@ const AppRouter = () => {
           <Route component={PageNotFound} /> */}
         </Switch>
         <Footer />
-      </>
+      </StoreGlobalUi>
     </BrowserRouter>
-  );
-};
+  )
+}
 
-export default AppRouter;
+export default AppRouter

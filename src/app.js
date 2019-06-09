@@ -6,7 +6,7 @@ import anchorsScroll from './js/modules/module--anchorsScroll'
 
 const Wrapper = () => {
   useEffect(() => {
-    const test = anchorsScroll({
+    anchorsScroll({
       element: 'a',
       offset: 0,
       // offsetElement: '#header',
