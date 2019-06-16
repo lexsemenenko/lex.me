@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 // import {id} from 'postcss-selector-parser'
 import {contextProjects} from '../../store/StoreProjects'
 import {contextGlobalUi} from '../../store/StoreGlobalUi'
@@ -25,6 +25,7 @@ const Projects = () => {
       type: 'TOGGLE_MODAL',
       newState: {...stateGlUi, ...{modalOpen: true}},
     })
+    document.body.classList.add('project__body-scroll')
   }
   const onToggleCloseAll = e => {
     const newArr = state.map(item => {
@@ -37,6 +38,7 @@ const Projects = () => {
       type: 'TOGGLE_MODAL',
       newState: {...stateGlUi, ...{modalOpen: false}},
     })
+    document.body.classList.remove('project__body-scroll')
   }
 
   return (

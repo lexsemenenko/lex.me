@@ -15,11 +15,12 @@ const pageHome = () => {
     const spInstance = sp({
       scrollpoint: '.scrollpoint',
       offset: 0,
-      elementOffset: '#header',
+      elementOffset: 'header', // Only by ID for now
       direction: 'both',
       debug: false,
     })
-    $(window).on('scroll', () => {
+
+    window.addEventListener('scroll', () => {
       dispatchUi({
         type: 'GET_SCROLLPOINTS_SECTIONS',
         getScrollPontsSections: spInstance.get(),

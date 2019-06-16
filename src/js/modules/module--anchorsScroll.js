@@ -22,24 +22,11 @@ const anchorsScroll = instanceSettings => {
     public: {},
   }
 
-  // let element
-  // let offset
-  // let offsetElement
-  // let offsetNudge
-  // let $offsetElement
-  // let $element
-
   const mergeSettings = () => {
     return Object.assign({}, root.settings, root.instance.settings)
   }
 
   const s = mergeSettings()
-
-  function cacheSelections() {
-    // ;({element, offset, offsetElement, offsetNudge} = s)
-    // $element = $(element)
-    // $offsetElement = $(offsetElement)
-  }
 
   function scroll() {
     // console.log(s)
@@ -86,7 +73,6 @@ const anchorsScroll = instanceSettings => {
 
   function init() {
     mergeSettings()
-    cacheSelections()
     scroll()
   }
 

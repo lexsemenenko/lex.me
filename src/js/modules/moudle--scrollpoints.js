@@ -1,8 +1,9 @@
+/* eslint-disable func-names */
 const scrollpoints = function(instanceSettings) {
   const root = {
     settings: {
       scrollpoint: null,
-      elementOffset: null,
+      elementOffset: null, // By ID for now only
       offset: 0,
       direction: 'both',
       debug: false,
@@ -12,11 +13,11 @@ const scrollpoints = function(instanceSettings) {
 
   let s
 
-  function _mergeSettings() {
+  const mergeSettings = () => {
     s = Object.assign({}, root.settings, instanceSettings)
   }
 
-  function _getCurrentScrollpoint() {
+  const getCurrentScrollpoint = () => {
     const {scrollpoint, elementOffset, offset, direction, debug} = s
 
     let scrollpointsArr = document.querySelectorAll(scrollpoint)
@@ -24,7 +25,12 @@ const scrollpoints = function(instanceSettings) {
 
     const scrollpointsArrWithActive = scrollpointsArr.map(item => {
       // Sizes, offsetsconst triggerMatching = spTouchesTrigger && spNotPassedTrigger;
-      const totalOffset = $(elementOffset).outerHeight() ? $(elementOffset).outerHeight() : offset
+      let elementOuterHeight
+      if (elementOffset) {
+        elementOuterHeight = document.getElementById(elementOffset).offsetHeight
+      }
+
+      const totalOffset = elementOuterHeight || offset
       const spFromTop = item.offsetTop - totalOffset
       const spHeight = item.offsetHeight
       const amountScrolled = window.pageYOffset
@@ -42,7 +48,14 @@ const scrollpoints = function(instanceSettings) {
       if (direction === 'down') {
         spTouchesTrigger ? (isActive = true) : (isActive = false)
       }
-      if (debug) $('.scrollpoint__trigger').css('top', `${trigger}px`)
+      let elementTrigger
+      if (debug) {
+        elementTrigger = document.getElementsByClassName('scrollpoint__trigger')
+        if (elementTrigger) {
+          // const trigger = amountScrolled + trigger
+          elementTrigger[0].style.top = `${trigger}px`
+        }
+      }
 
       return {
         name: item.id,
@@ -53,20 +66,22 @@ const scrollpoints = function(instanceSettings) {
     return scrollpointsArrWithActive
   }
 
-  function _debugVisually() {
-    $('body').append('<div class="scrollpoint__trigger"></div>')
+  const debugVisually = () => {
+    const elementTrigger = document.createElement('div')
+    elementTrigger.classList.add('scrollpoint__trigger')
+    document.body.appendChild(elementTrigger)
   }
 
   const init = () => {
-    _mergeSettings()
-    _debugVisually()
+    mergeSettings()
+    debugVisually()
   }
 
   init()
 
   return {
     get() {
-      return _getCurrentScrollpoint()
+      return getCurrentScrollpoint()
     },
   }
 }
