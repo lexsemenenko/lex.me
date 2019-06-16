@@ -70,7 +70,8 @@ const Projects = () => {
                   onToggleOpen(e)
                 }}
               >
-                <span>{name}</span>
+                <span className="project__toggle-name">{name}</span>
+                <span className="project__toggle-company">{company}</span>
               </button>
 
               <div className={`lx-modal ${isActive ? 'open' : 'closed'}`}>

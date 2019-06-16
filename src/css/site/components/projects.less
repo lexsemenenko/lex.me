@@ -5,11 +5,15 @@
   display: block;
   width: 100%;
   background-size: contain;
+  background-size: 100%;
   position: relative;
   height: 1px;
-  padding-top: 56.25%;
-  text-align: center;
-  /* 16:9 Aspect Ratio */
+  /* 16:10 Aspect Ratio */
+  padding-top: 62.5%; // 800px/500px * 100%
+  // text-align: center;
+  margin-bottom: @base-large;
+  background-position: 0 0;
+  transition: background-size 0.3s ease-in-out;
 
   &:before {
     position: absolute;
@@ -18,19 +22,41 @@
     left: 0;
     bottom: 0;
     right: 0;
-    background: @color-black-a-50;
-    // background: rgba(250, 100, 0, 0.8);
+    // background: @color-black-a-20;
+    // background: @color-white-a-30;
+    transition: background-color 0.3s ease-in-out;
+    background-color: rgba(174, 168, 211, 0.2);
+    // background: rgba(115, 101, 152, 0.3)
+  }
+
+  &:hover {
+    background-size: 105%;
+
+    &:before {
+      background-color: rgba(174, 168, 211, 0);
+    }
   }
 
   span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    .t-bold;
-    .t-large;
-    color: white;
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%, -50%);
+    //   .t-bold;
+    //   .t-large;
+    //   color: white;
+    display: block;
   }
+}
+
+.project__toggle-name {
+  margin-top: @base-small-xx;
+  .t-semibold;
+}
+
+.project__toggle-company {
+  color: @t-detail;
+  .t-small;
 }
 
 .project__content {
