@@ -1,31 +1,18 @@
 import React, {useContext} from 'react'
 import {contextDropdown} from './Dropdown'
 
-const DropdownToggle = props => {
-  const {children, classes} = props
-
+const DropdownToggle = ({children, classes}) => {
   const [state, dispatch] = useContext(contextDropdown)
-
-  const toggle = () => {
-    if (!state.isActive) {
-      dispatch({
-        type: 'TOGGLE',
-        newState: {isActive: true},
-      })
-    } else {
-      dispatch({
-        type: 'TOGGLE',
-        newState: {isActive: false},
-      })
-    }
-  }
 
   return (
     <button
       className={classes}
       type="button"
-      onClick={e => {
-        toggle()
+      onClick={() => {
+        dispatch({
+          type: 'TOGGLE',
+          newState: state.isActive ? {isActive: false} : {isActive: true},
+        })
       }}
     >
       {children}

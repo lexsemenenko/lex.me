@@ -24,7 +24,7 @@ const Header = () => (
             </a>
           </div>
         </div>
-        <Dropdown blockClass="test">
+        <Dropdown blockClass="menu-mobile">
           <DropdownToggle>Menu</DropdownToggle>
           <DropdownContent>Menu Content</DropdownContent>
         </Dropdown>

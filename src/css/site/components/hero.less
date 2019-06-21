@@ -5,18 +5,6 @@
   height: 100vh;
   align-items: center;
 
-  >div {
-    &:first-child {
-      padding-right: 10%;
-      flex-basis: 60%;
-      width: 60%;
-    }
-
-    &:last-child {
-      flex-basis: 40%;
-      width: 40%;
-    }
-  }
 
   &__arrow {
     display: block;
@@ -29,6 +17,21 @@
       }
     }
   }
+}
+
+.hero__text {
+
+  flex-basis: 60%; // Nudging
+  width: 60%; // Nudging
+  padding-right: 10%;
+
+  @media (max-width: 1020px) {
+    flex-basis: 55%;
+    width: 55%;
+    padding-right: 5%;
+  }
+
+
 }
 
 

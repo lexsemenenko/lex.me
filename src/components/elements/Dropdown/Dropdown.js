@@ -1,5 +1,6 @@
-import React, {createContext, useReducer, useEffect} from 'react'
+import React, {createContext, useReducer} from 'react'
 import classNames from 'classnames'
+import PropTypes from 'prop-types'
 import DropdownToggle from './DropdownToggle'
 import DropdownContent from './DropdownContent'
 
@@ -15,33 +16,31 @@ function reducer(state, action) {
   }
 }
 
-const StoreDropdown = props => {
-  const {children, blockClass} = props
-
+const Dropdown = ({children, blockClass}) => {
   const initialState = {
     isActive: false,
   }
-
   const [state, dispatch] = useReducer(reducer, initialState)
-
   const toggleClass = state.isActive ? 'open' : 'closed'
-  const classesToggle = classNames('dropdown__toggle', toggleClass)
-  const classesContnet = classNames('dropdown__content', toggleClass)
 
   return (
     <contextDropdown.Provider value={[state, dispatch]}>
-      <div className="dropdown">
+      <div className={classNames(blockClass, toggleClass)}>
         {children.map((item, i) => {
           if (i === 0) {
             return (
-              <DropdownToggle classes={classesToggle}>
+              <DropdownToggle
+                classes={classNames(`${blockClass}__toggle`, toggleClass)}
+              >
                 {item.props.children}
               </DropdownToggle>
             )
           }
           if (i === 1) {
             return (
-              <DropdownContent classes={classesContnet}>
+              <DropdownContent
+                classes={classNames(`${blockClass}__content`, toggleClass)}
+              >
                 {item.props.children}
               </DropdownContent>
             )
@@ -52,4 +51,14 @@ const StoreDropdown = props => {
   )
 }
 
-export default StoreDropdown
+Dropdown.propTypes = {
+  children: PropTypes.node,
+  blockClass: PropTypes.string,
+}
+
+Dropdown.defaultProps = {
+  children: null,
+  blockClass: 'collapsible',
+}
+
+export default Dropdown
