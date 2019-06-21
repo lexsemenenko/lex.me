@@ -1,5 +1,17 @@
-// .collapsible__toggle {
-//   display: block;
-//   background: silver;
-//   max-width: 200px;
-// }
+.collapsible__toggle {
+  background: silver;
+}
+
+.collapsible {
+  &.closed {
+    .collapsible__content {
+      display: none;
+    }
+  }
+
+  &.open {
+    .collapsible__content {
+      display: block;
+    }
+  }
+}

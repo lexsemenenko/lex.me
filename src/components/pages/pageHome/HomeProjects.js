@@ -9,9 +9,7 @@ const HomeProjects = () => {
         <span>Projects</span>
       </h2>
       <StoreProjects>
-        <div>
-          <Projects />
-        </div>
+        <Projects />
       </StoreProjects>
     </div>
   )
