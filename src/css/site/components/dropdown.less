@@ -2,12 +2,12 @@
 
 // .dropdown__toggle {}
 
-// .dropdown__content {
-//   &[data-collapsible*="open: false"] {
-//     display: none;
-//   }
+.dropdown__content {
+  &.closed {
+    display: none;
+  }
 
-//   &[data-collapsible*="open: true"] {
-//     display: block;
-//   }
-// }
+  &.open {
+    display: block;
+  }
+}

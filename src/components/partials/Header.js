@@ -1,5 +1,9 @@
 import React from 'react'
 
+import Dropdown from '../elements/Dropdown/Dropdown'
+import DropdownToggle from '../elements/Dropdown/DropdownToggle'
+import DropdownContent from '../elements/Dropdown/DropdownContent'
+
 const Header = () => (
   <div id="header" className="section header scrollpoint-header">
     <div className="group">
@@ -20,6 +24,10 @@ const Header = () => (
             </a>
           </div>
         </div>
+        <Dropdown blockClass="test">
+          <DropdownToggle>Menu</DropdownToggle>
+          <DropdownContent>Menu Content</DropdownContent>
+        </Dropdown>
       </div>
     </div>
   </div>
