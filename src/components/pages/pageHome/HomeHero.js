@@ -3,6 +3,7 @@ import scrollpoints from '../../../js/modules/moudle--scrollpoints'
 // import reducerUi from '../../redicers/reducerUi';
 import contextUi from '../../context/contextUi'
 import anchorsScroll from '../../../js/modules/module--anchorsScroll'
+import Image from '../../elements/Image'
 
 const HomeHero = () => {
   const {stateSpSections} = useContext(contextUi)
