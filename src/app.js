@@ -6,8 +6,6 @@ import anchorsScroll from './js/modules/module--anchorsScroll'
 
 const Wrapper = () => {
   useEffect(() => {
-    // Fire Anchors Smooth Scroll Module
-    // TODO:        - Add custom element offset
     anchorsScroll({
       element: 'a',
       offset: 0,

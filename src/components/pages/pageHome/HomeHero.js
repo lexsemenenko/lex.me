@@ -6,12 +6,7 @@ import contextUi from '../../context/contextUi'
 const HomeHero = () => {
   const {stateSpSections} = useContext(contextUi)
 
-  const [about, setAbout] = useState({
-    name: {
-      first: 'Lex',
-      last: 'Semenenko',
-    },
-  })
+  // console.log(stateSpSections)
 
   const [stateMenuSticky, toggleMenuSticky] = useState([
     {
@@ -47,9 +42,7 @@ const HomeHero = () => {
       <div className="hero">
         <div className="hero__text">
           <h1 className="h1 t-bold">Front-End & Web Developer</h1>
-          <strong className="h2 t-normal">
-            {about.name.first} {about.name.last}
-          </strong>
+          <strong className="h2 t-normal">Lex Semenenko</strong>
           <a className="hero__arrow" href="#about">
             <svg
               width="30"
@@ -77,6 +70,7 @@ const HomeHero = () => {
               'active'}`}
           >
             <ul className="menu-scroll">
+              {}
               <li>
                 <a
                   href="/#intro"

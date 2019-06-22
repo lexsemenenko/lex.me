@@ -11,15 +11,30 @@ const pageHome = () => {
   // # Using Reducer
   const [stateSpSections, dispatchUi] = useReducer(reducerUi, [])
 
+  const pageSections = [
+    {id: 'intro', title: 'Intro', classes: 'section--hero'},
+    {id: 'about', title: 'About', classes: 'section--lines'},
+    {
+      id: 'projects',
+      title: 'Projects',
+      classes: 'section--lines section--muted',
+    },
+    {id: 'contact', title: 'Contact', classes: 'section--lines-dark'},
+  ]
+
   const getSp = () => {
     const spInstance = sp({
       scrollpoint: '.scrollpoint',
       offset: 0,
-      elementOffset: 'header', // Only by ID for now
+      elementOffset: 'header', // by ID for now
       direction: 'both',
       debug: false,
     })
 
+    dispatchUi({
+      type: 'GET_SCROLLPOINTS_SECTIONS',
+      getScrollPontsSections: spInstance.get(),
+    })
     window.addEventListener('scroll', () => {
       dispatchUi({
         type: 'GET_SCROLLPOINTS_SECTIONS',
@@ -33,48 +48,22 @@ const pageHome = () => {
   }, [])
 
   return (
-    // We are providing context values to any children who wants to cosume it
     <contextUi.Provider value={{stateSpSections, dispatchUi}}>
-      <div
-        id="intro"
-        className={`section section--hero scrollpoint ${
-          stateSpSections.length && stateSpSections[0].isActive
-            ? ' active'
-            : ' not-active'
-        }`}
-      >
-        <HomeHero />
-      </div>
-      <div
-        id="about"
-        className={`section section--lines scrollpoint ${
-          stateSpSections.length && stateSpSections[1].isActive
-            ? ' active'
-            : ' not-active'
-        }`}
-      >
-        <HomeAbout />
-      </div>
-      <div
-        id="projects"
-        className={`section section--lines section--muted scrollpoint ${
-          stateSpSections.length && stateSpSections[2].isActive
-            ? ' active'
-            : ' not-active'
-        }`}
-      >
-        <HomeProjects />
-      </div>
-      <div
-        id="contact"
-        className={`section section--lines-dark  scrollpoint ${
-          stateSpSections.length && stateSpSections[3].isActive
-            ? ' active'
-            : ' not-active'
-        }`}
-      >
-        <HomeContact />
-      </div>
+      {pageSections.map(({id, title, classes}, i) => {
+        const spActiveClass =
+          stateSpSections.length && stateSpSections[i].isActive && ' active'
+        return (
+          <div
+            id={id}
+            className={`section ${classes} ${spActiveClass} scrollpoint`}
+          >
+            {id === 'intro' && <HomeHero />}
+            {id === 'about' && <HomeAbout />}
+            {id === 'projects' && <HomeProjects />}
+            {id === 'contact' && <HomeContact />}
+          </div>
+        )
+      })}
     </contextUi.Provider>
   )
 }
