@@ -1,12 +1,10 @@
 import React, {useEffect, useState, useContext} from 'react'
 import scrollpoints from '../../../js/modules/moudle--scrollpoints'
-// import reducerUi from '../../redicers/reducerUi';
-import contextUi from '../../context/contextUi'
-import anchorsScroll from '../../../js/modules/module--anchorsScroll'
 import Image from '../../elements/Image'
+import MenuScroll from '../../partials/MenuScroll'
 
 const HomeHero = () => {
-  const {stateSpSections} = useContext(contextUi)
+  
 
   const [stateMenuSticky, toggleMenuSticky] = useState([
     {
@@ -37,15 +35,7 @@ const HomeHero = () => {
     getMenuScrollpoint()
   }, [])
 
-  // Smooth scroll for the menu links
-  useEffect(() => {
-    anchorsScroll({
-      element: '.menu-scroll a',
-      offset: 0,
-      // offsetElement: '#header',
-      offsetNudge: 0,
-    })
-  })
+
 
   return (
     <div className="group">
@@ -79,22 +69,7 @@ const HomeHero = () => {
             className={`scrollpoint--menu ${stateMenuSticky[0].isActive &&
               'active'}`}
           >
-            <ul className="menu-scroll">
-              {stateSpSections.map(({id, isActive}) => {
-                let title
-                id === 'intro' && (title = 'Intro')
-                id === 'about' && (title = 'About')
-                id === 'projects' && (title = 'Projects')
-                id === 'contact' && (title = 'Contact')
-                return (
-                  <li>
-                    <a href={`/#${id}`} className={isActive && 'active'}>
-                      {title}
-                    </a>
-                  </li>
-                )
-              })}
-            </ul>
+            <MenuScroll className="menu-scroll" />
           </div>
         </div>
       </div>

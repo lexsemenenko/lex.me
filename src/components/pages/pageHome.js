@@ -6,6 +6,8 @@ import HomeProjects from './pageHome/HomeProjects'
 import HomeContact from './pageHome/HomeContact'
 import sp from '../../js/modules/moudle--scrollpoints'
 import contextUi from '../context/contextUi'
+import Header from '../../components/partials/Header'
+import Footer from '../../components/partials/Footer'
 
 const pageHome = () => {
   // # Using Reducer
@@ -49,6 +51,7 @@ const pageHome = () => {
 
   return (
     <contextUi.Provider value={{stateSpSections, dispatchUi}}>
+      <Header />
       {pageSections.map(({id, title, classes}, i) => {
         const spActiveClass =
           stateSpSections.length && stateSpSections[i].isActive && ' active'
@@ -64,6 +67,7 @@ const pageHome = () => {
           </div>
         )
       })}
+      <Footer />
     </contextUi.Provider>
   )
 }
