@@ -2,11 +2,10 @@ import React, {useEffect, useState, useContext} from 'react'
 import scrollpoints from '../../../js/modules/moudle--scrollpoints'
 // import reducerUi from '../../redicers/reducerUi';
 import contextUi from '../../context/contextUi'
+import anchorsScroll from '../../../js/modules/module--anchorsScroll'
 
 const HomeHero = () => {
   const {stateSpSections} = useContext(contextUi)
-
-  // console.log(stateSpSections)
 
   const [stateMenuSticky, toggleMenuSticky] = useState([
     {
@@ -36,6 +35,16 @@ const HomeHero = () => {
   useEffect(() => {
     getMenuScrollpoint()
   }, [])
+
+  // Smooth scroll for the menu links
+  useEffect(() => {
+    anchorsScroll({
+      element: '.menu-scroll a',
+      offset: 0,
+      // offsetElement: '#header',
+      offsetNudge: 0,
+    })
+  })
 
   return (
     <div className="group">
@@ -70,55 +79,20 @@ const HomeHero = () => {
               'active'}`}
           >
             <ul className="menu-scroll">
-              {}
-              <li>
-                <a
-                  href="/#intro"
-                  className={`${
-                    stateSpSections.length && stateSpSections[0].isActive
-                      ? 'active'
-                      : 'not-active'
-                  }`}
-                >
-                  Intro
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/#about"
-                  className={`${
-                    stateSpSections.length && stateSpSections[1].isActive
-                      ? 'active'
-                      : 'not-active'
-                  }`}
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/#projects"
-                  className={`${
-                    stateSpSections.length && stateSpSections[2].isActive
-                      ? 'active'
-                      : 'not-active'
-                  }`}
-                >
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/#contact"
-                  className={`${
-                    stateSpSections.length && stateSpSections[3].isActive
-                      ? 'active'
-                      : 'not-active'
-                  }`}
-                >
-                  Contact
-                </a>
-              </li>
+              {stateSpSections.map(({id, isActive}) => {
+                let title
+                id === 'intro' && (title = 'Intro')
+                id === 'about' && (title = 'About')
+                id === 'projects' && (title = 'Projects')
+                id === 'contact' && (title = 'Contact')
+                return (
+                  <li>
+                    <a href={`/#${id}`} className={isActive && 'active'}>
+                      {title}
+                    </a>
+                  </li>
+                )
+              })}
             </ul>
           </div>
         </div>

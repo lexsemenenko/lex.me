@@ -58,7 +58,7 @@ const scrollpoints = function(instanceSettings) {
       }
 
       return {
-        name: item.id,
+        id: item.id,
         isActive,
       }
     })
