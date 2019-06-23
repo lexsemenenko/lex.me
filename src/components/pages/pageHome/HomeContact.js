@@ -8,20 +8,23 @@ const HomeContact = () => (
     <div data-grid="columns: 12">
       <div data-grid-item="width: 6">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <form name="contact" method="POST" data-netlify="true">
+        <form name="contact" method="post">
+          <input type="hidden" name="form-name" value="contact" />
           <div className="form-item">
-            <label htmlFor="item_id">Name</label>
-            <input id="item_id" type="text" defaultValue="" />
+            <label htmlFor="name">Name</label>
+            <input name="name" id="name" type="text" defaultValue="" />
           </div>
           <div className="form-item">
-            <label htmlFor="item_id2">Email</label>
-            <input id="item_id2" type="email" defaultValue="" />
+            <label htmlFor="email">Email</label>
+            <input name="email" id="email" type="email" defaultValue="" />
           </div>
           <div className="form-item">
-            <label htmlFor="item_id3">Your Message</label>
-            <textarea />
+            <label htmlFor="message">Your Message</label>
+            <textarea name="message" id="message" />
           </div>
-          <button type="submit">Send</button>
+          <p>
+            <button type="submit">Send</button>
+          </p>
         </form>
       </div>
     </div>
