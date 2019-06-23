@@ -1,5 +1,5 @@
 import React from 'react'
-import StoreProjects from '../../store/StoreProjects'
+import StoreProjects from '../../elements/Project/StoreProjects'
 import Projects from '../../elements/Project/Projects'
 
 const HomeProjects = () => {

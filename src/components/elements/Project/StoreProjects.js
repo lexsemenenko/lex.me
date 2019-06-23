@@ -1,18 +1,14 @@
 import React, {createContext, useReducer} from 'react'
-import projectsData from '../../data/projectsData.json'
-
-// Adding toggle properies to the object
+import projectsData from './projectsData.json'
 
 export const contextProjects = createContext({})
 
 // Add active properties to each project
-const projectsDataWithActive = projectsData.map(item => {
+const initialState = projectsData.map(item => {
   const newObj = Object.assign({}, item)
   newObj.isActive = false
   return newObj
 })
-
-const initialState = projectsDataWithActive
 
 function reducer(state, action) {
   switch (action.type) {
