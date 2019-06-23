@@ -58,7 +58,7 @@ const pageHome = () => {
         return (
           <div
             id={id}
-            className={`section ${classes} ${spActiveClass} scrollpoint`}
+            className={`section ${classes} scrollpoint`}
           >
             {id === 'intro' && <HomeHero />}
             {id === 'about' && <HomeAbout />}

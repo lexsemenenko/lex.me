@@ -8,7 +8,7 @@ const HomeContact = () => (
     <div data-grid="columns: 12">
       <div data-grid-item="width: 6">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <form>
+        <form name="contact" method="POST" data-netlify="true">
           <div className="form-item">
             <label htmlFor="item_id">Name</label>
             <input id="item_id" type="text" defaultValue="" />
