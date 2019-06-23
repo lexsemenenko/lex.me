@@ -1,13 +1,15 @@
 @header-transition-duration: .3s;
 @header-transition-timing: ease;
+@header-padding-v: 20px;
+@header-padding-v-active: 10px;
 
 .header {
   transition-timing-function: ;
   // background-color: lighten(#e1f0fb, 4%);
   // border-bottom: 1px solid #e1f0fb;
   background-color: rgb(20, 20, 20);
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: @header-padding-v;
+  padding-bottom: @header-padding-v;
   transition: all @header-transition-duration @header-transition-timing;
 
   &__logo {
@@ -33,8 +35,8 @@
   }
 
   &.active {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: @header-padding-v-active;
+    padding-bottom: @header-padding-v-active;
     background-color: rgb(30, 30, 30);
     transition: all @header-transition-duration @header-transition-timing;
 

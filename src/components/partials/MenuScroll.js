@@ -3,8 +3,6 @@ import contextUi from '../context/contextUi'
 import anchorsScroll from '../../js/modules/module--anchorsScroll'
 
 const MenuScroll = ({className}) => {
-  console.log(className)
-  
   const {stateSpSections} = useContext(contextUi)
 
   // Smooth scroll for the menu links
@@ -16,7 +14,7 @@ const MenuScroll = ({className}) => {
       offsetNudge: 0,
     })
   })
-  
+
   return (
     <ul className={className}>
       {stateSpSections.map(({id, isActive}) => {
