@@ -3,7 +3,7 @@ const scrollpoints = function(instanceSettings) {
   const root = {
     settings: {
       scrollpoint: null,
-      elementOffset: null, // By ID for now
+      elementOffset: null, // By ID for now only
       offset: 0,
       direction: 'both',
       debug: false,
