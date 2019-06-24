@@ -30,8 +30,8 @@ const Project = ({project, open, closeAll}) => {
           }}
         >
           <span className="project__toggle-text">
-            <span>{name}</span>
             <span>{company}</span>
+            <span>{name}</span>
           </span>
           <span className="project__icon">Open</span>
         </button>

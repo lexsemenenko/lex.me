@@ -1,9 +1,13 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import {contextProjects} from './StoreProjects'
 import Project from './Project'
+import Pagination from './Pagination'
 
 const Projects = () => {
   const [state, dispatch] = useContext(contextProjects)
+
+  // Toggle Open/Close Functions
+  // ===========================================================================
 
   const open = e => {
     e.preventDefault()
@@ -31,12 +35,31 @@ const Projects = () => {
     document.body.classList.remove('project__body-scroll')
   }
 
+  // Pagination
+  // ===========================================================================
+  const [currentPage, setCurrentPage] = useState(1)
+  const [projectsPerPage, setProjectsPerPage] = useState(6)
+
+  // Get current projects
+  const indexOfLastProject = currentPage * projectsPerPage
+  const indexOfFirstProject = indexOfLastProject - projectsPerPage
+  const currentProjects = state.slice(indexOfFirstProject, indexOfLastProject)
+
+  // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber)
   return (
-    <div data-grid="columns: 12, gutters-row: true">
-      {state.map(project => {
-        return <Project project={project} open={open} closeAll={closeAll} />
-      })}
-    </div>
+    <>
+      <Pagination
+        projectsPerPage={projectsPerPage}
+        totalProjects={state.length}
+        paginate={paginate}
+      />
+      <div data-grid="columns: 12, gutters-row: true">
+        {currentProjects.map(project => {
+          return <Project project={project} open={open} closeAll={closeAll} />
+        })}
+      </div>
+    </>
   )
 }
 

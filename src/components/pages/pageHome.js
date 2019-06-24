@@ -6,8 +6,8 @@ import HomeProjects from './pageHome/HomeProjects'
 import HomeContact from './pageHome/HomeContact'
 import sp from '../../js/modules/moudle--scrollpoints'
 import contextUi from '../context/contextUi'
-import Header from '../../components/partials/Header'
-import Footer from '../../components/partials/Footer'
+import Header from '../partials/Header'
+import Footer from '../partials/Footer'
 
 const pageHome = () => {
   // # Using Reducer
@@ -56,10 +56,7 @@ const pageHome = () => {
         const spActiveClass =
           stateSpSections.length && stateSpSections[i].isActive && ' active'
         return (
-          <div
-            id={id}
-            className={`section ${classes} scrollpoint`}
-          >
+          <div id={id} className={`section ${classes} scrollpoint`}>
             {id === 'intro' && <HomeHero />}
             {id === 'about' && <HomeAbout />}
             {id === 'projects' && <HomeProjects />}
