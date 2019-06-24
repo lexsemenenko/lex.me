@@ -11,8 +11,8 @@
   color: white;
   /* 16:10 Aspect Ratio */
   padding-top: 62.5%; // 800px/500px * 100%
-  // text-align: center;
-  margin-bottom: @base-large;
+
+  // margin-bottom: @base-large;
   background-position: 50%;
   transition: background-size .6s ease-in-out;
   border-radius: @g-border-radius;
@@ -25,7 +25,7 @@
     bottom: 0;
     right: 0;
     transition: background-color 0.3s ease-in-out;
-    background: rgba(40,42,45,.75);
+    background: rgba(40, 42, 45, .75);
     border-radius: @g-border-radius;
   }
 
@@ -33,16 +33,19 @@
     background-size: 102%;
 
     &:before {
-      background: rgba(40,42,45,0.8);
+      background: rgba(40, 42, 45, 0.8);
     }
+
     .project__toggle-text {
       bottom: 35px;
     }
+
     .project__icon {
       opacity: 1;
     }
   }
 }
+
 .project__toggle-text {
   transition: bottom .6s;
   position: absolute;
@@ -50,17 +53,21 @@
   right: 0;
   bottom: 0;
   padding: @base-large-x;
+
   span {
     display: block;
+
     &:first-child {
       color: @color-black-20;
     }
+
     &:last-child {
       .t-bold;
       .t-large;
     }
   }
 }
+
 .project__icon {
   position: absolute;
   left: 0;
