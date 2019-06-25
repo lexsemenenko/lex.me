@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react'
-import ReactDOM from 'react-dom'
-import './css/main.less'
-import AppRouter from './routers/AppRouter'
-import anchorsScroll from './js/modules/module--anchorsScroll'
+import React, { useEffect } from 'react';
+import ReactDOM from 'react-dom';
+import './css/main.less';
+import AppRouter from './routers/AppRouter';
+import anchorsScroll from './js/modules/module--anchorsScroll';
 
 const Wrapper = () => {
   useEffect(() => {
@@ -11,9 +11,9 @@ const Wrapper = () => {
       offset: 0,
       // offsetElement: '#header',
       offsetNudge: 0
-    })
-  }, [])
+    });
+  }, []);
 
-  return <AppRouter />
-}
-ReactDOM.render(<Wrapper />, document.getElementById('root'))
+  return <AppRouter />;
+};
+ReactDOM.render(<Wrapper />, document.getElementById('root'));

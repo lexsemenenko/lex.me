@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CollapsibleContent = ({ children, id }) => {
+const CollapsibleContent = ({ children }) => {
   return <div className="collapsible__content">{children}</div>;
 };
 
