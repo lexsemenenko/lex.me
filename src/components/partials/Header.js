@@ -7,25 +7,23 @@ import MenuScroll from './MenuScroll';
 
 const Header = () => (
   <div id="header" className="section header scrollpoint-header">
-    <div className="group">
-      <div className="header__logo">
-        <a href="/">
-          <Image src="/images/lex-logo.svg" />
-        </a>
-      </div>
-      <Dropdown blockClass="menu-mobile">
-        <DropdownToggle>
-          <span className="menu-mobile__icon">
-            <span />
-            <span />
-            <span />
-          </span>
-        </DropdownToggle>
-        <DropdownContent>
-          <MenuScroll className="menu-scroll-mobile" />
-        </DropdownContent>
-      </Dropdown>
+    <div className="header__logo">
+      <a href="/">
+        <Image src="/images/lex-logo.svg" />
+      </a>
     </div>
+    <Dropdown blockClass="menu-mobile">
+      <DropdownToggle>
+        <span className="menu-mobile__icon">
+          <span />
+          <span />
+          <span />
+        </span>
+      </DropdownToggle>
+      <DropdownContent>
+        <MenuScroll className="menu-scroll-mobile" />
+      </DropdownContent>
+    </Dropdown>
   </div>
 );
 

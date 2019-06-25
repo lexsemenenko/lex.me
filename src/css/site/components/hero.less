@@ -4,43 +4,28 @@
   flex-wrap: nowrap;
   height: 100vh;
   align-items: center;
-
+  background: radial-gradient(lighten(@color-gray-dark, 4%), @color-gray-dark 65%);
 
   &__arrow {
     display: block;
     margin-top: @element-margin;
-    color: #FA6400;
+    color: @color-accent;
 
     svg {
       polygon {
-        fill: #FA6400;
+        fill: @color-accent;
       }
     }
   }
 }
 
 .hero__text {
-
-  flex-basis: 60%; // Nudging
-  width: 60%; // Nudging
-  padding-right: 10%;
-
-  @media (max-width: 1020px) {
-    flex-basis: 55%;
-    width: 55%;
-    padding-right: 5%;
-  }
-
-
-}
-
-
-.hero__text {
+  flex-basis: 60%;
+  width: 60%;
+  padding: 100px 10% 50px 6%;
   background-image: url("/images/home-hero-texture.svg");
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  padding-top: 100px;
-  padding-bottom: 50px;
   color: white;
 
   h1 {
@@ -49,6 +34,11 @@
 
   strong {
     color: white;
-    opacity: 0.6;
+  }
+
+  @media (max-width: 1020px) {
+    flex-basis: 55%;
+    width: 55%;
+    padding: 100px 5% 50px 0;
   }
 }

@@ -49,7 +49,7 @@ const HomeHero = () => {
               <polygon points="10.5,16.08 5.63,10.66 6.37,10 10.5,14.58 14.63,10 15.37,10.66" />
               <line
                 fill="none"
-                stroke="#FA6400"
+                stroke="#dc4133"
                 x1="10.5"
                 y1="4"
                 x2="10.5"

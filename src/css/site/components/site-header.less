@@ -4,23 +4,31 @@
 @header-padding-v-active: 10px;
 
 .header {
-  transition-timing-function: ;
-  // background-color: lighten(#e1f0fb, 4%);
-  // border-bottom: 1px solid #e1f0fb;
-  background-color: rgb(20, 20, 20);
   padding-top: @header-padding-v;
   padding-bottom: @header-padding-v;
   transition: all @header-transition-duration @header-transition-timing;
+  background-color: @color-gray-dark;
+
+  &:after {
+    position: absolute;
+    height: 10px;
+    bottom: -10px;
+    width: 100%;
+    left: 0;
+    content: "";
+  }
 
   &__logo {
-    // margin: 0 auto;
-    width: (423px / 5.5px);
+    transition: all @header-transition-duration @header-transition-timing;
 
-    svg path {
-      fill: rgba(255, 255, 255, 0.15);
+    img {
+      display: block;
     }
 
-    transition: all @header-transition-duration @header-transition-timing;
+    a {
+      display: block;
+      width: (423px / 5.5px);
+    }
   }
 
   position: fixed;
@@ -37,8 +45,12 @@
   &.active {
     padding-top: @header-padding-v-active;
     padding-bottom: @header-padding-v-active;
-    background-color: rgb(30, 30, 30);
+    background-color: @color-gray-dark-x;
     transition: all @header-transition-duration @header-transition-timing;
+
+    &:after {
+      background-image: linear-gradient(@color-black-a-20, transparent 40%);
+    }
 
     .menu-main {
       opacity: 1;
@@ -47,8 +59,7 @@
 
     .header__logo {
       width: (423px / 6px);
-      //height: 198px / 6;
-      line-height: 0; // remove space under svg
+      // line-height: 0; // remove space under svg
     }
   }
 }

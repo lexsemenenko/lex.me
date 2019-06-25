@@ -18,7 +18,7 @@ const Project = ({ project, open, closeAll }) => {
   const toggleClasses = isActive ? 'open' : 'closed';
 
   return (
-    <div data-grid-item="width: 9, width-large: 4, width-large-x: 4">
+    <div data-grid-item="width: 6, width-large: 4">
       <div className={`project ${toggleClasses}`}>
         <button
           type="button"

@@ -9,7 +9,11 @@ const HomeAbout = () => {
       </h2>
       <div data-grid="columns: 12">
         <div data-grid-item="width: 12, width-large: 6">
-          <p className="t-large">Lorem ipsum text here.</p>
+          <p className="t-large">
+            I am a Pittsburgh based <strong>Front-End </strong> &amp; Web{' '}
+            <strong>Developer</strong> by trade with perseverance, curiosity, a
+            growth mindset and a passion for emerging tech.
+          </p>
         </div>
       </div>
     </div>
