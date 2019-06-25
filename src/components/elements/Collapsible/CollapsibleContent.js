@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const CollapsibleContent = ({children, id}) => {
-  return <div className="collapsible__content">{children}</div>
-}
+const CollapsibleContent = ({ children, id }) => {
+  return <div className="collapsible__content">{children}</div>;
+};
 
-export default CollapsibleContent
+export default CollapsibleContent;

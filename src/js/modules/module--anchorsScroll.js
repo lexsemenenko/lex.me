@@ -14,70 +14,65 @@ const anchorsScroll = instanceSettings => {
       offset: 0,
       offsetElement: null,
       offsetNudge: 0,
-      duration: 500,
+      duration: 500
     },
     instance: {
-      settings: instanceSettings,
+      settings: instanceSettings
     },
-    public: {},
-  }
+    public: {}
+  };
 
   const mergeSettings = () => {
-    return Object.assign({}, root.settings, root.instance.settings)
-  }
+    return Object.assign({}, root.settings, root.instance.settings);
+  };
 
-  const s = mergeSettings()
+  const s = mergeSettings();
 
   function scroll() {
     // console.log(s)
-    const {element, offset, offsetElement, offsetNudge, duration} = s
-    let el = document.querySelectorAll(element)
-    el = [...el]
+    const {element, offset, offsetElement, offsetNudge, duration} = s;
+    let el = document.querySelectorAll(element);
+    el = [...el];
     // Spread NodeList into an array first before looping
     el.forEach(item => {
       item.addEventListener('click', e => {
-        e.preventDefault()
+        e.preventDefault();
         if (item.hash !== '') {
-          const elMatch = document.getElementById(item.hash.substring(1))
-          const elMatchPositionTop = elMatch.getBoundingClientRect().top
-          const startPosition = window.pageYOffset
-          const distance = elMatchPositionTop
-          let startTime = null
+          const elMatch = document.getElementById(item.hash.substring(1));
+          const elMatchPositionTop = elMatch.getBoundingClientRect().top;
+          const startPosition = window.pageYOffset;
+          const distance = elMatchPositionTop;
+          let startTime = null;
 
           const animation = currentTime => {
-            if (startTime === null) startTime = currentTime
-            const timeElapsed = currentTime - startTime
-            const run = Math.easeInOutQuad(
-              timeElapsed,
-              startPosition,
-              distance,
-              duration
-            )
-            window.scrollTo(0, run)
-            if (timeElapsed < duration) requestAnimationFrame(animation)
-          }
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = Math.easeInOutQuad(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+          };
           //        http://www.gizma.com/easing
           Math.easeInOutQuad = (t, b, c, d) => {
-            t /= d / 2
-            if (t < 1) return (c / 2) * t * t + b
-            t--
-            return (-c / 2) * (t * (t - 2) - 1) + b
-          }
+            t /= d / 2;
+            if (t < 1) return (c / 2) * t * t + b;
+            t--;
+            return (-c / 2) * (t * (t - 2) - 1) + b;
+          };
 
           // Animate at 60fps for nice animation
-          requestAnimationFrame(animation)
+          requestAnimationFrame(animation);
         }
-      })
-    })
+      });
+    });
   }
 
   function init() {
-    mergeSettings()
-    scroll()
+    mergeSettings();
+    scroll();
   }
 
-  init()
-  return root.public
-}
+  init();
+  return root.public;
+};
 
-export default anchorsScroll
+export default anchorsScroll;

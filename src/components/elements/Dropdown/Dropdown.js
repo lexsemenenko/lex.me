@@ -1,27 +1,27 @@
-import React, {createContext, useReducer} from 'react'
-import classNames from 'classnames'
-import PropTypes from 'prop-types'
-import DropdownToggle from './DropdownToggle'
-import DropdownContent from './DropdownContent'
+import React, { createContext, useReducer } from 'react';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import DropdownToggle from './DropdownToggle';
+import DropdownContent from './DropdownContent';
 
 // Create Context
-export const contextDropdown = createContext({})
+export const contextDropdown = createContext({});
 
 function reducer(state, action) {
   switch (action.type) {
     case 'TOGGLE':
-      return action.newState
+      return action.newState;
     default:
-      return state
+      return state;
   }
 }
 
-const Dropdown = ({children, blockClass}) => {
+const Dropdown = ({ children, blockClass }) => {
   const initialState = {
-    isActive: false,
-  }
-  const [state, dispatch] = useReducer(reducer, initialState)
-  const toggleClass = state.isActive ? 'open' : 'closed'
+    isActive: false
+  };
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const toggleClass = state.isActive ? 'open' : 'closed';
 
   return (
     <contextDropdown.Provider value={[state, dispatch]}>
@@ -34,7 +34,7 @@ const Dropdown = ({children, blockClass}) => {
               >
                 {item.props.children}
               </DropdownToggle>
-            )
+            );
           }
           if (i === 1) {
             return (
@@ -43,22 +43,22 @@ const Dropdown = ({children, blockClass}) => {
               >
                 {item.props.children}
               </DropdownContent>
-            )
+            );
           }
         })}
       </div>
     </contextDropdown.Provider>
-  )
-}
+  );
+};
 
 Dropdown.propTypes = {
   children: PropTypes.node,
-  blockClass: PropTypes.string,
-}
+  blockClass: PropTypes.string
+};
 
 Dropdown.defaultProps = {
   children: null,
-  blockClass: 'collapsible',
-}
+  blockClass: 'collapsible'
+};
 
-export default Dropdown
+export default Dropdown;

@@ -1,37 +1,37 @@
-import React, {useContext} from 'react'
-import classNames from 'classnames'
-import {contextCollapsibles} from './StoreCollapsibles'
-import CollapsibleToggle from './CollapsibleToggle'
-import CollapsibleContent from './CollapsibleContent'
+import React, { useContext } from 'react';
+import classNames from 'classnames';
+import { contextCollapsibles } from './StoreCollapsibles';
+import CollapsibleToggle from './CollapsibleToggle';
+import CollapsibleContent from './CollapsibleContent';
 
-const Collapsible = ({children}) => {
-  const [state, dispatch] = useContext(contextCollapsibles)
+const Collapsible = ({ children }) => {
+  const [state, dispatch] = useContext(contextCollapsibles);
 
   const toggle = idClicked => {
     const newState = state.map(item => {
-      const itemIsClicked = item.id === idClicked
+      const itemIsClicked = item.id === idClicked;
       if (itemIsClicked) {
         if (!item.isActive) {
-          return {...item, ...{isActive: true}}
+          return { ...item, ...{ isActive: true } };
         }
-        return {...item, ...{isActive: false}}
+        return { ...item, ...{ isActive: false } };
       }
 
       // For all Others
-      return item
-    })
+      return item;
+    });
     dispatch({
       type: 'TOGGLE',
-      newState,
-    })
-  }
+      newState
+    });
+  };
 
   return (
     <>
-      {children.map(({props}, index) => {
-        const {id} = props
-        const toggleClass = state[index].isActive ? 'open' : 'closed'
-        const classes = classNames('collapsible', toggleClass)
+      {children.map(({ props }, index) => {
+        const { id } = props;
+        const toggleClass = state[index].isActive ? 'open' : 'closed';
+        const classes = classNames('collapsible', toggleClass);
         return (
           <div className={classes}>
             {props.children.map((itemChild, i) => {
@@ -40,19 +40,19 @@ const Collapsible = ({children}) => {
                   <CollapsibleToggle toggle={toggle} id={id}>
                     {itemChild.props.children}
                   </CollapsibleToggle>
-                )
+                );
               if (i === 1)
                 return (
                   <CollapsibleContent id={id}>
                     {itemChild.props.children}
                   </CollapsibleContent>
-                )
+                );
             })}
           </div>
-        )
+        );
       })}
     </>
-  )
-}
+  );
+};
 
-export default Collapsible
+export default Collapsible;

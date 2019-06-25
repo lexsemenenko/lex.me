@@ -1,33 +1,33 @@
-import React, {createContext, useReducer, useEffect} from 'react'
-import Collapsible from './Collapsible'
+import React, { createContext, useReducer, useEffect } from 'react';
+import Collapsible from './Collapsible';
 
 // Create Context
-export const contextCollapsibles = createContext({})
+export const contextCollapsibles = createContext({});
 
 function reducerCollapsibles(state, action) {
   switch (action.type) {
     case 'TOGGLE':
-      return action.newState
+      return action.newState;
     default:
-      return state
+      return state;
   }
 }
 
 const StoreCollapsibles = props => {
-  const {children, blockClass} = props
+  const { children, blockClass } = props;
 
-  const initialState = children.map(({props}, index) => {
-    const {id} = props
+  const initialState = children.map(({ props }, index) => {
+    const { id } = props;
     return {
       id,
-      isActive: false,
-    }
-  })
+      isActive: false
+    };
+  });
 
   const [stateCollapsibles, dispatchCollapsibles] = useReducer(
     reducerCollapsibles,
     initialState
-  )
+  );
 
   return (
     <contextCollapsibles.Provider
@@ -35,7 +35,7 @@ const StoreCollapsibles = props => {
     >
       <Collapsible>{children}</Collapsible>
     </contextCollapsibles.Provider>
-  )
-}
+  );
+};
 
-export default StoreCollapsibles
+export default StoreCollapsibles;

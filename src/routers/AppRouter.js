@@ -1,6 +1,6 @@
-import React from 'react'
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import PageHome from '../components/pages/pageHome'
+import React from 'react';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import PageHome from '../components/pages/pageHome';
 
 const AppRouter = () => {
   return (
@@ -12,7 +12,7 @@ const AppRouter = () => {
           <Route component={PageNotFound} /> */}
       </Switch>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default AppRouter
+export default AppRouter;

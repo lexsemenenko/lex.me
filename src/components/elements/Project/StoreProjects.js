@@ -1,33 +1,33 @@
-import React, {createContext, useReducer} from 'react'
-import projectsData from './projectsData.json'
+import React, { createContext, useReducer } from 'react';
+import projectsData from './projectsData.json';
 
-export const contextProjects = createContext({})
+export const contextProjects = createContext({});
 
 // Add active properties to each project
 const initialState = projectsData.map(item => {
-  const newObj = Object.assign({}, item)
-  newObj.isActive = false
-  return newObj
-})
+  const newObj = Object.assign({}, item);
+  newObj.isActive = false;
+  return newObj;
+});
 
 function reducer(state, action) {
   switch (action.type) {
     case 'OPEN_PROJECT':
-      return action.newState
+      return action.newState;
     case 'CLOSE_ALL_PROJECTS':
-      return action.newState
+      return action.newState;
     default:
-      return state
+      return state;
   }
 }
 
-const StoreProjects = ({children}) => {
-  const [state, dispatch] = useReducer(reducer, initialState)
+const StoreProjects = ({ children }) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <contextProjects.Provider value={[state, dispatch]}>
       {children}
     </contextProjects.Provider>
-  )
-}
+  );
+};
 
-export default StoreProjects
+export default StoreProjects;

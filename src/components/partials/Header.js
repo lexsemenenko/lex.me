@@ -1,9 +1,9 @@
-import React from 'react'
-import Dropdown from '../elements/Dropdown/Dropdown'
-import DropdownToggle from '../elements/Dropdown/DropdownToggle'
-import DropdownContent from '../elements/Dropdown/DropdownContent'
-import Image from '../elements/Image'
-import MenuScroll from './MenuScroll'
+import React from 'react';
+import Dropdown from '../elements/Dropdown/Dropdown';
+import DropdownToggle from '../elements/Dropdown/DropdownToggle';
+import DropdownContent from '../elements/Dropdown/DropdownContent';
+import Image from '../elements/Image';
+import MenuScroll from './MenuScroll';
 
 const Header = () => (
   <div id="header" className="section header scrollpoint-header">
@@ -27,6 +27,6 @@ const Header = () => (
       </Dropdown>
     </div>
   </div>
-)
+);
 
-export default Header
+export default Header;

@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-const Project = ({project, open, closeAll}) => {
+const Project = ({ project, open, closeAll }) => {
   const {
     company,
     content,
@@ -9,13 +9,13 @@ const Project = ({project, open, closeAll}) => {
     image,
     isActive,
     link,
-    name,
-  } = project
+    name
+  } = project;
 
   const styleToggle = {
-    backgroundImage: `url(images/${image})`,
-  }
-  const toggleClasses = isActive ? 'open' : 'closed'
+    backgroundImage: `url(images/${image})`
+  };
+  const toggleClasses = isActive ? 'open' : 'closed';
 
   return (
     <div data-grid-item="width: 9, width-large: 4, width-large-x: 4">
@@ -26,7 +26,7 @@ const Project = ({project, open, closeAll}) => {
           style={styleToggle}
           id={id}
           onClick={e => {
-            open(e)
+            open(e);
           }}
         >
           <span className="project__toggle-text">
@@ -48,7 +48,7 @@ const Project = ({project, open, closeAll}) => {
                     className="project__close"
                     type="button"
                     onClick={e => {
-                      closeAll(e)
+                      closeAll(e);
                     }}
                   >
                     Close
@@ -78,7 +78,7 @@ const Project = ({project, open, closeAll}) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Project
+export default Project;

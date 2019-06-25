@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const HomeContact = () => (
   <div className="group">
@@ -29,6 +29,6 @@ const HomeContact = () => (
       </div>
     </div>
   </div>
-)
+);
 
-export default HomeContact
+export default HomeContact;

@@ -1,0 +1,101 @@
+// =============================================================================
+// Menu Scroll
+// =============================================================================
+
+@menu-scroll--a: {
+  padding: 0.7em 1em;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.5);
+  // font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    bottom: 12px;
+    height: 8px;
+    background-color: transparent;
+    transition: 0.3s ease-out;
+    transition-property: background-color, border-color, box-shadow, height, right;
+    left: 0.9em;
+    right: 0.9em;
+  }
+
+  &.active {
+    color: white;
+
+    &::before {
+      transition-property: background-color, border-color, box-shadow, height, right;
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+}
+
+.scrollpoint--menu {
+  position: relative;
+  min-height: 50px;
+
+  .menu-scroll {
+    z-index: 150;
+    position: relative;
+    top: auto;
+  }
+
+  &.active {
+    .menu-scroll {
+      position: fixed;
+      z-index: 200;
+      top: 0;
+    }
+  }
+}
+
+// Shared
+// =============================================================================
+
+.menu-scroll,
+.menu-scroll-mobile {
+  display: flex;
+  justify-content: space-between;
+
+  li {
+    &:first-child {
+      a {
+        padding-left: 0;
+
+        &:before {
+          left: -0.1em;
+        }
+      }
+    }
+
+    &:last-child {
+      a {
+        padding-right: 0;
+
+        &:before {
+          right: -0.1em;
+        }
+      }
+    }
+  }
+
+  a {
+    @menu-scroll--a()
+  }
+}
+
+
+// Responsive
+// =============================================================================
+
+.menu-scroll {
+  @media (max-width: 870px) {
+    display: none;
+  }
+}

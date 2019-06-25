@@ -1,0 +1,55 @@
+.h1 {
+  #TYPE.create(@size: @t-large-xxx,
+  @lh: 1em,
+  @family: inherit);
+  margin-bottom: 0.4em;
+  color: #111;
+  letter-spacing: -1.25px;
+}
+
+.h2 {
+  #TYPE.create(@size: @t-large-xx,
+  @lh: 1em,
+  @family: inherit);
+  color: #111;
+  margin-bottom: 0.8em;
+  font-weight: 600;
+
+  &__block {
+    span {
+      position: relative;
+      display: block;
+      margin-bottom: -0.7em;
+    }
+
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 4em;
+      height: .4em;
+      background: lighten(#111, 83%);
+    }
+  }
+}
+
+.h3 {
+  #TYPE.create(@size: @t-large-x,
+  @lh: 1em,
+  @family: inherit);
+  color: #111;
+  margin-bottom: 0.8em;
+  font-weight: 600;
+}
+
+.h4 {
+  #TYPE.create(@size: @t-large,
+  @lh: 1em,
+  @family: inherit);
+  color: #111;
+  margin-bottom: 0.8em;
+  font-weight: 600;
+}
+
+// .h5 {}
+
+// .h6 {}

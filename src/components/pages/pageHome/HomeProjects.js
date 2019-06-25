@@ -1,6 +1,6 @@
-import React from 'react'
-import StoreProjects from '../../elements/Project/StoreProjects'
-import Projects from '../../elements/Project/Projects'
+import React from 'react';
+import StoreProjects from '../../elements/Project/StoreProjects';
+import Projects from '../../elements/Project/Projects';
 
 const HomeProjects = () => {
   return (
@@ -12,7 +12,7 @@ const HomeProjects = () => {
         <Projects />
       </StoreProjects>
     </div>
-  )
-}
+  );
+};
 
-export default HomeProjects
+export default HomeProjects;

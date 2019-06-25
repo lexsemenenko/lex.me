@@ -1,0 +1,180 @@
+#G() {
+
+  .create(
+    @columns:                 @G__columns,
+    @gutter:                  @G__gutter,
+    @attr:                    @G__attr,
+    @breakpoint:              @G__breakpoint,
+    @optional:                false
+  ) {
+
+    // Make an object for the grid
+    @grid: {
+      columns:                @columns;
+      gutter:                 @gutter;
+      columnWidth:            100% / @columns;
+      breakpoint:             @breakpoint;
+      attr:                   @attr;
+    };
+
+    #G._getVars(@grid);
+
+    // No Breakpoint
+    // =====================================
+
+    // Defaults
+    @{_selectGrid} {
+      
+      .cf;
+
+      // Ensure empty elements still take up space in layout
+      > @{_selectItem} {
+        min-height: 1px; 
+      }
+      // This is for value of true and also covers all options below
+      &[@{_attr}*="gutters-row:"] {
+        > @{_selectItem} {
+          padding-top:        @gutter;
+          padding-bottom:     @gutter;
+        }
+      }
+      &[@{_attr}*="gutters-row: top"] {
+        > @{_selectItem} {
+          //&.@{equalheight--class--row-last} {
+          //  padding-bottom: 0;
+          //}
+        }
+      }
+      &[@{_attr}*="gutters-row: bottom"] {
+        > @{_selectItem} {
+          //&.@{equalheight--class--row-first} {
+          //  padding-top: 0;
+          //}
+        }
+      }
+      &[@{_attr}*="gutters-row: fit"] {
+        margin-top:           -@gutter;
+        margin-bottom:        -@gutter;
+      }
+    }
+
+    // Within Breakpoint
+    // =====================================
+
+    @media @breakpoint {
+      
+      @{_selectGrid} {
+
+        // Defaults
+        display:              flex;
+        flex-flow:            row wrap;
+        align-items:          stretch;
+        margin-left:          -@gutter;
+        margin-right:         -@gutter;
+
+        // Item: Defaults
+        > @{_selectItem} {
+          float:              left; // Fallback
+          padding-left:       @gutter;
+          padding-right:      @gutter;
+        }
+
+        // Alignment options
+        &[@{_attr}*="align: middle"] {
+          align-items:        center;
+        }
+        &[@{_attr}*="align: end"] {
+          align-items:        flex-end;
+        }
+        &[@{_attr}*="align: start"] {
+          align-items:        flex-start;
+        }
+
+        // Generated props for item
+        #G._widths(@grid);
+        #G._offsets(@grid);
+
+      }
+    }
+    // Call optional mixins passed by user
+    & when not (@optional = false) {
+      @optional();
+    }
+  }
+
+  // Function for adding additional breakpoint to grid
+  // Similar to the create() function without defaults or selectors
+  // for items that need to change on breakpoints
+  // This will print:
+  // - Width Selectors
+  // - Offset Selectors
+  // - Rule position changes (if enabled in the create mixin)
+  .breakpoint(
+    @suffix:                  "large",
+    @gutter:                  @G__gutter,
+    @breakpoint:              @G__breakpoint
+  ) {
+
+     //#G._getVars(@grid);
+
+    @media @breakpoint {
+
+      @{_selectGrid} {
+        margin-left:          -@gutter;
+        margin-right:         -@gutter;
+
+        > @{_selectItem} {
+          padding-left:       @gutter;
+          padding-right:      @gutter;
+        }
+
+        // Generated props
+        #G._widths(@grid, '-@{suffix}');
+        #G._offsets(@grid, '-@{suffix}');
+      }
+    }
+  }
+  
+
+  // Private Mixins
+  // =============================================================================
+
+  ._widths(@grid, @suffix: '') {
+
+    #G._getVars(@grid);
+    
+    .for(@i: 1, @n: @columns) {
+      
+      @width:                 @columnWidth * @i;
+      
+      > [@{_attrItem}*="width@{suffix}: @{i}"] {
+        width:                @width;
+        flex-basis:           @width;
+        max-width:            @width;
+      }
+    }
+  }
+
+  ._offsets(@grid, @suffix: '') {
+
+    #G._getVars(@grid);
+
+    .for(@i: 1, @n: @columns) {
+      > [@{_attrItem}*="offset@{suffix}: @{i}"] {
+        margin-left:          @columnWidth * @i;
+      }
+    }
+  }
+
+  ._getVars(@grid) {
+    // Used to expose ruleset to local scope and provide additional vars
+    @columnWidth: @grid[columnWidth];
+    @columns: @grid[columns];
+    //@gutter: @grid[gutter];
+    @_selectGrid: e('[@{attr}*="columns: @{columns}"]');
+    @_attrItem: e('@{attr}-item');
+    @_attr: e(@attr);
+    @_columns: e('columns: @{columns}');
+    @_selectItem: e('[@{attr}-item]');
+  }
+}

@@ -10,7 +10,7 @@ const Wrapper = () => {
       element: 'a',
       offset: 0,
       // offsetElement: '#header',
-      offsetNudge: 0,
+      offsetNudge: 0
     })
   }, [])
 

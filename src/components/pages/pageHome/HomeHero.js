@@ -1,41 +1,36 @@
-import React, {useEffect, useState, useContext} from 'react'
-import scrollpoints from '../../../js/modules/moudle--scrollpoints'
-import Image from '../../elements/Image'
-import MenuScroll from '../../partials/MenuScroll'
+import React, { useEffect, useState } from 'react';
+import scrollpoints from '../../../js/modules/moudle--scrollpoints';
+import MenuScroll from '../../partials/MenuScroll';
 
 const HomeHero = () => {
-  
-
   const [stateMenuSticky, toggleMenuSticky] = useState([
     {
       isActive: false,
-      name: undefined,
-    },
-  ])
+      name: undefined
+    }
+  ]);
 
   const getMenuScrollpoint = () => {
     const scrollpointsMenuInstance = scrollpoints({
       scrollpoint: '.scrollpoint--menu',
       offset: 0,
-      direction: 'down',
-    })
+      direction: 'down'
+    });
 
-    const header = document.getElementById('header')
+    const header = document.getElementById('header');
 
     window.addEventListener('scroll', () => {
-      toggleMenuSticky(scrollpointsMenuInstance.get())
+      toggleMenuSticky(scrollpointsMenuInstance.get());
       scrollpointsMenuInstance.get()[0].isActive
         ? header.classList.add('active')
-        : header.classList.remove('active')
-    })
-  }
+        : header.classList.remove('active');
+    });
+  };
 
   // Component Did Mount
   useEffect(() => {
-    getMenuScrollpoint()
-  }, [])
-
-
+    getMenuScrollpoint();
+  }, []);
 
   return (
     <div className="group">
@@ -74,7 +69,7 @@ const HomeHero = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HomeHero
+export default HomeHero;

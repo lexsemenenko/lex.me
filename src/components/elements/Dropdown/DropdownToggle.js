@@ -1,8 +1,8 @@
-import React, {useContext} from 'react'
-import {contextDropdown} from './Dropdown'
+import React, { useContext } from 'react';
+import { contextDropdown } from './Dropdown';
 
-const DropdownToggle = ({children, classes}) => {
-  const [state, dispatch] = useContext(contextDropdown)
+const DropdownToggle = ({ children, classes }) => {
+  const [state, dispatch] = useContext(contextDropdown);
 
   return (
     <button
@@ -11,13 +11,13 @@ const DropdownToggle = ({children, classes}) => {
       onClick={() => {
         dispatch({
           type: 'TOGGLE',
-          newState: state.isActive ? {isActive: false} : {isActive: true},
-        })
+          newState: state.isActive ? { isActive: false } : { isActive: true }
+        });
       }}
     >
       {children}
     </button>
-  )
-}
+  );
+};
 
-export default DropdownToggle
+export default DropdownToggle;

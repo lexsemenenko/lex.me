@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-import StoreCollapsibles from '../elements/Collapsible/StoreCollapsibles'
-import Collapsible from '../elements/Collapsible/Collapsible'
-import CollapsibleToggle from '../elements/Collapsible/CollapsibleToggle'
-import CollapsibleContent from '../elements/Collapsible/CollapsibleContent'
+import StoreCollapsibles from '../elements/Collapsible/StoreCollapsibles';
+import Collapsible from '../elements/Collapsible/Collapsible';
+import CollapsibleToggle from '../elements/Collapsible/CollapsibleToggle';
+import CollapsibleContent from '../elements/Collapsible/CollapsibleContent';
 
 const Footer = () => (
   <div className="section footer">
@@ -38,6 +38,6 @@ const Footer = () => (
       </div>
     </div>
   </div>
-)
+);
 
-export default Footer
+export default Footer;

@@ -1,17 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-const CollapsibleToggle = ({children, id, toggle}) => {
+const CollapsibleToggle = ({ children, id, toggle }) => {
   return (
     <button
       className="collapsible__toggle"
       type="button"
       onClick={e => {
-        toggle(id)
+        toggle(id);
       }}
     >
       {children}
     </button>
-  )
-}
+  );
+};
 
-export default CollapsibleToggle
+export default CollapsibleToggle;

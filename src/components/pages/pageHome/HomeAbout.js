@@ -1,5 +1,5 @@
-import React from 'react'
-import Button from '../../elements/Button'
+import React from 'react';
+import Button from '../../elements/Button';
 
 const HomeAbout = () => {
   return (
@@ -13,7 +13,7 @@ const HomeAbout = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HomeAbout
+export default HomeAbout;

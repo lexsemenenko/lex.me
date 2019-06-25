@@ -15,9 +15,16 @@
     "jest": true
   },
   "rules": {
+    "semi": [
+      "error",
+      "always"
+    ],
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
     "no-debugger": 0,
     "no-console": 0,
-    "comma-dangle": 0,
     "space-before-function-paren": 0,
     "no-unused-vars": [
       "error",
@@ -47,9 +54,11 @@
     "prettier/prettier": [
       "error",
       {
-        "trailingComma": "es5",
+        "trailingComma": "none",
         "singleQuote": true,
         "printWidth": 80,
+        "tabWidth": 2,
+        "useTabs": false,
       }
     ]
   },
