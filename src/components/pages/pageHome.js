@@ -56,7 +56,7 @@ const pageHome = () => {
         const spActiveClass =
           stateSpSections.length && stateSpSections[i].isActive && ' active';
         return (
-          <div id={id} className={`section ${classes} scrollpoint`}>
+          <div id={id} key={id} className={`section ${classes} scrollpoint`}>
             {id === 'intro' && <HomeHero />}
             {id === 'about' && <HomeAbout />}
             {id === 'projects' && <HomeProjects />}

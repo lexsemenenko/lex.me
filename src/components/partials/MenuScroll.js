@@ -24,8 +24,8 @@ const MenuScroll = ({ className }) => {
         id === 'projects' && (title = 'Projects');
         id === 'contact' && (title = 'Contact');
         return (
-          <li>
-            <a href={`/#${id}`} className={isActive && 'active'}>
+          <li key={id}>
+            <a href={`/#${id}`} className={isActive ? 'active' : ''}>
               {title}
             </a>
           </li>

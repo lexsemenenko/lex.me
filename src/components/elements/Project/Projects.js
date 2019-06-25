@@ -55,8 +55,16 @@ const Projects = () => {
         paginate={paginate}
       />
       <div data-grid="columns: 12, gutters-row: true">
-        {currentProjects.map(project => {
-          return <Project project={project} open={open} closeAll={closeAll} />;
+        {currentProjects.map((project, i) => {
+          const uniqueKey = `project${i.toString()}`;
+          return (
+            <Project
+              key={uniqueKey}
+              project={project}
+              open={open}
+              closeAll={closeAll}
+            />
+          );
         })}
       </div>
     </>

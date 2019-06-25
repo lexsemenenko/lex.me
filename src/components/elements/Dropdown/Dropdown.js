@@ -31,6 +31,7 @@ const Dropdown = ({ children, blockClass }) => {
             return (
               <DropdownToggle
                 classes={classNames(`${blockClass}__toggle`, toggleClass)}
+                key={`key${i}`}
               >
                 {item.props.children}
               </DropdownToggle>
@@ -39,6 +40,7 @@ const Dropdown = ({ children, blockClass }) => {
           if (i === 1) {
             return (
               <DropdownContent
+                key={`key${i}`}
                 classes={classNames(`${blockClass}__content`, toggleClass)}
               >
                 {item.props.children}

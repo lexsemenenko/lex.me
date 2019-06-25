@@ -33,7 +33,7 @@ Icon.propTypes = {
 
 Icon.defaultProps = {
   name: '',
-  className: '',
+  className: 'undefined',
   size: null,
   onClick: null,
   disabled: false

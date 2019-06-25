@@ -28,22 +28,24 @@ const Collapsible = ({ children }) => {
 
   return (
     <>
-      {children.map(({ props }, index) => {
+      {children.map(({ props }, i) => {
         const { id } = props;
-        const toggleClass = state[index].isActive ? 'open' : 'closed';
+        const toggleClass = state[i].isActive ? 'open' : 'closed';
         const classes = classNames('collapsible', toggleClass);
+        const uniqueKey = `collapsible${id}`;
         return (
-          <div className={classes}>
+          <div className={classes} key={uniqueKey}>
             {props.children.map((itemChild, i) => {
+              const uniqueKey = `collapsible${id}-${i}`;
               if (i === 0)
                 return (
-                  <CollapsibleToggle toggle={toggle} id={id}>
+                  <CollapsibleToggle toggle={toggle} id={id} key={uniqueKey}>
                     {itemChild.props.children}
                   </CollapsibleToggle>
                 );
               if (i === 1)
                 return (
-                  <CollapsibleContent id={id}>
+                  <CollapsibleContent id={id} key={uniqueKey}>
                     {itemChild.props.children}
                   </CollapsibleContent>
                 );

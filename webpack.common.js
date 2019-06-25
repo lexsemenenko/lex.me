@@ -78,12 +78,12 @@ module.exports = {
         from: './src/images/',
         to: 'images/',
         flatten: true
-      },
-      {
-        from: './src/data/',
-        to: 'data/',
-        flatten: true
       }
+      // {
+      //   from: './src/data/',
+      //   to: 'data/',
+      //   flatten: true
+      // }
     ]),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',

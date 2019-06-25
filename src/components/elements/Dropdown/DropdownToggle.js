@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 import { contextDropdown } from './Dropdown';
 
-const DropdownToggle = ({ children, classes }) => {
+const DropdownToggle = ({ children, classes, uniqueKey }) => {
   const [state, dispatch] = useContext(contextDropdown);
-
   return (
     <button
       className={classes}

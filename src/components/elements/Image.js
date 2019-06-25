@@ -27,7 +27,7 @@ Image.defaultProps = {
   width: 640,
   height: 360,
   circle: false,
-  className: ''
+  className: undefined
 };
 
 export default Image;
