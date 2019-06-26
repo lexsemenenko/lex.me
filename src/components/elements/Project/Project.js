@@ -36,7 +36,7 @@ const Project = ({ project, open, closeAll }) => {
           </span>
           <span className="project__icon">
             <span className="hide-v">Open</span>
-            <Icon name="arrow-right"/>
+            <Icon name="arrow-right" size="1.8em"/>
           </span>
         </button>
 

@@ -40,7 +40,7 @@ const HomeHero = () => {
           <h1 className="h1 t-bold">Front-End & Web Developer</h1>
           <strong className="h2 t-normal">Lex Semenenko</strong>
           <a className="hero__arrow" href="#about">
-            <Icon name="arrow-down"/>
+            <Icon name="arrow-down" size="1.8em"/>
           </a>
         </div>
         <div className="hero__menu">

@@ -34,11 +34,12 @@
     }
 
     .project__toggle-text {
-      bottom: 35px;
+      bottom: 20px;
     }
 
     .project__icon {
       opacity: 1;
+      bottom: @base-large - 5px;
     }
   }
 }
@@ -49,7 +50,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  padding: @base-large-x;
+  margin: @base-large-x - 5px;
+  // margin-bottom: @base-large-x - 15px;
 
   span {
     display: block;
@@ -61,17 +63,17 @@
     &:last-child {
       .t-bold;
       .t-large;
+      line-height: 1.3em;
     }
   }
 }
 
 .project__icon {
   position: absolute;
-  left: 0;
-  bottom: 0;
-  padding: @base-large-x;
+  left: @base-large-x - 5px;
+  bottom: @base-large;
   opacity: 0;
-  transition: opacity .6s;
+  transition: opacity .6s, bottom .6s;
 }
 
 .project__toggle-name {

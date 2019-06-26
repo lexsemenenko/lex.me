@@ -3,35 +3,35 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const Icon = ({name, width, height, className, fill }) => {
+const Icon = ({name, size, className, fill }) => {
 
   const printIcon = (passedName) => {
 
 
     switch(passedName) {
-      case "arrow-down":
-        return (
-          <svg
-            className={className}
-            xmlns="http://www.w3.org/2000/svg"
-            width={width}
-            height={height}
-            viewBox="0 0 500 500"
-          >
-            <path d="M410 268l-13-13c-4-4-10-6-16-6s-12 2-16 6l-84 84V72c0-12-9-22-21-22h-19c-12 0-23 10-23 22v268l-84-85c-5-4-10-6-16-6-5 0-11 2-15 6l-13 13c-8 9-8 22 0 31l144 144c5 4 10 7 16 7s11-3 16-7l144-144c8-9 8-22 0-31z" />
-          </svg>
-        )
-        break;
       case "arrow-right":
         return (
           <svg
             className={className}
             xmlns="http://www.w3.org/2000/svg"
-            width={width}
-            height={height}
+            width={size}
+            height={size}
             viewBox="0 0 500 500"
           >
-            <path d="M444 234L299 90c-4-4-9-6-15-6s-12 2-16 6l-13 13c-4 4-6 10-6 16 0 5 2 11 6 15l84 85H72c-12 0-22 9-22 21v19c0 12 10 22 22 22h268l-85 85c-4 4-6 10-6 16 0 5 2 11 6 15l13 13c4 4 10 6 16 6s11-2 15-6l145-144c4-5 6-10 6-16s-2-11-6-16z"/>
+            <path d="M293 142a21 21 0 0 1 29-29l122 122c4 4 6 9 6 15s-2 11-6 15L322 387c-8 8-21 8-29 0-8-9-8-21 0-29l87-87H70c-11 0-20-10-20-21s9-20 20-20h310l-87-88z"/>
+          </svg>
+        )
+        break;
+      case "arrow-down":
+        return (
+          <svg
+            className={className}
+            xmlns="http://www.w3.org/2000/svg"
+            width={size}
+            height={size}
+            viewBox="0 0 500 500"
+          >
+            <path d="M358 293c8-8 21-8 29 0s8 21 0 29L265 444c-4 4-9 6-15 6s-11-2-15-6L113 322c-8-8-8-21 0-29 9-8 21-8 29 0l87 87V70c0-11 10-20 21-20s20 9 20 20v310l88-87z"/>
           </svg>
         )
         break;
