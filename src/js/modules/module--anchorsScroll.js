@@ -36,8 +36,8 @@ const anchorsScroll = instanceSettings => {
     // Spread NodeList into an array first before looping
     el.forEach(item => {
       item.addEventListener('click', e => {
-        e.preventDefault();
         if (item.hash !== '') {
+          e.preventDefault();
           const elMatch = document.getElementById(item.hash.substring(1));
           const elMatchPositionTop = elMatch.getBoundingClientRect().top;
           const startPosition = window.pageYOffset;
