@@ -14,21 +14,20 @@
   color: #111;
   margin-bottom: 0.8em;
   font-weight: 600;
+}
+.h2__block {
+  span {
+    position: relative;
+    display: block;
+    margin-bottom: -0.7em;
+  }
 
-  &__block {
-    span {
-      position: relative;
-      display: block;
-      margin-bottom: -0.7em;
-    }
-
-    &:after {
-      content: "";
-      display: inline-block;
-      width: 4em;
-      height: .4em;
-      background: lighten(#111, 83%);
-    }
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 4em;
+    height: .4em;
+    background: lighten(#111, 83%);
   }
 }
 

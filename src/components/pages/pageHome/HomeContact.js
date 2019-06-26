@@ -2,7 +2,7 @@ import React from 'react';
 
 const HomeContact = () => (
   <div className="group">
-    <h2 className="h2 h2__block">
+    <h2 className="section__title">
       <span>Contact</span>
     </h2>
     <div data-grid="columns: 12">

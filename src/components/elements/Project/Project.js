@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../Icons/Icons'
+import Icon from '../Icons'
 
 const Project = ({ project, open, closeAll }) => {
   const {
@@ -55,7 +55,8 @@ const Project = ({ project, open, closeAll }) => {
                       closeAll(e);
                     }}
                   >
-                    Close
+                    <Icon name="close"/>
+                    <span className="hide-v">Close Project</span>
                   </button>
                 </div>
                 <div className="scroll-projects__body">
