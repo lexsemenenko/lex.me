@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import './css/main.less';
+import './less/main.less';
 import AppRouter from './routers/AppRouter';
 import anchorsScroll from './js/modules/module--anchorsScroll';
 

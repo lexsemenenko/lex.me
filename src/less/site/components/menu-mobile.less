@@ -42,7 +42,6 @@
     height: 2px;
     width: 100%;
     background: @color-white-a-50;
-    border-radius: 2px;
     transition: all cubic-bezier(0.25, 0.1, 0.28, 1.54) 0.32s;
 
     &:nth-child(1) {
@@ -86,6 +85,14 @@
 // =============================================================================
 
 .menu-mobile__content {
+  margin-top: 6px;
+  background-color: tint(@color-gray-dark, 3%);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: @menu-icon-height + @header-padding-v + @header-padding-v;
+  z-index: 101;
+
   &.closed {
     display: none;
   }
@@ -94,6 +101,13 @@
     display: block;
   }
 }
+
+.header.active {
+  .menu-mobile__content {
+    top: @menu-icon-height + @header-padding-v-active + @header-padding-v-active;
+  }
+}
+
 
 // Responsive
 // =============================================================================

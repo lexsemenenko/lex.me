@@ -40,7 +40,7 @@ const HomeHero = () => {
           <h1 className="h1 t-bold">Front-End & Web Developer</h1>
           <strong className="h2 t-normal">Lex Semenenko</strong>
           <a className="hero__arrow" href="#about">
-            <Icon name="arrowDown" fill="plum"/>
+            <Icon name="arrow-down"/>
           </a>
         </div>
         <div className="hero__menu">

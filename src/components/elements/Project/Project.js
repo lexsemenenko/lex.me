@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from '../Icons/Icons'
 
 const Project = ({ project, open, closeAll }) => {
   const {
@@ -33,7 +34,10 @@ const Project = ({ project, open, closeAll }) => {
             <span>{company}</span>
             <span>{name}</span>
           </span>
-          <span className="project__icon">Open</span>
+          <span className="project__icon">
+            <span className="hide-v">Open</span>
+            <Icon name="arrow-right"/>
+          </span>
         </button>
 
         <div className={`lx-modal ${toggleClasses}`}>
