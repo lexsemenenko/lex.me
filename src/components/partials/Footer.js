@@ -6,7 +6,7 @@ import CollapsibleToggle from '../elements/Collapsible/CollapsibleToggle';
 import CollapsibleContent from '../elements/Collapsible/CollapsibleContent';
 
 const Footer = () => (
-  <div className="section footer">
+  <div id="footer" className="section footer"> 
     <div className="group">
       <div data-grid="columns: 12">
         <div data-grid-item="width: 4, offset: 4">

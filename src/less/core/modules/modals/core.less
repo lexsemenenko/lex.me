@@ -3,24 +3,18 @@
 // =============================================================================
 
 .lx-modal {
-  display: none;
-
-  &.open {
-    background: @modal-overlay-bg-color;
-    z-index: @modal-z-index;
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
+  background: @modal-overlay-bg-color;
+  z-index: @modal-z-index;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .lx-modal__panel {
   background-color: @modal-panel-background-color;
   position: relative;
-  display: none;
   max-width: @modal-panel-max-width;
   // Vertical Margins & Centering
   height: (100%-@modal-panel-margin-v*2);
@@ -53,7 +47,20 @@
     margin-right: @modal-panel-margin-h--mobile;
   }
 
+  &.open {}
+  &.closed {}
+}
+
+.lx-modal {
   &.open {
-    display: block;
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility .25s, opacity .25s;
+  }
+  &.closed {
+    height: 0px;
+    visibility: hidden;
+    opacity: 0;
   }
 }
