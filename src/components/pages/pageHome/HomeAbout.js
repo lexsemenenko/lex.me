@@ -16,14 +16,23 @@ const HomeAbout = () => {
             <strong>Developer</strong> by trade with perseverance, curiosity, a
             growth mindset and a passion for emerging tech.
           </p>
-          <div className="t-center">
-            <a href="http://www.linkedin.com/in/lexs/" target="_blank">
-              <Icon name="linkedin" size="3em" fill="#0a66c2"/>
-            </a>
-            <a href="http://github.com/lexsemenenko" target="_blank">
-              <Icon name="github" size="3em" fill="#24292e"/>
-            </a>
-          </div>
+          <ul className="social-list">
+            <li>
+              <a href="http://www.linkedin.com/in/lexs/" target="_blank">
+                <Icon name="linkedin" fill="#0a66c2" size="3.3em"/>
+              </a>
+            </li>
+            <li>
+              <a href="http://github.com/lexsemenenko" target="_blank">
+                <Icon name="github" fill="#24292e" size="3.3em"/>
+              </a>
+            </li>
+            <li>
+              <Button href="#">
+                Download Resume
+              </Button>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
