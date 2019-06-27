@@ -19,18 +19,16 @@ const HomeAbout = () => {
           <ul className="social-list">
             <li>
               <a href="http://www.linkedin.com/in/lexs/" target="_blank">
-                <Icon name="linkedin" fill="#0a66c2" size="3.3em"/>
+                <Icon name="linkedin" fill="#0a66c2" size="2.7em"/>
               </a>
             </li>
             <li>
               <a href="http://github.com/lexsemenenko" target="_blank">
-                <Icon name="github" fill="#24292e" size="3.3em"/>
+                <Icon name="github" fill="#24292e" size="2.7em"/>
               </a>
             </li>
             <li>
-              <Button href="#">
-                Download Resume
-              </Button>
+              <Button href="#">Resume</Button>
             </li>
           </ul>
         </div>
