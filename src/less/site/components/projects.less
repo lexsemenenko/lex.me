@@ -99,10 +99,38 @@
 
 .project__close {
   position: absolute;
-  left: 0;
-  bottom: 0;
+  right: @base-medium;
+  top: 50%;
+  transform: translateY(-50%);
+  color: @color-accent;
+  svg {
+    height: 1.5em;
+    width: 1.5em;
+    display: block;
+  }
 }
 
 .project__body-scroll {
   overflow-y: hidden;
+}
+
+// Modal
+.project__header {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: @base-medium;
+  right: @base-medium;
+  padding-right: 1.5em;
+  line-height: 1.2em;
+  // color: darken(@color-gray-light, 20%);
+  strong {
+    font-size: 18px;
+    display: block;
+  }
+  span {
+    .t-detail;
+    display: block;
+    margin-top: 0.3em;
+  }
 }

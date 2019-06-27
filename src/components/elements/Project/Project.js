@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from '../Icons'
+import Button from '../Button'
 
 const Project = ({ project, open, closeAll }) => {
   const {
@@ -45,9 +46,10 @@ const Project = ({ project, open, closeAll }) => {
             <div className={`project__content ${isActive ? 'open' : 'closed'}`}>
               <div className="scroll-projects">
                 <div className="scroll-projects__header">
-                  <h3>{name}</h3>
-                  <p>{company}</p>
-
+                  <div className="project__header">
+                    <strong>{name}</strong>
+                    <span>{company}</span>
+                  </div>
                   <button
                     className="project__close"
                     type="button"
@@ -60,22 +62,16 @@ const Project = ({ project, open, closeAll }) => {
                   </button>
                 </div>
                 <div className="scroll-projects__body">
-                  <p>
-                    Pellentesque habitant morbi tristique senectus et netus et
-                    malesuada fames ac turpis egestas. Vestibulum tortor quam,
-                    feugiat vitae, ultricies eget, tempor sit amet, ante. Donec
-                    eu libero sit amet quam egestas semper. Aenean ultricies mi
-                    vitae est. Mauris placerat eleifend leo. Quisque sit amet
-                    est et sapien ullamcorper pharetra. Vestibulum erat wisi,
-                    condimentum sed, commodo vitae, ornare sit amet, wisi.
-                    Aenean fermentum, elit eget tincidunt condimentum, eros
-                    ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec
-                    non enim in turpis pulvinar facilisis. Ut felis. Praesent
-                    dapibus, neque id cursus faucibus, tortor neque egestas
-                    augue, eu vulputate magna eros eu erat. Aliquam erat
-                    volutpat. Nam dui mi, tincidunt quis, accumsan porttitor,
-                    facilisis luctus, metus
-                  </p>
+                  <div data-grid="columns: 12">
+                    <div data-grid-item="width: 8">
+                      <p>
+                        Project details coming soon...
+                      </p>
+                      <Button href="#">View Project</Button>
+                    </div>
+                    <div data-grid-item="width: 4">
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
