@@ -3,8 +3,41 @@
   justify-content: center;
   li {
     margin: 0 @base-small-xx;
+    &:nth-child(2),
+    &:nth-child(3) {
+      a {
+        vertical-align: -1.45em;
+      }
+    }
   }
-  a {
+
+
+
+  svg {
+    width: 2.3em;
+    height: 2.3em;
     display: inline-block;
+    color: @t-base-color;
+    transition: color 0.3s;
+
+    &.icon-pdf {
+      color: darken(#FF3500, 6%);
+      &:hover {
+        color: darken(#FF3500, 9%);
+      }
+    }
+
+    &.icon-linkedin {
+      color: #0a66c2;
+    }
+    &.icon-linkedin:hover {
+      color: darken(#0a66c2, 5%);
+    }
+    &.icon-github {
+      color: #AC5C51;
+    }
+    &.icon-github:hover {
+      color: darken(#AC5C51, 5%);
+    }
   }
 }

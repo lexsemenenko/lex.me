@@ -6,7 +6,7 @@ const HomeContact = () => (
       <span>Contact</span>
     </h2>
     <div data-grid="columns: 12">
-      <div data-grid-item="width: 6">
+      <div data-grid-item="width: 6, offset: 3">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         <form name="contact" method="post">
           <input type="hidden" name="form-name" value="contact" />
@@ -23,7 +23,7 @@ const HomeContact = () => (
             <textarea name="message" id="message" />
           </div>
           <p>
-            <button type="submit">Send</button>
+            <button className="btn" type="submit">Send</button>
           </p>
         </form>
       </div>

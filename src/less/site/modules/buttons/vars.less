@@ -1,0 +1,18 @@
+@btn-border-radius: 0;
+@btn-brd-width: 1px;
+
+// Primary Button
+@btn-bg: tint(@color-gray-light, 40%);
+@btn-brd-color: darken(@btn-bg, 3%);
+@btn-txt-color: inherit;
+
+// Button Sizes
+@btn-txt-size: @t-small;
+@btn-height: @base-small - 2px;
+
+.hook--mix-btn() {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  transition: all 0.3s;
+  font-weight: 600;
+}

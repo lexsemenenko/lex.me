@@ -49,11 +49,6 @@ const Projects = () => {
   const paginate = pageNumber => setCurrentPage(pageNumber);
   return (
     <>
-      <Pagination
-        projectsPerPage={projectsPerPage}
-        totalProjects={state.length}
-        paginate={paginate}
-      />
       <div data-grid="columns: 12, gutters-row: true">
         {currentProjects.map((project, i) => {
           const uniqueKey = `project${i.toString()}`;
@@ -67,6 +62,11 @@ const Projects = () => {
           );
         })}
       </div>
+      <Pagination
+        projectsPerPage={projectsPerPage}
+        totalProjects={state.length}
+        paginate={paginate}
+      />
     </>
   );
 };

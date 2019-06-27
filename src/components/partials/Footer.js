@@ -8,16 +8,6 @@ import CollapsibleContent from '../elements/Collapsible/CollapsibleContent';
 const Footer = () => (
   <div className="section footer">
     <div className="group">
-      <StoreCollapsibles blockClass="menu-mobile">
-        <Collapsible id="id-1">
-          <CollapsibleToggle>Collapsible Toggle 1</CollapsibleToggle>
-          <CollapsibleContent>Collapsible Content1</CollapsibleContent>
-        </Collapsible>
-        <Collapsible id="id-2">
-          <CollapsibleToggle>Collapsible Toggle2</CollapsibleToggle>
-          <CollapsibleContent>Collapsible Content2</CollapsibleContent>
-        </Collapsible>
-      </StoreCollapsibles>
       <div data-grid="columns: 12">
         <div data-grid-item="width: 4, offset: 4">
           <div className="footer__logo">

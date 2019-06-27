@@ -12,23 +12,21 @@ const HomeAbout = () => {
       <div data-grid="columns: 12">
         <div data-grid-item="width: 8, offset: 2, width-large: 6, offset-large: 3">
           <p className="t-large t-center">
-            I am a Pittsburgh based <strong>Front-End </strong> &amp; Web{' '}
-            <strong>Developer</strong> by trade with perseverance, curiosity, a
-            growth mindset and a passion for emerging tech.
+            I am a Pittsburgh based <strong>Front-End Web Developer</strong> by trade with perseverance, curiosity, a growth mindset and a passion for emerging tech.
           </p>
           <ul className="social-list">
             <li>
-              <a href="http://www.linkedin.com/in/lexs/" target="_blank">
-                <Icon name="linkedin" fill="#0a66c2" size="2.7em"/>
-              </a>
+              <Button href="#" className="btn-icon"><Icon name="pdf" />Resume</Button>
             </li>
             <li>
               <a href="http://github.com/lexsemenenko" target="_blank">
-                <Icon name="github" fill="#24292e" size="2.7em"/>
+                <Icon name="github"/>
               </a>
             </li>
             <li>
-              <Button href="#">Resume</Button>
+              <a href="http://www.linkedin.com/in/lexs/" target="_blank">
+                <Icon name="linkedin"/>
+              </a>
             </li>
           </ul>
         </div>
