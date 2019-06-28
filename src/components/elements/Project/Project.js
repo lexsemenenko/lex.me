@@ -65,9 +65,9 @@ const Project = ({ project, open, closeAll }) => {
                   <div data-grid="columns: 12">
                     <div data-grid-item="width: 8">
                       <p>
-                        Project details coming soon...
+                        Project details coming soon... 
                       </p>
-                      <Button href="#">View Project</Button>
+                      <Button href="#" className="btn-icon-right">View Project<Icon name="link" /></Button>
                     </div>
                     <div data-grid-item="width: 4">
                     </div>
