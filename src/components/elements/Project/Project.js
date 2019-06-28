@@ -1,8 +1,8 @@
 import React from 'react';
-import Icon from '../Icons'
-import Button from '../Button'
+import Icon from '../Icons';
+import Button from '../Button';
 
-const Project = ({ project, open, closeAll }) => {
+const Project = ({project, open, closeAll}) => {
   const {
     company,
     content,
@@ -37,7 +37,7 @@ const Project = ({ project, open, closeAll }) => {
           </span>
           <span className="project__icon">
             <span className="hide-v">Open</span>
-            <Icon name="arrow-right" size="1.8em"/>
+            <Icon name="arrow-right" size="1.8em" />
           </span>
         </button>
 
@@ -57,20 +57,20 @@ const Project = ({ project, open, closeAll }) => {
                       closeAll(e);
                     }}
                   >
-                    <Icon name="close"/>
+                    <Icon name="close" />
                     <span className="hide-v">Close Project</span>
                   </button>
                 </div>
                 <div className="scroll-projects__body">
                   <div data-grid="columns: 12">
                     <div data-grid-item="width: 8">
-                      <p>
-                        Project details coming soon... 
-                      </p>
-                      <Button href="#" className="btn-icon-right">View Project<Icon name="link" /></Button>
+                      <p>Project details coming soon...</p>
+                      <Button href="#" className="btn-icon-right">
+                        View Project
+                        <Icon name="link" />
+                      </Button>
                     </div>
-                    <div data-grid-item="width: 4">
-                    </div>
+                    <div data-grid-item="width: 4" />
                   </div>
                 </div>
               </div>

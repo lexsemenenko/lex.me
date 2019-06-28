@@ -1,9 +1,5 @@
 {
-  "extends": [
-    "airbnb",
-    "prettier",
-    "prettier/react"
-  ],
+  "extends": ["airbnb", "prettier", "prettier/react"],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2018
@@ -15,14 +11,8 @@
     "jest": true
   },
   "rules": {
-    "semi": [
-      "error",
-      "always"
-    ],
-    "comma-dangle": [
-      "error",
-      "never"
-    ],
+    "semi": ["error", "always"],
+    "comma-dangle": ["error", "never"],
     "no-debugger": 0,
     "no-console": 0,
     "space-before-function-paren": 0,
@@ -33,14 +23,10 @@
         "args": "none"
       }
     ],
-    "__COMMENT": "React: Allow JSX in any file types",
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
+        "extensions": [".js", ".jsx"]
       }
     ],
     "quotes": [
@@ -58,13 +44,9 @@
         "singleQuote": true,
         "printWidth": 80,
         "tabWidth": 2,
-        "useTabs": false,
+        "useTabs": false
       }
     ]
   },
-  "plugins": [
-    "html",
-    "prettier",
-    "react-hooks"
-  ]
+  "plugins": ["prettier", "react-hooks"]
 }

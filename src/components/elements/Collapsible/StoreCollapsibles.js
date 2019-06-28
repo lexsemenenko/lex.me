@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useEffect } from 'react';
+import React, {createContext, useReducer} from 'react';
 import Collapsible from './Collapsible';
 
 // Create Context
@@ -14,10 +14,10 @@ function reducerCollapsibles(state, action) {
 }
 
 const StoreCollapsibles = props => {
-  const { children, blockClass } = props;
+  const {children, blockClass} = props;
 
-  const initialState = children.map(({ props }, index) => {
-    const { id } = props;
+  const initialState = children.map(({props}, index) => {
+    const {id} = props;
     return {
       id,
       isActive: false

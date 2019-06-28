@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from 'react';
+import React, {createContext, useReducer} from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import DropdownToggle from './DropdownToggle';
@@ -16,7 +16,7 @@ function reducer(state, action) {
   }
 }
 
-const Dropdown = ({ children, blockClass }) => {
+const Dropdown = ({children, blockClass}) => {
   const initialState = {
     isActive: false
   };
@@ -27,11 +27,12 @@ const Dropdown = ({ children, blockClass }) => {
     <contextDropdown.Provider value={[state, dispatch]}>
       <div className={classNames(blockClass, toggleClass)}>
         {children.map((item, i) => {
+          const uniqueKey = `key${i}`;
           if (i === 0) {
             return (
               <DropdownToggle
                 classes={classNames(`${blockClass}__toggle`, toggleClass)}
-                key={`key${i}`}
+                key={uniqueKey}
               >
                 {item.props.children}
               </DropdownToggle>
@@ -40,7 +41,7 @@ const Dropdown = ({ children, blockClass }) => {
           if (i === 1) {
             return (
               <DropdownContent
-                key={`key${i}`}
+                key={uniqueKey}
                 classes={classNames(`${blockClass}__content`, toggleClass)}
               >
                 {item.props.children}

@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from 'react';
+import React, {useEffect, useReducer} from 'react';
 import reducerUi from '../redicers/reducerUi';
 import HomeHero from './pageHome/HomeHero';
 import HomeAbout from './pageHome/HomeAbout';
@@ -14,14 +14,14 @@ const pageHome = () => {
   const [stateSpSections, dispatchUi] = useReducer(reducerUi, []);
 
   const pageSections = [
-    { id: 'intro', title: 'Intro', classes: 'intro' },
-    { id: 'about', title: 'About', classes: 'about' },
+    {id: 'intro', title: 'Intro', classes: 'intro'},
+    {id: 'about', title: 'About', classes: 'about'},
     {
       id: 'projects',
       title: 'Projects',
       classes: 'projects'
     },
-    { id: 'contact', title: 'Contact', classes: 'contact' }
+    {id: 'contact', title: 'Contact', classes: 'contact'}
   ];
 
   const getSp = () => {
@@ -50,13 +50,19 @@ const pageHome = () => {
   }, []);
 
   return (
-    <contextUi.Provider value={{ stateSpSections, dispatchUi }}>
+    <contextUi.Provider value={{stateSpSections, dispatchUi}}>
       <Header />
-      {pageSections.map(({ id, title, classes }, i) => {
+      {pageSections.map(({id, title, classes}, i) => {
         const spActiveClass =
-          stateSpSections.length && stateSpSections[i].isActive && ' active';
+          stateSpSections.length && stateSpSections[i].isActive
+            ? ' active'
+            : '';
         return (
-          <div id={id} key={id} className={`section ${classes} scrollpoint`}>
+          <div
+            id={id}
+            key={id}
+            className={`section ${classes} ${spActiveClass} scrollpoint`}
+          >
             {id === 'intro' && <HomeHero />}
             {id === 'about' && <HomeAbout />}
             {id === 'projects' && <HomeProjects />}

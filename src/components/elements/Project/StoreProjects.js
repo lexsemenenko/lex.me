@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from 'react';
+import React, {createContext, useReducer} from 'react';
 import projectsData from './projectsData.json';
 
 export const contextProjects = createContext({});
@@ -21,7 +21,7 @@ function reducer(state, action) {
   }
 }
 
-const StoreProjects = ({ children }) => {
+const StoreProjects = ({children}) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <contextProjects.Provider value={[state, dispatch]}>

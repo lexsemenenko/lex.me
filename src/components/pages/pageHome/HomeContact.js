@@ -10,26 +10,42 @@ const HomeContact = () => (
       <div data-grid-item="width: 3, offset: 2">
         <ul className="list-plain">
           <li>
-            <a className="t-large" href="mailto:lex@lex.me">lex@lex.me</a>
+            <a className="t-large" href="mailto:lex@lex.me">
+              lex@lex.me
+            </a>
           </li>
           <li>
-            <a className="t-large" href="tel:1-412-328-1034">(412) 328-1034</a> 
+            <a className="t-large" href="tel:1-412-328-1034">
+              (412) 328-1034
+            </a>
           </li>
           <li>
             <ul className="social-list ">
               <li>
-                <a href="http://www.linkedin.com/in/lexs/" target="_blank">
-                  <Icon name="linkedin"/>
+                <a
+                  href="http://www.linkedin.com/in/lexs/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon name="linkedin" />
                 </a>
               </li>
               <li>
-                <a href="http://github.com/lexsemenenko" target="_blank">
-                  <Icon name="github"/>
+                <a
+                  href="http://github.com/lexsemenenko"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon name="github" />
                 </a>
               </li>
               <li>
-                <a href="https://www.facebook.com/lex.semenenko" target="_blank">
-                  <Icon name="facebook"/>
+                <a
+                  href="https://www.facebook.com/lex.semenenko"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon name="facebook" />
                 </a>
               </li>
             </ul>
@@ -42,7 +58,7 @@ const HomeContact = () => (
           <input type="hidden" name="form-name" value="contact" />
           <div className="form-item">
             <label htmlFor="name">Name</label>
-            <input name="name" id="name" type="text" defaultValue="" />
+            <input name="name" type="text" defaultValue="" />
           </div>
           <div className="form-item">
             <label htmlFor="email">Email</label>
@@ -53,7 +69,9 @@ const HomeContact = () => (
             <textarea name="message" id="message" cols="50" />
           </div>
           <p>
-            <button className="btn btn-accent" type="submit">Send</button>
+            <button className="btn btn-accent" type="submit">
+              Send
+            </button>
           </p>
         </form>
       </div>

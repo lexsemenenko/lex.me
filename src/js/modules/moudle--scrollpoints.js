@@ -27,7 +27,8 @@ const scrollpoints = function(instanceSettings) {
       // Sizes, offsetsconst triggerMatching = spTouchesTrigger && spNotPassedTrigger;
       let elementOuterHeight;
       if (elementOffset) {
-        elementOuterHeight = document.getElementById(elementOffset).offsetHeight;
+        elementOuterHeight = document.getElementById(elementOffset)
+          .offsetHeight;
       }
 
       const totalOffset = elementOuterHeight || offset;
@@ -50,7 +51,9 @@ const scrollpoints = function(instanceSettings) {
       }
       let elementTrigger;
       if (debug) {
-        elementTrigger = document.getElementsByClassName('scrollpoint__trigger');
+        elementTrigger = document.getElementsByClassName(
+          'scrollpoint__trigger'
+        );
         if (elementTrigger) {
           // const trigger = amountScrolled + trigger
           elementTrigger[0].style.top = `${trigger}px`;

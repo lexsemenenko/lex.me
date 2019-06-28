@@ -2,14 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const Button = ({
-  children,
-  onClick,
-  className,
-  disabled,
-  active,
-  ...attrs
-}) => {
+const Button = ({children, onClick, className, disabled, active, ...attrs}) => {
   const onClickAction = e => {
     if (disabled) {
       e.preventDefault();
@@ -18,7 +11,7 @@ const Button = ({
     }
   };
 
-  const classes = classNames('btn', className, { active });
+  const classes = classNames('btn', className, {active});
 
   const Tag = attrs.href ? 'a' : 'button';
 

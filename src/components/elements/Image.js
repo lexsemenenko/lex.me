@@ -2,13 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const Image = ({ src, alt, className, width, height, circle, ...attrs }) => {
-  const classes = classNames(className, { circle });
-
-  if (!src) {
-    src = `https://via.placeholder.com/${width}x${height}`;
-  }
-
+const Image = ({src, alt, className, width, height, circle, ...attrs}) => {
+  const classes = classNames(className, {circle});
   return <img src={src} alt={alt} className={classes} {...attrs} />;
 };
 
@@ -22,7 +17,7 @@ Image.propTypes = {
 };
 
 Image.defaultProps = {
-  src: '',
+  src: ``,
   alt: 'image',
   width: 640,
   height: 360,

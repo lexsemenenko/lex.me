@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CollapsibleToggle = ({ children, id, toggle }) => {
+const CollapsibleToggle = ({children, id, toggle}) => {
   return (
     <button
       className="collapsible__toggle"

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
-const Pagination = ({ projectsPerPage, totalProjects, paginate }) => {
+const Pagination = ({projectsPerPage, totalProjects, paginate}) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalProjects / projectsPerPage); i++) {
-    pageNumbers.push({ number: i, isActive: false });
+    pageNumbers.push({number: i, isActive: false});
     pageNumbers[0].isActive = true;
   }
 
@@ -13,15 +13,15 @@ const Pagination = ({ projectsPerPage, totalProjects, paginate }) => {
     setState(
       state.map((item, i) => {
         if (i === num - 1) {
-          return { number: i + 1, isActive: true };
+          return {number: i + 1, isActive: true};
         }
-        return { number: i + 1, isActive: false };
+        return {number: i + 1, isActive: false};
       })
     );
   };
   return (
     <ul className="pagination">
-      {state.map(({ number, isActive }) => (
+      {state.map(({number, isActive}) => (
         <li
           key={number}
           className={`pagination__item ${isActive ? 'active' : ''}`}

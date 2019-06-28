@@ -1,11 +1,10 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import contextUi from '../context/contextUi';
 import anchorsScroll from '../../js/modules/module--anchorsScroll';
 
-const MenuScroll = ({ className }) => {
-  const { stateSpSections } = useContext(contextUi);
+const MenuScroll = ({className}) => {
+  const {stateSpSections} = useContext(contextUi);
 
-  // Smooth scroll for the menu links
   useEffect(() => {
     anchorsScroll({
       element: `.${className} a`,
@@ -17,7 +16,7 @@ const MenuScroll = ({ className }) => {
 
   return (
     <ul className={className}>
-      {stateSpSections.map(({ id, isActive }) => {
+      {stateSpSections.map(({id, isActive}) => {
         let title;
         id === 'intro' && (title = 'Intro');
         id === 'about' && (title = 'About');

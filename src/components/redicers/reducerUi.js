@@ -7,4 +7,4 @@ const reducerUi = (state, action) => {
   }
 };
 
-export { reducerUi as default };
+export {reducerUi as default};

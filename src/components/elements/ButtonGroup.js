@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const ButtonGroup = ({ children, className, vertical, ...attrs }) => {
-  const classes = classNames('btn-group', className, { vertical });
+const ButtonGroup = ({children, className, vertical, ...attrs}) => {
+  const classes = classNames('btn-group', className, {vertical});
 
   return (
     <div className={classes} {...attrs}>
