@@ -14,14 +14,14 @@ const pageHome = () => {
   const [stateSpSections, dispatchUi] = useReducer(reducerUi, []);
 
   const pageSections = [
-    { id: 'intro', title: 'Intro', classes: 'section--hero' },
-    { id: 'about', title: 'About', classes: 'section--lines' },
+    { id: 'intro', title: 'Intro', classes: 'intro' },
+    { id: 'about', title: 'About', classes: 'about' },
     {
       id: 'projects',
       title: 'Projects',
-      classes: 'section--lines section--muted'
+      classes: 'projects'
     },
-    { id: 'contact', title: 'Contact', classes: 'section--lines-dark' }
+    { id: 'contact', title: 'Contact', classes: 'contact' }
   ];
 
   const getSp = () => {

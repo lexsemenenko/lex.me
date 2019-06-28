@@ -91,6 +91,11 @@ const printSVGinner = (passedName) => {
         </g>
       )
       break;
+    case "facebook":
+      return (
+        <path d="M231 2h37l3 1a246 246 0 0 1 229 230l-1 38-3 21a246 246 0 0 1-178 199l-29 7V323h58l11-72h-68v-54c1-18 13-29 31-30l26-1h14v-62c-25-3-50-7-76-3-27 4-49 17-62 42-8 15-12 31-12 48v60h-63v72h63v174h-2A246 246 0 0 1 5 295l-4-24-1-20 2-22A246 246 0 0 1 207 6l24-4z"/>
+      )
+      break;
     default:
       return (
         <div>

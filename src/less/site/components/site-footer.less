@@ -1,6 +1,5 @@
 .footer {
-  // background-color: white;
-  @section-base();
+  @section-padding-base();
   background-color: @color-black-3;
   min-height: 20em;
   background-image: url('/images/section--lines.svg');
@@ -10,7 +9,7 @@
     margin: 0 auto;
     width: 423px / 7;
     svg {
-      fill: @color-gray-dark;
+      fill: lighten(@color-gray-dark, 15%);
     }
   }
 }

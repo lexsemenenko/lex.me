@@ -1,75 +1,49 @@
-@section-base-padding-v: @base-large*3;
 
 
-@section-base: {
-  padding-top: @section-base-padding-v;
-  padding-bottom: @section-base-padding-v;
-}
-
-@section-small: {
-  padding-top: @base-large;
-  padding-bottom: @base-large;
-}
-
-@section-large: {
-  padding-top: @base-large-xx * 2;
-  padding-bottom: @base-large-xx * 2;
+@section-padding-base: {
+  padding-top: @base-large*3;
+  padding-bottom: @base-large*3;
+  @media @break-primary {
+    padding-bottom: @base-large*3;
+  }
 }
 
 @section-hero-bg: {
   background: linear-gradient(120deg, lighten(#e1f0fb, 2%) 50%, lighten(#e1f0fb, 0%) 50%);
 }
 
-.section--hero {
-  // background-color: rgb(20, 20, 20);
-  background-color: @color-gray-dark;
-}
+// Modifiers
+// =============================================================================
 
-.section--lines {
-  @section-base();
-  background: #ffffff;
-  background-image: url('/images/section--lines.svg');
-  background-position-x: 50%;
-  background-repeat: repeat-y;
-}
+.section {
+  &.intro {
+    background-color: @color-gray-dark;
+  }
+  &.about {
+    background: white url('/images/section--lines.svg') repeat-y center;
+    @section-padding-base();
+  }
+  &.projects {
+    background: #f8f8f8 url('/images/section--lines.svg') repeat-y center;
+    @section-padding-base();
+  }
+  &.contact {
+    background: @color-gray-dark url('/images/section--lines-dark.svg') repeat-y center;
+    @section-padding-base();
+    color: @color-gray;
 
-.section--lines-dark {
-  @section-base();
-  background: @color-gray-dark;
-  background-image: url('/images/section--lines-dark.svg');
-  background-position-x: 50%;
-  background-repeat: repeat-y;
-  color: rgba(255, 255, 255, .6);
-
-  h2,
-  h3 {
-    color: white;
-
-    &:after {
-      opacity: 0.2;
+    a {
+      color: white;
+      &:hover {
+        color: white;
+      }
     }
   }
 }
 
-.section--content {
-  @section-small();
-  background: #ffffff;
-}
 
-.section--muted {
-  background-color: #f8f8f8;
-}
-
-.section--page-title {
-  @section-small();
-  background-color: lighten(#e1f0fb, 2%);
-
-  h1,
-  h2 {
-    .t-semibold;
-    margin-bottom: 0;
-  }
-}
+// Elements
+// =============================================================================
 
 .section__title {
   text-align: center;

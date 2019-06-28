@@ -16,19 +16,6 @@
 // @t-small-x:                   11px;
 // @t-small-x-lh:                @t-base-lh;
 
-#COLOR.set(@color-bg: F,
-  @color-border: F,
-  @color-text: T,
-  @color-icon: F,
-  @color-name: -blue,
-  @color-value: @color-blue);
-
-#COLOR.set(@color-bg: F,
-  @color-border: F,
-  @color-text: T,
-  @color-icon: F,
-  @color-name: -blue-dark,
-  @color-value: @color-blue-dark);
 
 #JS.breakpoint(@element: 'body',
   @breakpoint: ~"screen",
@@ -48,6 +35,13 @@
 // Site Specific
 // =============================================================================
 
+#COLOR.set(@color-bg: F,
+  @color-border: F,
+  @color-text: T,
+  @color-icon: F,
+  @color-name: -gray,
+  @color-value: @color-gray);
+
 @g-border-radius: 6px;
 @section-padding-v: 30px;
 @section-padding-v-small: 20px;
@@ -61,3 +55,7 @@
 @color-gray-dark-x: tint(darken(@color-gray-dark, 3%), 1%);
 @color-gray: #9da7b3;
 @color-gray-light: tint(@color-gray, 70%);
+
+
+
+// t-gray

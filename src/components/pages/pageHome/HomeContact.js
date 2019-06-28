@@ -1,13 +1,43 @@
 import React from 'react';
+import Icon from '../../elements/Icons';
 
 const HomeContact = () => (
-  <div className="group">
+  <div className="group contact">
     <h2 className="section__title">
       <span>Contact</span>
     </h2>
     <div data-grid="columns: 12">
-      <div data-grid-item="width: 6, offset: 3">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <div data-grid-item="width: 3, offset: 2">
+        <ul className="list-plain">
+          <li>
+            <a className="t-large" href="mailto:lex@lex.me">lex@lex.me</a>
+          </li>
+          <li>
+            <a className="t-large" href="tel:1-412-328-1034">(412) 328-1034</a> 
+          </li>
+          <li>
+            <ul className="social-list ">
+              <li>
+                <a href="http://www.linkedin.com/in/lexs/" target="_blank">
+                  <Icon name="linkedin"/>
+                </a>
+              </li>
+              <li>
+                <a href="http://github.com/lexsemenenko" target="_blank">
+                  <Icon name="github"/>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/lex.semenenko" target="_blank">
+                  <Icon name="facebook"/>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div data-grid-item="width: 5">
+        <p>Or, reach out using the form below.</p>
         <form name="contact" method="post">
           <input type="hidden" name="form-name" value="contact" />
           <div className="form-item">
@@ -23,7 +53,7 @@ const HomeContact = () => (
             <textarea name="message" id="message" />
           </div>
           <p>
-            <button className="btn" type="submit">Send</button>
+            <button className="btn btn-accent" type="submit">Send</button>
           </p>
         </form>
       </div>
