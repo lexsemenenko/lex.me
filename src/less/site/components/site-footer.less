@@ -1,15 +1,9 @@
 .footer {
   @section-padding-base();
-  background-color: @color-black-3;
+  background: @color-black-3 url('/images/section--lines.svg') center repeat-y;
+  text-align: center;
   min-height: 20em;
-  background-image: url('/images/section--lines.svg');
-  background-position-x: 50%;
-  background-repeat: repeat-y;
-  &__logo {
-    margin: 0 auto;
-    width: 423px / 7;
-    svg {
-      fill: lighten(@color-gray-dark, 15%);
-    }
+  svg {
+    fill: lighten(@color-gray-dark, 15%);
   }
 }

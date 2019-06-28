@@ -50,7 +50,7 @@ const HomeContact = () => (
           </div>
           <div className="form-item">
             <label htmlFor="message">Your Message</label>
-            <textarea name="message" id="message" />
+            <textarea name="message" id="message" cols="50" />
           </div>
           <p>
             <button className="btn btn-accent" type="submit">Send</button>
