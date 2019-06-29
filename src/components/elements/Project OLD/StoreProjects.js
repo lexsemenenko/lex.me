@@ -11,6 +11,7 @@ const initialState = projectsData.map(item => {
 });
 
 function reducer(state, action) {
+  console.log(state);
   switch (action.type) {
     case 'OPEN_PROJECT':
       return action.newState;

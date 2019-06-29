@@ -1,6 +1,5 @@
 import React from 'react';
-import StoreProjects from '../../elements/Project/StoreProjects';
-import Projects from '../../elements/Project/Projects';
+import Collapsible from '../../elements/Project/Collapsible';;
 
 const HomeProjects = () => {
   return (
@@ -8,9 +7,16 @@ const HomeProjects = () => {
       <h2 className="section__title">
         <span>Projects</span>
       </h2>
-      <StoreProjects>
-        <Projects />
-      </StoreProjects>
+      {/* <Collapsible>
+        <CollapsibleToggle>One Toggle</CollapsibleToggle>
+        <CollapsibleContent>One Contnet</CollapsibleContent>
+
+        <CollapsibleToggle>Two Toggle</CollapsibleToggle>
+        <CollapsibleContent>Two Contnet</CollapsibleContent>
+
+        <CollapsibleToggle>Three Toggle</CollapsibleToggle>
+        <CollapsibleContent>Three Contnet</CollapsibleContent>
+      <CollapsibleList/> */}
     </div>
   );
 };

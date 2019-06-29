@@ -5,7 +5,6 @@
     "id": "cybercrimePreventionWorkbook",
     "image": "project--cybercrimePreventionWorkbook.jpg",
     "content": "Content goes here and can be long. Possibly markdown or HTML.",
-    "description": "Project Description",
     "link": "http://www.combattingcybercrime.org"
   },
   {
@@ -14,7 +13,6 @@
     "id": "cgapDigitalAnnualReport",
     "image": "placeholder--project-2.jpg",
     "content": "Content here 1",
-    "description": "Project completed at Informatics Studio. Front-End & Static Site Generator development.",
     "link": "http://www.combattingcybercrime.org"
   },
   {
@@ -23,7 +21,6 @@
     "id": "projectThree",
     "image": "placeholder--project-2.jpg",
     "content": "Content goes here and can be long. Possibly markdown or HTML.",
-    "description": "Project Description",
     "link": "http://google.com"
   },
   {
@@ -32,7 +29,6 @@
     "image": "project—hssc.jpg",
     "content": "Content goes here and can be long. Possibly markdown or HTML.",
     "company": "Company Name",
-    "description": "Project Description",
     "link": "http://google.com"
   },
   {
@@ -41,7 +37,6 @@
     "image": "placeholder--project-2.jpg",
     "content": "Content goes here and can be long. Possibly markdown or HTML.",
     "company": "Company Name",
-    "description": "Project Description",
     "link": "http://google.com"
   },
   {
@@ -50,7 +45,6 @@
     "image": "placeholder--project-2.jpg",
     "content": "Content goes here and can be long. Possibly markdown or HTML.",
     "company": "Company Name",
-    "description": "Project Description",
     "link": "http://google.com"
   },
   {
@@ -59,7 +53,6 @@
     "image": "placeholder--project-2.jpg",
     "content": "Content goes here and can be long. Possibly markdown or HTML.",
     "company": "Company Name",
-    "description": "Project Description",
     "link": "http://google.com"
   },
   {
@@ -68,7 +61,6 @@
     "image": "placeholder--project-2.jpg",
     "content": "Content goes here and can be long. Possibly markdown or HTML.",
     "company": "Company Name",
-    "description": "Project Description",
     "link": "http://google.com"
   },
   {
@@ -77,7 +69,6 @@
     "image": "placeholder--project-2.jpg",
     "content": "Content goes here and can be long. Possibly markdown or HTML.",
     "company": "Company Name",
-    "description": "Project Description",
     "link": "http://google.com"
   },
   {
@@ -86,7 +77,6 @@
     "image": "placeholder--project-2.jpg",
     "content": "Content goes here and can be long. Possibly markdown or HTML.",
     "company": "Company Name",
-    "description": "Project Description",
     "link": "http://google.com"
   }
 ]
