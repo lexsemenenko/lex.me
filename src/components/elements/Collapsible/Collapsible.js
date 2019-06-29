@@ -37,13 +37,13 @@ const Collapsible = ({children}) => {
           <div className={classes} key={uniqueKey}>
             {props.children.map((itemChild, j) => {
               const uniqueKey2 = `collapsible${id}-${j}`;
-              if (i === 0)
+              if (j === 0)
                 return (
                   <CollapsibleToggle toggle={toggle} id={id} key={uniqueKey2}>
                     {itemChild.props.children}
                   </CollapsibleToggle>
                 );
-              if (i === 1)
+              if (j === 1)
                 return (
                   <CollapsibleContent id={id} key={uniqueKey2}>
                     {itemChild.props.children}
