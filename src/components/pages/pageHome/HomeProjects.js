@@ -7,7 +7,6 @@ const HomeProjects = () => {
       <h2 className="section__title">
         <span>Projects</span>
       </h2>
-
       <StoreContentful />
     </div>
   );

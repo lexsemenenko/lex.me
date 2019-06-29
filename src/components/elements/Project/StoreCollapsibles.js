@@ -16,13 +16,16 @@ function reducerCollapsibles(state, action) {
 const StoreCollapsibles = props => {
   const {children, blockClass} = props;
 
-  const initialState = children.map(({props}, index) => {
-    const {id} = props;
-    return {
-      id,
-      isActive: false
-    };
-  });
+  // const initialState = children.map(({props}, index) => {
+  //   const {id} = props;
+  //   return {
+  //     id,
+  //     isActive: false
+  //   };
+  // });
+
+  // temp
+  const initialState = [];
 
   const [stateCollapsibles, dispatchCollapsibles] = useReducer(
     reducerCollapsibles,

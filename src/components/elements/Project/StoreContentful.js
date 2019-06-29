@@ -11,26 +11,29 @@ const StoreContentful = props => {
   const {children} = props;
 
   const [stateProjects, setProjects] = useState({projects: []});
+  const {projects} = stateProjects;
 
   // Component Did Mount
   useEffect(() => {
-    ContentfulClient.getEntries().then(entries => {
+    ContentfulClient.getEntries({
+      content_type: 'project'
+    }).then(entries => {
       setProjects({projects: entries.items});
     });
   }, []);
 
   return (
     <contextContentful.Provider value={stateProjects}>
-      <StoreCollapsibles blockClass="project">
-        <Collapsible id="id-1">
-          <CollapsibleToggle>Collapsible Toggle 1</CollapsibleToggle>
-          <CollapsibleContent>Collapsible Content1</CollapsibleContent>
-        </Collapsible>
-        <Collapsible id="id-2">
-          <CollapsibleToggle>Collapsible Toggle2</CollapsibleToggle>
-          <CollapsibleContent>Collapsible Content2</CollapsibleContent>
-        </Collapsible>
-      </StoreCollapsibles>
+      <>
+        <ul>
+          {projects.map(item => (
+            <li key={item.sys.id}>
+              {}
+              <div>{item.fields.projectTitle}</div>
+            </li>
+          ))}
+        </ul>
+      </>
     </contextContentful.Provider>
   );
 };
