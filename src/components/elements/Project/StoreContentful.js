@@ -8,8 +8,6 @@ export const contextProjectsToggle = createContext({});
 
 export const reducerProjectsToggle = (state, action) => {
   switch (action.type) {
-    case 'INIT':
-      return action.initialState;
     case 'TOGGLE':
       return action.newState;
     default:
@@ -24,7 +22,7 @@ const StoreContentful = () => {
 
   const [stateProjectsToggle, dispatchProjectsToggle] = useReducer(
     reducerProjectsToggle,
-    []
+    {activeID: null}
   );
 
   // Pagination
@@ -36,7 +34,8 @@ const StoreContentful = () => {
   const projectsPaged = projectsArr => {
     const indexOfLastProject = currentPage * projectsPerPage;
     const indexOfFirstProject = indexOfLastProject - projectsPerPage;
-    return projectsArr.slice(indexOfFirstProject, indexOfLastProject);
+    const filtered = projectsArr.slice(indexOfFirstProject, indexOfLastProject);
+    return filtered;
   };
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
@@ -47,22 +46,7 @@ const StoreContentful = () => {
     ContentfulClient.getEntries({
       content_type: 'project'
     }).then(entries => {
-      // Setup Projects State
       setProjects({projects: entries.items});
-
-      // Setup Toggle State
-      const initialState = entries.items.map((item, index) => {
-        const {id} = item.sys;
-        return {
-          id,
-          isActive: false
-        };
-      });
-
-      dispatchProjectsToggle({
-        type: 'INIT',
-        initialState
-      });
     });
   }, []);
 
@@ -75,17 +59,15 @@ const StoreContentful = () => {
           <>
             {projectsPaged(projects).map(({sys, fields}, i) => {
               const {id} = sys;
-              if (stateProjectsToggle[i]) {
-                const {isActive} = stateProjectsToggle[i];
-                return (
-                  <Project
-                    key={id}
-                    id={id}
-                    fields={fields}
-                    isActive={isActive}
-                  />
-                );
+              let isActive = false;
+
+              if (stateProjectsToggle.activeID == id) {
+                isActive = true;
               }
+
+              return (
+                <Project key={id} id={id} fields={fields} isActive={isActive} />
+              );
             })}
           </>
         ) : (

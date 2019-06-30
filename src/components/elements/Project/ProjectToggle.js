@@ -9,18 +9,9 @@ const ProjectToggle = ({id, fields, toggleClass}) => {
   const [state, dispatch] = useContext(contextProjectsToggle);
 
   const toggle = clickedID => {
-    const newState = state.map(item => {
-      if (item.id === clickedID) {
-        if (!item.isActive) {
-          return {...item, ...{isActive: true}};
-        }
-        return {...item, ...{isActive: false}};
-      }
-      return item;
-    });
     dispatch({
       type: 'TOGGLE',
-      newState
+      newState: {activeID: clickedID}
     });
   };
 
@@ -35,7 +26,6 @@ const ProjectToggle = ({id, fields, toggleClass}) => {
         toggle(id);
       }}
     >
-      <div>{projectTitle}</div>
       <span className="project__toggle-text">
         <span>{projectCompany}</span>
         <span>{projectTitle}</span>

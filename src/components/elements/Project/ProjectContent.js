@@ -10,17 +10,9 @@ const ProjectContent = ({id, fields, toggleClass}) => {
   const [state, dispatch] = useContext(contextProjectsToggle);
 
   const close = clickedID => {
-    const newState = state.map(item => {
-      if (item.id === clickedID) {
-        if (item.isActive) {
-          return {...item, ...{isActive: false}};
-        }
-      }
-      return item;
-    });
     dispatch({
       type: 'TOGGLE',
-      newState
+      newState: {activeID: false}
     });
   };
 
@@ -52,10 +44,19 @@ const ProjectContent = ({id, fields, toggleClass}) => {
             <div className="scroll-projects__body">
               <div data-grid="columns: 12">
                 <div data-grid-item="width: 8">
-                  <div
-                    className="wysiwyg"
-                    dangerouslySetInnerHTML={getParsedMarkdown(projectMarkdown)}
-                  />
+                  {projectMarkdown ? (
+                    <div
+                      className="wysiwyg"
+                      dangerouslySetInnerHTML={getParsedMarkdown(
+                        projectMarkdown
+                      )}
+                    />
+                  ) : (
+                    <div className="wysiwyg">
+                      <p>Project details are coming soon.</p>
+                    </div>
+                  )}
+
                   <Button href="#" className="btn-icon-right">
                     View Project
                     <Icon name="link" />
