@@ -1,13 +1,17 @@
-import React, {useEffect, useState, useContext} from 'react';
+import React, {useEffect, useContext} from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import contextUi from '../context/contextUi';
 import anchorsScroll from '../../js/modules/module--anchorsScroll';
 
 const MenuScroll = ({className}) => {
   const {stateSpSections} = useContext(contextUi);
 
+  const classes = classNames(className);
+
   useEffect(() => {
     anchorsScroll({
-      element: `.${className} a`,
+      element: `.${classes} a`,
       offset: 0,
       // offsetElement: '#header',
       offsetNudge: 0
@@ -15,7 +19,7 @@ const MenuScroll = ({className}) => {
   });
 
   return (
-    <ul className={className}>
+    <ul className={classes}>
       {stateSpSections.map(({id, isActive}) => {
         let title;
         id === 'intro' && (title = 'Intro');
@@ -32,6 +36,14 @@ const MenuScroll = ({className}) => {
       })}
     </ul>
   );
+};
+
+MenuScroll.propTypes = {
+  className: PropTypes.string
+};
+
+MenuScroll.defaultProps = {
+  className: ''
 };
 
 export default MenuScroll;

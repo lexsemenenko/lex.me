@@ -6,7 +6,7 @@ import Image from '../elements/Image';
 import MenuScroll from './MenuScroll';
 
 const Header = () => (
-  <div id="header" className="section header scrollpoint-header">
+  <header id="header" className="section header scrollpoint-header">
     <div className="header__logo">
       <a href="/">
         <Image src="/images/lex-logo.svg" />
@@ -24,7 +24,7 @@ const Header = () => (
         <MenuScroll className="menu-scroll-mobile" />
       </DropdownContent>
     </Dropdown>
-  </div>
+  </header>
 );
 
 export default Header;

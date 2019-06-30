@@ -44,13 +44,13 @@ const HomeHero = () => {
           </a>
         </div>
         <div className="hero__menu">
-          <div
+          <nav
             id="menu"
             className={`scrollpoint--menu ${stateMenuSticky[0].isActive &&
               'active'}`}
           >
             <MenuScroll className="menu-scroll" />
-          </div>
+          </nav>
         </div>
       </div>
     </div>

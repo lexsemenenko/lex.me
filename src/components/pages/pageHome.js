@@ -58,7 +58,7 @@ const pageHome = () => {
             ? ' active'
             : '';
         return (
-          <div
+          <section
             id={id}
             key={id}
             className={`section ${classes} ${spActiveClass} scrollpoint`}
@@ -67,7 +67,7 @@ const pageHome = () => {
             {id === 'about' && <HomeAbout />}
             {id === 'projects' && <HomeProjects />}
             {id === 'contact' && <HomeContact />}
-          </div>
+          </section>
         );
       })}
       <Footer />
