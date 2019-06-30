@@ -26,8 +26,10 @@
     // background: rgba(220, 65, 51, .75);
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-size: 102%;
+    outline: none;
 
     &:before {
       background: rgba(42, 47, 54, 0.9);
@@ -103,6 +105,7 @@
   top: 50%;
   transform: translateY(-50%);
   color: @color-accent;
+
   svg {
     height: 1.5em;
     width: 1.5em;
@@ -123,11 +126,13 @@
   right: @base-medium;
   padding-right: 1.5em;
   line-height: 1.2em;
+
   // color: darken(@color-gray-light, 20%);
   strong {
     font-size: 18px;
     display: block;
   }
+
   span {
     .t-detail;
     display: block;

@@ -10,8 +10,9 @@
 
 .hero__arrow {
   color: @color-accent;
-  display: block;
+  display: inline-block;
   margin-top: @element-margin;
+
   &:hover {
     color: @color-accent--hover;
   }
@@ -27,11 +28,16 @@
   color: white;
 
   h1 {
+    .h1;
+    .t-bold;
     color: white;
   }
 
   strong {
+    .h2;
+    .t-normal;
     color: white;
+    display: block;
   }
 
   @media (max-width: 1020px) {
