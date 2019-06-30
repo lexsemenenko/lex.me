@@ -25,7 +25,6 @@ const ProjectContent = ({id, fields, toggleClass}) => {
   };
 
   const getParsedMarkdown = field => {
-    console.log(projectMarkdown);
     return {__html: marked(field, {sanitize: true})};
   };
 
