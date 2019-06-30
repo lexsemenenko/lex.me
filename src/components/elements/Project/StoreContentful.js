@@ -1,6 +1,7 @@
 import React, {useState, useEffect, createContext, useReducer} from 'react';
 import ContentfulClient from './ContentfulClient';
 import Project from './Project';
+import Pagination from './Pagination';
 
 // Create Context
 export const contextProjectsToggle = createContext({});
@@ -19,11 +20,27 @@ export const reducerProjectsToggle = (state, action) => {
 const StoreContentful = () => {
   const [stateProjects, setProjects] = useState({projects: []});
   const {projects} = stateProjects;
+  const gotProjects = !!projects.length;
 
   const [stateProjectsToggle, dispatchProjectsToggle] = useReducer(
     reducerProjectsToggle,
     []
   );
+
+  // Pagination
+  // ===========================================================================
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [projectsPerPage] = useState(3);
+
+  const projectsPaged = projectsArr => {
+    const indexOfLastProject = currentPage * projectsPerPage;
+    const indexOfFirstProject = indexOfLastProject - projectsPerPage;
+    return projectsArr.slice(indexOfFirstProject, indexOfLastProject);
+  };
+  const paginate = pageNumber => setCurrentPage(pageNumber);
+
+  // ===========================================================================
 
   // Getting Projects Data from Contentful
   useEffect(() => {
@@ -54,11 +71,9 @@ const StoreContentful = () => {
       value={[stateProjectsToggle, dispatchProjectsToggle]}
     >
       <ul data-grid="columns: 12, gutters-row: true">
-        {!projects.length ? (
-          <div>Loading</div>
-        ) : (
+        {gotProjects ? (
           <>
-            {projects.map(({sys, fields}, i) => {
+            {projectsPaged(projects).map(({sys, fields}, i) => {
               const {id} = sys;
               if (stateProjectsToggle[i]) {
                 const {isActive} = stateProjectsToggle[i];
@@ -73,8 +88,17 @@ const StoreContentful = () => {
               }
             })}
           </>
+        ) : (
+          <div>Loading Projects...</div>
         )}
       </ul>
+      {gotProjects && (
+        <Pagination
+          projectsPerPage={projectsPerPage}
+          totalProjects={projects.length}
+          paginate={paginate}
+        />
+      )}
     </contextProjectsToggle.Provider>
   );
 };

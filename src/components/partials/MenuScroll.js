@@ -21,15 +21,15 @@ const MenuScroll = ({className}) => {
   return (
     <ul className={classes}>
       {stateSpSections.map(({id, isActive}) => {
-        let title;
-        id === 'intro' && (title = 'Intro');
-        id === 'about' && (title = 'About');
-        id === 'projects' && (title = 'Projects');
-        id === 'contact' && (title = 'Contact');
+        let linkName;
+        id === 'intro' && (linkName = 'Intro');
+        id === 'about' && (linkName = 'About');
+        id === 'projects' && (linkName = 'Projects');
+        id === 'contact' && (linkName = 'Contact');
         return (
           <li key={id}>
             <a href={`/#${id}`} className={isActive ? 'active' : ''}>
-              {title}
+              {linkName}
             </a>
           </li>
         );

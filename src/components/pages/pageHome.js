@@ -16,11 +16,7 @@ const pageHome = () => {
   const pageSections = [
     {id: 'intro', title: 'Intro', classes: 'intro'},
     {id: 'about', title: 'About', classes: 'about'},
-    {
-      id: 'projects',
-      title: 'Projects',
-      classes: 'projects'
-    },
+    {id: 'projects', title: 'Projects', classes: 'projects'},
     {id: 'contact', title: 'Contact', classes: 'contact'}
   ];
 
@@ -37,6 +33,7 @@ const pageHome = () => {
       type: 'GET_SCROLLPOINTS_SECTIONS',
       getScrollPontsSections: spInstance.get()
     });
+
     window.addEventListener('scroll', () => {
       dispatchUi({
         type: 'GET_SCROLLPOINTS_SECTIONS',
