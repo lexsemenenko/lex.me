@@ -29,7 +29,7 @@ const StoreContentful = () => {
   // ===========================================================================
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [projectsPerPage] = useState(3);
+  const [projectsPerPage] = useState(6);
 
   const projectsPaged = projectsArr => {
     const indexOfLastProject = currentPage * projectsPerPage;
@@ -61,7 +61,7 @@ const StoreContentful = () => {
               const {id} = sys;
               let isActive = false;
 
-              if (stateProjectsToggle.activeID == id) {
+              if (stateProjectsToggle.activeID === id) {
                 isActive = true;
               }
 
@@ -71,7 +71,9 @@ const StoreContentful = () => {
             })}
           </>
         ) : (
-          <div>Loading Projects...</div>
+          <div className="t-center">
+            <p>Loading Projects...</p>
+          </div>
         )}
       </ul>
       {gotProjects && (

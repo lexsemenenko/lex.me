@@ -14,6 +14,7 @@ const ProjectContent = ({id, fields, toggleClass}) => {
       type: 'TOGGLE',
       newState: {activeID: false}
     });
+    document.body.classList.remove('project__body-scroll');
   };
 
   const getParsedMarkdown = field => {

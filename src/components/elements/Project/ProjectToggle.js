@@ -13,6 +13,7 @@ const ProjectToggle = ({id, fields, toggleClass}) => {
       type: 'TOGGLE',
       newState: {activeID: clickedID}
     });
+    document.body.classList.add('project__body-scroll');
   };
 
   return (
