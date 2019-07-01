@@ -44,7 +44,8 @@ const StoreContentful = () => {
   // Getting Projects Data from Contentful
   useEffect(() => {
     ContentfulClient.getEntries({
-      content_type: 'project'
+      content_type: 'project',
+      order: '-fields.projectDate'
     }).then(entries => {
       setProjects({projects: entries.items});
     });

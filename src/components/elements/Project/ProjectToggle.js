@@ -1,10 +1,11 @@
 import React, {useContext} from 'react';
+import PropTypes from 'prop-types';
 import Icon from '../Icons';
 import {contextProjectsToggle} from './StoreContentful';
 
 const ProjectToggle = ({id, fields, toggleClass}) => {
   const {projectTitle, projectCompany, projectImage} = fields;
-  const imageUrl = projectImage.fields.file.url;
+  const imgURL = projectImage ? projectImage.fields.file.url : '';
 
   const [state, dispatch] = useContext(contextProjectsToggle);
 
@@ -21,7 +22,7 @@ const ProjectToggle = ({id, fields, toggleClass}) => {
       type="button"
       className={`project__toggle ${toggleClass}`}
       style={{
-        backgroundImage: `url(${imageUrl})`
+        backgroundImage: `url(${imgURL})`
       }}
       onClick={() => {
         toggle(id);
@@ -40,3 +41,15 @@ const ProjectToggle = ({id, fields, toggleClass}) => {
 };
 
 export default ProjectToggle;
+
+ProjectToggle.propTypes = {
+  projectImage: PropTypes.string,
+  projectTitle: PropTypes.string,
+  projectCompany: PropTypes.string
+};
+
+ProjectToggle.defaultProps = {
+  projectImage: null,
+  projectTitle: '',
+  projectCompany: ''
+};

@@ -5,7 +5,7 @@ import Button from '../Button';
 import {contextProjectsToggle} from './StoreContentful';
 
 const ProjectContent = ({id, fields, toggleClass}) => {
-  const {projectTitle, projectCompany, projectMarkdown} = fields;
+  const {projectTitle, projectCompany, projectMarkdown, projectLink} = fields;
 
   const [state, dispatch] = useContext(contextProjectsToggle);
 
@@ -44,7 +44,7 @@ const ProjectContent = ({id, fields, toggleClass}) => {
             </div>
             <div className="scroll-projects__body">
               <div data-grid="columns: 12">
-                <div data-grid-item="width: 8">
+                <div data-grid-item="width: 8, width-large: 7">
                   {projectMarkdown ? (
                     <div
                       className="wysiwyg"
@@ -54,16 +54,25 @@ const ProjectContent = ({id, fields, toggleClass}) => {
                     />
                   ) : (
                     <div className="wysiwyg">
-                      <p>Project details are coming soon.</p>
+                      <p>Project details are coming soon...</p>
                     </div>
                   )}
-
-                  <Button href="#" className="btn-icon-right">
-                    View Project
-                    <Icon name="link" />
-                  </Button>
                 </div>
-                <div data-grid-item="width: 4" />
+                <div data-grid-item="width: 4, width-large: 3, offset-large: 1">
+                  {projectLink && (
+                    <Button
+                      href={projectLink}
+                      className="btn-icon-right m-btm"
+                      target="_blank"
+                    >
+                      View Project
+                      <Icon name="link" />
+                    </Button>
+                  )}
+                  {/* <p>
+                    <strong>Technologies:</strong>
+                  </p> */}
+                </div>
               </div>
             </div>
           </div>
