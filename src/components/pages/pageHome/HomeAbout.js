@@ -17,8 +17,12 @@ const HomeAbout = () => {
           </p>
           <ul className="social-list">
             <li>
-              <Button href="#" className="btn-icon">
-                <Icon name="pdf" />
+              <Button
+                href="https://docs.google.com/document/d/1ivrLanSQRmg7qjInqMjrxkkN3mmmxvl_Z3tWNdtUbak/edit?usp=sharing"
+                className="btn-icon"
+                target="_blank"
+              >
+                <Icon name="google-doc" />
                 Resume
               </Button>
             </li>
