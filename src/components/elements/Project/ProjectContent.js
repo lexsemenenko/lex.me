@@ -1,11 +1,21 @@
 import React, {useContext} from 'react';
 import marked from 'marked';
+import PropTypes from 'prop-types';
 import Icon from '../Icons';
 import Button from '../Button';
 import {contextProjectsToggle} from './StoreContentful';
+import Image from '../Image';
 
 const ProjectContent = ({id, fields, toggleClass}) => {
-  const {projectTitle, projectCompany, projectMarkdown, projectLink} = fields;
+  const {
+    projectTitle,
+    projectCompany,
+    projectMarkdown,
+    projectLink,
+    projectImage
+  } = fields;
+
+  const imgURL = projectImage ? projectImage.fields.file.url : '';
 
   const [state, dispatch] = useContext(contextProjectsToggle);
 
@@ -58,7 +68,8 @@ const ProjectContent = ({id, fields, toggleClass}) => {
                     </div>
                   )}
                 </div>
-                <div data-grid-item="width: 4, width-large: 3, offset-large: 1">
+                <div data-grid-item="width: 4, width-large: 4, offset-large: 1">
+                  <Image src={imgURL} />
                   {projectLink && (
                     <Button
                       href={projectLink}
@@ -83,3 +94,15 @@ const ProjectContent = ({id, fields, toggleClass}) => {
 };
 
 export default ProjectContent;
+
+ProjectContent.propTypes = {
+  projectImage: PropTypes.string,
+  projectTitle: PropTypes.string,
+  projectCompany: PropTypes.string
+};
+
+ProjectContent.defaultProps = {
+  projectImage: null,
+  projectTitle: '',
+  projectCompany: ''
+};
