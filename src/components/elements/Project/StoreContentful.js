@@ -29,7 +29,7 @@ const StoreContentful = () => {
   // ===========================================================================
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [projectsPerPage] = useState(6);
+  const [projectsPerPage] = useState(9);
 
   const projectsPaged = projectsArr => {
     const indexOfLastProject = currentPage * projectsPerPage;
