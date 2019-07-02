@@ -32,6 +32,7 @@ const Pagination = ({projectsPerPage, totalProjects, paginate}) => {
             onClick={() => {
               paginate(number);
               makeActive(number);
+              document.getElementById("projects").scrollIntoView();
             }}
           >
             {number}
