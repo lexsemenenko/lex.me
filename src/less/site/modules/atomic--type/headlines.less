@@ -1,7 +1,7 @@
 .h1 {
   #TYPE.create(@size: @t-large-xxx,
-  @lh: 1em,
-  @family: inherit);
+    @lh: 1em,
+    @family: inherit);
   margin-bottom: 0.4em;
   color: #111;
   letter-spacing: -1.25px;
@@ -9,8 +9,8 @@
 
 .h2 {
   #TYPE.create(@size: @t-large-xx,
-  @lh: 1em,
-  @family: inherit);
+    @lh: 1em,
+    @family: inherit);
   color: #111;
   margin-bottom: 0.8em;
   font-weight: 600;
@@ -19,6 +19,7 @@
 .h2__block {
   position: relative;
   z-index: 1;
+
   span {
     position: relative;
     z-index: 1;
@@ -36,6 +37,7 @@
 
   .contact & {
     color: white;
+
     &:after {
       background: @color-gray;
       opacity: 0.2;
@@ -45,18 +47,18 @@
 
 .h3 {
   #TYPE.create(@size: @t-large-x,
-  @lh: 1em,
-  @family: inherit);
-  color: #111;
+    @lh: 1em,
+    @family: inherit);
+  color: inherit;
   margin-bottom: 0.8em;
   font-weight: 600;
 }
 
 .h4 {
-  #TYPE.create(@size: @t-large,
-  @lh: 1em,
-  @family: inherit);
-  color: #111;
+  #TYPE.create(@size: @t-base,
+    @lh: 1em,
+    @family: inherit);
+  color: inherit;
   margin-bottom: 0.8em;
   font-weight: 600;
 }

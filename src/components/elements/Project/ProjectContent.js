@@ -12,7 +12,8 @@ const ProjectContent = ({id, fields, toggleClass}) => {
     projectCompany,
     projectMarkdown,
     projectLink,
-    projectImage
+    projectImage,
+    projectTechnologies
   } = fields;
 
   const imgURL = projectImage ? projectImage.fields.file.url : '';
@@ -54,6 +55,19 @@ const ProjectContent = ({id, fields, toggleClass}) => {
             </div>
             <div className="scroll-projects__body">
               <div data-grid="columns: 12">
+                <div data-grid-item="width: 4, width-large: 4">
+                  <Image src={imgURL} />
+                  {projectLink && (
+                    <Button
+                      href={projectLink}
+                      className="btn-icon-right m-btm"
+                      target="_blank"
+                    >
+                      View Project
+                      <Icon name="link" />
+                    </Button>
+                  )}
+                </div>
                 <div data-grid-item="width: 8, width-large: 7">
                   {projectMarkdown ? (
                     <div
@@ -67,22 +81,16 @@ const ProjectContent = ({id, fields, toggleClass}) => {
                       <p>Project details are coming soon...</p>
                     </div>
                   )}
-                </div>
-                <div data-grid-item="width: 4, width-large: 4, offset-large: 1">
-                  <Image src={imgURL} />
-                  {projectLink && (
-                    <Button
-                      href={projectLink}
-                      className="btn-icon-right m-btm"
-                      target="_blank"
-                    >
-                      View Project
-                      <Icon name="link" />
-                    </Button>
+                  {projectTechnologies && (
+                    <>
+                      <h4 className="h4">Technologies:</h4>
+                      <ul className="project__tech">
+                        {projectTechnologies.map(technologyItem => (
+                          <li key={technologyItem}>{technologyItem}</li>
+                        ))}
+                      </ul>
+                    </>
                   )}
-                  {/* <p>
-                    <strong>Technologies:</strong>
-                  </p> */}
                 </div>
               </div>
             </div>
@@ -98,11 +106,15 @@ export default ProjectContent;
 ProjectContent.propTypes = {
   projectImage: PropTypes.string,
   projectTitle: PropTypes.string,
-  projectCompany: PropTypes.string
+  projectCompany: PropTypes.string,
+  projectTechnologies: PropTypes.arrayOf(PropTypes.string),
+  projectLink: PropTypes.string
 };
 
 ProjectContent.defaultProps = {
   projectImage: null,
   projectTitle: '',
-  projectCompany: ''
+  projectCompany: '',
+  projectTechnologies: [],
+  projectLink: ''
 };
