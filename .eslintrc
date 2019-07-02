@@ -5,13 +5,15 @@
     "ecmaVersion": 2018
   },
   "env": {
-    "browser": true,
     "node": true,
-    "jquery": true,
-    "jest": true
+    "browser": true,
+    "es6": true,
+    "jquery": true
   },
   "rules": {
-    "semi": ["error", "always"],
+    "import/prefer-default-export": 0,
+    "no-underscore-dangle": 0,
+    "func-names": 0,
     "comma-dangle": ["error", "never"],
     "no-debugger": 0,
     "no-console": 0,
@@ -42,9 +44,7 @@
       {
         "trailingComma": "none",
         "singleQuote": true,
-        "printWidth": 80,
-        "tabWidth": 2,
-        "useTabs": false
+        "printWidth": 80
       }
     ]
   },
