@@ -51,11 +51,12 @@ const scrollpoints = function(instanceSettings) {
       }
       let elementTrigger;
       if (debug) {
+        console.log('test');
         elementTrigger = document.getElementsByClassName(
           'scrollpoint__trigger'
         );
         if (elementTrigger) {
-          // const trigger = amountScrolled + trigger
+          const trigger = amountScrolled + trigger;
           elementTrigger[0].style.top = `${trigger}px`;
         }
       }
@@ -69,15 +70,17 @@ const scrollpoints = function(instanceSettings) {
     return scrollpointsArrWithActive;
   };
 
-  const debugVisually = () => {
-    const elementTrigger = document.createElement('div');
-    elementTrigger.classList.add('scrollpoint__trigger');
-    document.body.appendChild(elementTrigger);
+  const debugVisually = ({debug}) => {
+    if (debug) {
+      const elementTrigger = document.createElement('div');
+      elementTrigger.classList.add('scrollpoint__trigger');
+      document.body.appendChild(elementTrigger);
+    }
   };
 
   const init = () => {
     mergeSettings();
-    debugVisually();
+    debugVisually(s);
   };
 
   init();
