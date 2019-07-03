@@ -11,9 +11,8 @@ const HomeAbout = () => {
       <div data-grid="columns: 12">
         <div data-grid-item="width: 8, offset: 2, width-large: 6, offset-large: 3">
           <p className="t-lead t-center">
-            I am a Pittsburgh based <strong>Front-End Web Developer</strong> by
-            trade with perseverance, curiosity, a growth mindset and a passion
-            for emerging tech.
+            I am a Pittsburgh based Front-End Web Developer by trade with
+            perseverance, curiosity, and a passion for emerging tech.
           </p>
           <ul className="social-list">
             <li>
