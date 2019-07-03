@@ -25,11 +25,12 @@ const scrollpoints = function(instanceSettings) {
 
     const scrollpointsArrWithActive = scrollpointsArr.map(item => {
       // Sizes, offsetsconst triggerMatching = spTouchesTrigger && spNotPassedTrigger;
-      let elementOuterHeight;
+      let elementOuterHeight = 0;
       if (elementOffset) {
         elementOuterHeight = document.getElementById(elementOffset)
           .offsetHeight;
       }
+      console.log(elementOuterHeight, 'elementOuterHeight');
 
       const totalOffset = elementOuterHeight || offset;
       const spFromTop = item.offsetTop - totalOffset;

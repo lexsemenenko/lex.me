@@ -40,7 +40,7 @@ const anchorsScroll = instanceSettings => {
           e.preventDefault();
           const elMatch = document.getElementById(item.hash.substring(1));
           const elMatchPositionTop = elMatch.getBoundingClientRect().top;
-          const startPosition = window.pageYOffset;
+          const startPosition = window.pageYOffset - offset;
           const distance = elMatchPositionTop;
           let startTime = null;
 

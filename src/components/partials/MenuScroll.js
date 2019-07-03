@@ -12,8 +12,8 @@ const MenuScroll = ({className}) => {
   useEffect(() => {
     anchorsScroll({
       element: `.${classes} a`,
-      offset: 0,
-      // offsetElement: '#header',
+      offset: 55, // Static for now (nudging ~ height of collapsed header)
+      // offsetElement: 'header', // should be ID for now
       offsetNudge: 0
     });
   });

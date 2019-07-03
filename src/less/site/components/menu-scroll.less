@@ -12,6 +12,11 @@
   font-size: 18px;
   letter-spacing: 0.05em;
 
+  @media @mobile {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
   &:before {
     content: '';
     display: block;
@@ -62,6 +67,7 @@
 .menu-scroll-mobile {
   display: flex;
   justify-content: space-around;
+
   a {
     @menu-scroll--a()
   }

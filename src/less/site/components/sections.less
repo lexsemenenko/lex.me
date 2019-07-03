@@ -1,18 +1,10 @@
-@section-padding-base: {
+@section-padding-v: {
   padding-top: @base-large*3;
   padding-bottom: @base-large*3;
 
   @media @break-primary {
-    padding-bottom: @base-large*3;
-  }
-}
-
-@section-padding-small: {
-  padding-top: @base-large*1.5;
-  padding-bottom: @base-large*1.5;
-
-  @media @break-primary {
-    padding-bottom: @base-large*1.5;
+    padding-top: @base-large*2;
+    padding-bottom: @base-large*2;
   }
 }
 
@@ -30,17 +22,17 @@
 
   &.about {
     background: white url('/images/section--lines.svg') repeat-y center;
-    @section-padding-base();
+    @section-padding-v();
   }
 
   &.projects {
     background: #f8f8f8 url('/images/section--lines.svg') repeat-y center;
-    @section-padding-base();
+    @section-padding-v();
   }
 
   &.contact {
     background: @color-gray-dark;
-    @section-padding-base();
+    @section-padding-v();
     color: @color-gray;
 
     a {
@@ -53,7 +45,7 @@
   }
 
   &.content {
-    @section-padding-base();
+    @section-padding-v();
   }
 }
 
