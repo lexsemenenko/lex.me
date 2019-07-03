@@ -1,8 +1,7 @@
-
-
 @section-padding-base: {
   padding-top: @base-large*3;
   padding-bottom: @base-large*3;
+
   @media @break-primary {
     padding-bottom: @base-large*3;
   }
@@ -19,14 +18,17 @@
   &.intro {
     background-color: @color-gray-dark;
   }
+
   &.about {
     background: white url('/images/section--lines.svg') repeat-y center;
     @section-padding-base();
   }
+
   &.projects {
     background: #f8f8f8 url('/images/section--lines.svg') repeat-y center;
     @section-padding-base();
   }
+
   &.contact {
     background: @color-gray-dark;
     @section-padding-base();
@@ -34,10 +36,15 @@
 
     a {
       color: white;
+
       &:hover {
         color: white;
       }
     }
+  }
+
+  &.content {
+    @section-padding-base();
   }
 }
 
@@ -47,6 +54,6 @@
 
 .section__title {
   text-align: center;
-  .h2; 
-  .h2__block;
+  .h1;
+  .h1__block;
 }

@@ -1,22 +1,21 @@
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  .t-semibold;
+}
+
 .h1 {
   #TYPE.create(@size: @t-large-xxx,
-    @lh: 1em,
-    @family: inherit);
-  margin-bottom: 0.4em;
-  color: #111;
-  letter-spacing: -1.25px;
+    @lh: @t-large-xxx-lh,
+    @size-small: @t-break--large-xxx,
+    @lh-small: @t-break--large-xxx-lh,
+    @family: inherit,
+    @margin: true);
 }
 
-.h2 {
-  #TYPE.create(@size: @t-large-xx,
-    @lh: 1em,
-    @family: inherit);
-  color: #111;
-  margin-bottom: 0.8em;
-  font-weight: 600;
-}
-
-.h2__block {
+.h1__block {
   position: relative;
   z-index: 1;
 
@@ -45,24 +44,29 @@
   }
 }
 
+.h2 {
+  #TYPE.create(@size: @t-large-xx,
+    @lh: @t-large-xx-lh,
+    @size-small: @t-break--large-xx,
+    @lh-small: @t-break--large-xx-lh,
+    @family: inherit,
+    @margin: true);
+}
+
 .h3 {
   #TYPE.create(@size: @t-large-x,
-    @lh: 1em,
-    @family: inherit);
-  color: inherit;
-  margin-bottom: 0.8em;
-  font-weight: 600;
+    @lh: @t-large-x-lh,
+    @size-small: @t-break--large-x,
+    @lh-small: @t-break--large-x-lh,
+    @family: inherit,
+    @margin: true);
 }
 
 .h4 {
-  #TYPE.create(@size: @t-base,
-    @lh: 1em,
-    @family: inherit);
-  color: inherit;
-  margin-bottom: 0.8em;
-  font-weight: 600;
+  #TYPE.create(@size: @t-large,
+    @lh: @t-large-lh,
+    @size-small: @t-break--large,
+    @lh-small: @t-break--large-lh,
+    @family: inherit,
+    @margin: true);
 }
-
-// .h5 {}
-
-// .h6 {}

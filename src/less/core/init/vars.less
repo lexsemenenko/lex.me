@@ -71,22 +71,23 @@ Changes:            1.0.0 | ...
 
 
 @toggle-rem: on; // rem units
-@t-margin-multiplier: 1; // Amount the margin should be altered from the line-height
+@t-margin-multiplier: 0.5; // Amount the margin should be altered from the line-height
 
-@t-base: 15px;
-@t-base-lh: 1.6em;
 @t-base-color: @color-black-80;
 @t-detail: @color-black-50;
 
 @t-family-base: 'Open Sans', 'Arial', sans-serif;
 
-@t-large-xxx: 55px;
-@t-large-xxx-lh: @t-base-lh;
-@t-large-xx: 40px;
-@t-large-xx-lh: @t-base-lh;
-@t-large-x: 26px;
-@t-large-x-lh: @t-base-lh;
-@t-large: 21px;
+
+@t-base: 16px;
+@t-base-lh: 1.5em;
+@t-large-xxx: 42px;
+@t-large-xxx-lh: @t-base-lh * 0.66;
+@t-large-xx: 32px;
+@t-large-xx-lh: @t-base-lh * 0.66;
+@t-large-x: 24px;
+@t-large-x-lh: @t-base-lh * 0.66;
+@t-large: 20px;
 @t-large-lh: @t-base-lh;
 @t-small: 14px;
 @t-small-lh: @t-base-lh;
@@ -95,7 +96,7 @@ Changes:            1.0.0 | ...
 
 // Extras
 @t-lh-dense: 1.2em;
-@t-lh-no: 0.8em; // When displaying a block and removing the line-height. Adjust per font.
+@t-lh-dense-x: 0.8em; // When displaying a block and removing the line-height. Adjust per font.
 
 
 // Type Breakpoint Sizes
@@ -106,20 +107,28 @@ Changes:            1.0.0 | ...
 // variables -->  #TYPE.createSize('large'); 
 
 @t-breakpoint: @break-primary;
+@t-break-size-multiplier: 0.85;
 
-@t-break--base: 15px;
+@t-break--base: 16px;
 @t-break--base-lh: 1.6em;
 
-@t-break--large-xx: 39px;
-@t-break--large-xx-lh: @t-base-lh;
-@t-break--large-x: 25px;
-@t-break--large-x-lh: @t-base-lh;
-@t-break--large: 200px;
-@t-break--large-lh: @t-base-lh;
-@t-break--small: 10px;
-@t-break--small-lh: @t-base-lh;
-@t-break--small-x: 11px;
-@t-break--small-x-lh: @t-base-lh;
+@t-break--large-xxx: @t-large-xxx * @t-break-size-multiplier;
+@t-break--large-xxx-lh: @t-large-xxx-lh;
+
+@t-break--large-xx: @t-large-xx * @t-break-size-multiplier;
+@t-break--large-xx-lh: @t-large-xx-lh;
+
+@t-break--large-x: @t-large-x * @t-break-size-multiplier;
+@t-break--large-x-lh: @t-large-x-lh;
+
+@t-break--large: @t-large * @t-break-size-multiplier;
+@t-break--large-lh: @t-large-lh;
+
+@t-break--small: @t-small * @t-break-size-multiplier;
+@t-break--small-lh: @t-small-lh;
+
+@t-break--small-x: 12px;
+@t-break--small-x-lh: @t-small-x-lh;
 
 // Elements
 // =============================================================================
