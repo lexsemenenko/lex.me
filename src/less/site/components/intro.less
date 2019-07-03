@@ -6,6 +6,14 @@
   height: 100vh;
   align-items: center;
   background: radial-gradient(lighten(@color-gray-dark, 4%), @color-gray-dark 65%);
+
+  @media @break-primary {
+    justify-content: center;
+  }
+
+  @media @mobile {
+    justify-content: flex-start;
+  }
 }
 
 .hero__arrow {
@@ -45,11 +53,13 @@
     width: 55%;
     padding: 100px 5% 50px 0;
   }
+
   @media @break-primary {
     flex-basis: 80%;
     width: 80%;
     padding: 80px 5% 20px 0;
   }
+
   @media @mobile {
     flex-basis: 90%;
     width: 90%;
