@@ -1,9 +1,11 @@
 .footer {
-  @section-padding-base();
-  background: @color-black-3 url('/images/section--lines.svg') center repeat-y;
+  @section-padding-small();
+  background: darken(@color-gray-dark, 2%);
   text-align: center;
-  min-height: 20em;
+  color: lighten(@color-gray-dark, 17%);
+
   svg {
-    fill: lighten(@color-gray-dark, 15%);
+    fill: lighten(@color-gray-dark, 6%);
+    margin-bottom: -@base-small;
   }
 }
