@@ -37,7 +37,7 @@ const HomeHero = () => {
     <div className="group">
       <div className="hero">
         <div className="hero__text">
-          <h1>Front-End & Web Developer</h1>
+          <h1>Front-End Web Developer</h1>
           <strong>Lex Semenenko</strong>
           <a className="hero__arrow" href="#about">
             <Icon name="arrow-down" size="1.5em" />
