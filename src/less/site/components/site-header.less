@@ -20,15 +20,21 @@
 
   &__logo {
     transition: all @header-transition-duration @header-transition-timing;
-
-    img {
-      display: block;
-    }
-
     a {
       display: block;
       width: (423px / 5.5px);
+      // .active & {
+      //   width: (423px / 6.5px);
+      // }
+      color: lighten(@color-gray-dark, 15%);
+      &:hover {
+        color: lighten(@color-gray-dark, 20%);
+      }
     }
+    svg {
+      display: block;
+    }
+
   }
 
   position: fixed;
