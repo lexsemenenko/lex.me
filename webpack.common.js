@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const LessLists = require('less-plugin-lists');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   // entry: {
@@ -95,6 +96,7 @@ module.exports = {
       filename: '[name].[contenthash].css',
       chunkFilename: '[id].extract.css'
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };

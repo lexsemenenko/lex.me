@@ -1,5 +1,4 @@
 const merge = require('webpack-merge');
-const webpack = require('webpack');
 
 const path = require('path');
 const common = require('./webpack.common.js');
@@ -11,6 +10,5 @@ module.exports = merge(common, {
     historyApiFallback: true,
     hot: true
   },
-  devtool: 'inline-source-map',
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  devtool: 'inline-source-map'
 });
