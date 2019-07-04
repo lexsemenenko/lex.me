@@ -1,6 +1,5 @@
 // .project__item {}
 
-
 .project__toggle {
   display: block;
   width: 100%;
@@ -12,17 +11,17 @@
   /* 16:10 Aspect Ratio */
   padding-top: 62.5%; // 800px/500px * 100%
   background-position: 50%;
-  transition: background-size .6s ease-in-out;
+  transition: background-size 0.6s ease-in-out;
 
   &:before {
     position: absolute;
-    content: "";
+    content: '';
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     transition: background-color 0.3s ease-in-out;
-    background: rgba(42, 47, 54, .75);
+    background: rgba(42, 47, 54, 0.75);
     // background: rgba(220, 65, 51, .75);
   }
 
@@ -47,7 +46,7 @@
 }
 
 .project__toggle-text {
-  transition: bottom .6s;
+  transition: bottom 0.6s;
   position: absolute;
   left: 0;
   right: 0;
@@ -75,7 +74,7 @@
   left: @base-large-x - 5px;
   bottom: @base-large;
   opacity: 0;
-  transition: opacity .6s, bottom .6s;
+  transition: opacity 0.6s, bottom 0.6s;
   color: @color-accent;
 }
 
@@ -92,7 +91,7 @@
 .project__content {
   img {
     width: 100%;
-    margin-bottom: @element-margin/2;
+    margin-bottom: @element-margin / 2;
   }
 
   &.closed {
@@ -147,4 +146,15 @@
 
 .project__tech {
   margin-bottom: @element-margin;
+  display: flex;
+  flex-flow: row wrap;
+  li {
+    .t-small;
+    margin-right: 0.5em;
+    background-color: darken(@color-gray, 5%);
+    color: white;
+    padding: 0.2em 0.6em;
+    margin-bottom: 0.6em;
+    white-space: nowrap;
+  }
 }

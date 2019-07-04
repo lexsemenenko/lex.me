@@ -30,7 +30,6 @@ const scrollpoints = function(instanceSettings) {
         elementOuterHeight = document.getElementById(elementOffset)
           .offsetHeight;
       }
-      console.log(elementOuterHeight, 'elementOuterHeight');
 
       const totalOffset = elementOuterHeight || offset;
       const spFromTop = item.offsetTop - totalOffset;

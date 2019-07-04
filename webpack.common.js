@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const LessLists = require('less-plugin-lists');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
   // entry: {
@@ -33,10 +33,16 @@ module.exports = {
           // Last is executed first
           // {
           //   // What Loaders to use from bottom to top
-          //   loader: 'style-loader', // creates style nodes from JS strings
+          //   loader: 'style-loader' // creates style nodes from JS strings
           // },
           {
-            loader: MiniCssExtractPlugin.loader // Extracts CSS into separate files. It creates a CSS file per JS file. Use instead of style-loader as it does inline styles
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              // only enable hot in development
+              // hmr: process.env.NODE_ENV === 'development',
+              // if hmr does not work, this is a forceful method.
+              // reloadAll: true
+            }
           },
           {
             loader: 'css-loader',
