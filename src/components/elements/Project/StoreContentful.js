@@ -1,6 +1,7 @@
 import React, {useState, useEffect, createContext, useReducer} from 'react';
 import ContentfulClient from './ContentfulClient';
 import Project from './Project';
+import Loader from '../Loader';
 import Pagination from './Pagination';
 
 // Create Context
@@ -55,9 +56,9 @@ const StoreContentful = () => {
     <contextProjectsToggle.Provider
       value={[stateProjectsToggle, dispatchProjectsToggle]}
     >
-      <ul data-grid="columns: 12, gutters-row: true">
+      <>
         {gotProjects ? (
-          <>
+          <ul data-grid="columns: 12, gutters-row: true">
             {projectsPaged(projects).map(({sys, fields}, i) => {
               const {id} = sys;
               let isActive = false;
@@ -70,13 +71,11 @@ const StoreContentful = () => {
                 <Project key={id} id={id} fields={fields} isActive={isActive} />
               );
             })}
-          </>
+          </ul>
         ) : (
-          <div className="t-center">
-            <p>Loading Projects...</p>
-          </div>
+          <Loader />
         )}
-      </ul>
+      </>
       {gotProjects && (
         <Pagination
           projectsPerPage={projectsPerPage}
