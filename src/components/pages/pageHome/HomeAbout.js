@@ -17,7 +17,7 @@ const HomeAbout = () => {
           <ul className="social-list">
             <li>
               <Button
-                href="https://docs.google.com/document/d/1ivrLanSQRmg7qjInqMjrxkkN3mmmxvl_Z3tWNdtUbak/edit?usp=sharing"
+                href="https://docs.google.com/document/d/1KSu4RLhsIZeVO5jJiX37j5dbAqKj9Pu121ImX4p0nTI/edit?usp=sharing"
                 className="btn-icon"
                 target="_blank"
               >
